@@ -1,0 +1,2 @@
+- Algo der aus einer Menge effizient ein neues SET generiert.  (Anwendungsfall: Intro mit zufälligen Beispiel SET)
+- Algo zum Generieren von einer Auslagefläche X*Y welches N-Sets enthält.
