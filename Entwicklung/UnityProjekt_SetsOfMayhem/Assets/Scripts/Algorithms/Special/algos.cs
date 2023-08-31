@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static medium;
+using static config_parameters;
 
-public static class algos {
+public static class algos
+{
 
 
 
@@ -11,7 +13,7 @@ public static class algos {
     public static void scanForSelected()
     {
         numberOfSelected = 0;
-        
+
         for (int i = 0; i < array_cards_status.Length; i++)
         {
             if (array_cards_status[i] == 2)
@@ -106,6 +108,130 @@ public static class algos {
         return true;
     }
 
+    public static void CheckAndFillCardField()
+    {
 
 
+        for (int i = 0; i < array_cards_status.Length; i++)
+        {
+            if (array_cards_status[i] == 0)
+            {
+
+                FillCardInField(i);
+                array_cards_status[i] = 3;
+
+            }
+        }
+    }
+
+    public static void FillCardInField(int pos)
+    {
+                
+        for (int i = 0; i < Max_Anzahl_katProKarte; i++)
+        {
+            fieldOfCards[pos, i] = (int)UnityEngine.Random.Range(0, numberofUnitsPerKat_max - 1);
+            //fieldOfCards[pos, i] = ;
+        }
+
+    }
+    public static void checkForPlayerSetSelection()
+    {
+
+        scanForSelected();
+        if (numberOfSelected >= numberOfSelected_soll)
+        {
+            for (int i = 0; i < array_cards_status.Length; i++)
+            {
+                bool cfs = checkForSetinSelected();
+                if (cfs == true)
+                {
+                    //ebug.Log(array_cards_selected + " ; " + array_cards_status + " ; " + array_cards_used_with_id);
+                    if (array_cards_status[i] == 2)
+                    {
+                        array_cards_status[i] = 0;
+                    }
+                }
+                else
+                {
+                    array_cards_status[i] = 1;
+                }
+            }
+
+
+        }
+
+
+    }
+
+    public static int welcheNummerHatKat(string katname)
+    {
+        //kategorien_n[0] = "Andere";
+
+
+        if (string.IsNullOrEmpty(katname))
+        {
+            return -1;
+        }
+        int i = 0;
+        for (int j = 0; j < kategorien_n.Length; j++)
+        {
+            if (kategorien_n[j] == katname)
+            {
+                return j;
+            }
+        }
+        //wenn nicht gefunden, finde platz
+        for (int j = 0; j < kategorien_n.Length; j++)
+        {
+            if (string.IsNullOrEmpty(kategorien_n[j]))
+            {
+                kategorien_n[j] = katname;
+                return j;
+            }
+        }
+
+        Debug.Log("sollte nicht passieren");
+        return i;
+    }
+
+    public static int welcheNummerHatWert(int kat_id, string wertname)
+    {
+        //werte_n[kat_id, 0] = "Unsortiert";
+
+        int i = 0;
+        if (string.IsNullOrEmpty(wertname))
+        {
+            return -1;
+        }
+        for (int j = 0; j < numberofUnitsPerKat_max; j++)
+        {
+            if (werte_n[kat_id, j] == wertname)
+            {
+                return j;
+            }
+        }
+        //wenn nicht gefunden, finde platz
+        for (int j = 0; j < numberofUnitsPerKat_max; j++)
+        {
+            if (string.IsNullOrEmpty(werte_n[kat_id, j]))
+            {
+                werte_n[kat_id, j] = wertname;
+                return j;
+            }
+        }
+
+        Debug.Log("sollte nicht passieren");
+        return i;
+    }
+
+    public static void update_arrays()
+    {
+        fieldOfCards = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+        array_cards_status = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update
+
+        array_cards_used_with_id = new int[Game_numberOfCardsOnDeck]; //Kartenabbild_ID
+
+        array_cards_selected = new int[Game_numberOfCardsOnDeck];//verweise auf array
+
+    }
 }

@@ -15,5 +15,16 @@ public static class methods {
 
         return sar;
     }
+    public static string ArrayToString(string[] iar)
+    {
+        string sar = "";
+        for (int i = 0; i < iar.Length; i++)
+        {
+            sar = sar + " ; i=" + i + " : " + iar[i];
+        }
+
+
+        return sar;
+    }
 
 }

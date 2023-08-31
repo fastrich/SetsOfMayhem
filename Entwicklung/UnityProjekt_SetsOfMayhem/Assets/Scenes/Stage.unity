@@ -130,6 +130,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 644710599}
     m_Modifications:
+    - target: {fileID: 442300017948524387, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087292205132583336, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159032892965054676, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851121621779165224, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819523604944823731, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562033994083847127, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6768969557366612555, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
       propertyPath: m_Name
       value: KarteA
@@ -218,7 +242,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3935551246575458365, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
 --- !u!224 &109861275 stripped
 RectTransform:
@@ -337,6 +362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1578237671}
     m_Modifications:
+    - target: {fileID: 4852843607682942590, guid: 9746440896306cf438763a8bc252fd3c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6378169443522176998, guid: 9746440896306cf438763a8bc252fd3c, type: 3}
       propertyPath: m_Name
       value: Canvas_Background

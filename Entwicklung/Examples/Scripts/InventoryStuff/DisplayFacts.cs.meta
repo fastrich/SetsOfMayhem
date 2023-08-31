@@ -1,0 +1,54 @@
+fileFormatVersion: 2
+guid: d982f30612e9c5c4eb26c1ad0bb859e1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - factscreenContent: {instanceID: 0}
+  - prefab_Point: {fileID: 858001163752551619, guid: f019e9f67e8dab947bc60028223b6cec,
+      type: 3}
+  - prefab_Distance: {fileID: 4221381813544557775, guid: 8106c748f1aeb084d87fdc71dd009b67,
+      type: 3}
+  - prefab_Angle: {fileID: 6643637775379894484, guid: 30fcd362f34a9844fba66065924c6143,
+      type: 3}
+  - prefab_Default: {fileID: 3623208097461608675, guid: f8cb4e8bb9c09724c925b25c660fb2cd,
+      type: 3}
+  - prefab_OnLine: {fileID: 6050914136827205310, guid: 496d04605465c7f4dba7638cc6e2dc6e,
+      type: 3}
+  - prefab_Line: {fileID: 7510387096843212865, guid: d6ee990520a44954fb494468665d19e9,
+      type: 3}
+  - prefab_ParallelLineFact: {fileID: 7510387096843212865, guid: 9f086cfbfeb0dfd46af67395aa17aafa,
+      type: 3}
+  - prefab_RectangleFact: {fileID: 8156936215466465834, guid: b6f35afcaff5d8a40bf8f792eb3299e6,
+      type: 3}
+  - prefab_RadiusFact: {fileID: 2513701074329712390, guid: 5b54aca5b2f2bfa48968656ed3bea181,
+      type: 3}
+  - prefab_AreaCircle: {fileID: 7016901710118546043, guid: 210f1e1acf16abf40a39587074c4d25a,
+      type: 3}
+  - prefab_ConeVolume: {fileID: 2523593828849809055, guid: 992edeb4264d0fa49b0f9b35b9ab85ce,
+      type: 3}
+  - prefab_OrthogonalCircleLine: {fileID: 8554350198830106250, guid: 9ce7444f588cd054989126eaff75c5f3,
+      type: 3}
+  - prefab_TruncatedConeVolume: {fileID: 4123133807278660472, guid: 9d0019fa4b5725a49bdfc78c4d67661e,
+      type: 3}
+  - prefab_RightAngle: {fileID: 3080888058940174091, guid: 389563c758e86d848b3341576b90b7e4,
+      type: 3}
+  - prefab_CylinderVolume: {fileID: 5287418535931939099, guid: 30d09e8685950994893b3b6388a8906c,
+      type: 3}
+  - prefab_EqualFact: {fileID: 7523305359074541435, guid: 5f461930be2eb074193dc12eb60e10b2,
+      type: 3}
+  - prefab_UnEqualFact: {fileID: 5769925203401971992, guid: 047cd3a517f781846a1f983394b4bb7b,
+      type: 3}
+  - prefab_TestFact: {fileID: 2846439484187545958, guid: 5dc76e187eae4214697491bfb42773e8,
+      type: 3}
+  - prefab_CircleFact: {fileID: 6636443472981757786, guid: 9d08fd45bc83c7c42a9be42f5309c6c2,
+      type: 3}
+  - prefab_OnCircleFact: {fileID: 2115817999818309900, guid: df93bd4d977e4ab42a626f7bd06596d6,
+      type: 3}
+  - prefab_AngleCircleLineFact: {fileID: 4902928549420802332, guid: 62cec72d28de59d4c8ae782957cc10a1,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

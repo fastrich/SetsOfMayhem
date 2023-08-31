@@ -1,7 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BackToButton_mobile
+    - ControlOptionsM_Keyboard_mobile
+    - ControlOptionsMenue_mobile
+    - MenueControl_mobile
     - SET_controller
+    - SystemOptionsMenue_mobile
+    - dyn1
+    - dyn2
+    - dynMulti
+    - gameoptions_main
     - intro_main
     - karte
     - kartenID_installer
@@ -10,22 +19,14 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.2D.Tilemap.Extras.Editor.dll:
-    - UnityEditor.Tilemaps.GameObjectBrush
-    - UnityEditor.Tilemaps.GroupBrush
-    - UnityEditor.Tilemaps.LineBrush
-    - UnityEditor.Tilemaps.RandomBrush
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -46,6 +47,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -75,8 +78,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
@@ -92,11 +97,152 @@ ScriptsOnlyBuild:
     fullTypeName: karte
     methodName: OnClick
   - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn02
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn06
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn08
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn04
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn07
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn_GenChilds
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn01
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: ControlOptionsMenue_mobile
+    methodName: InputSystemModes
+  - assembly: Assembly-CSharp
     fullTypeName: mainmenue_main
     methodName: StartGame_withOptionsM
   - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: kindsOfOptions_Bttn
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: ControlOptionsM_Keyboard_mobile
+    methodName: ChangeMouseCaptureInWindow
+  - assembly: Assembly-CSharp
+    fullTypeName: ControlOptionsMenue_mobile
+    methodName: TouchControls
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn09
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn_GenRot
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: numOfCardsInASET_Bttn
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn03
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
     fullTypeName: mainmenue_main
-    methodName: StartGame_Fast
+    methodName: StartGame_Fast_Classic
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn05
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: numOfUperKat_Bttn
+  - assembly: Assembly-CSharp
+    fullTypeName: mainmenue_main
+    methodName: StartGame_withOptionsM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: OnKlickBttn_GenColor
+  - assembly: Assembly-CSharp
+    fullTypeName: mainmenue_main
+    methodName: StartGame_Fast_Random
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions_main
+    methodName: numOfCardsInField_Bttn
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: ControlOptionsM_Keyboard_mobile
+    methodName: ChangeMouseCaptureInWindow
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
   - assembly: Assembly-CSharp
     fullTypeName: karte
     methodName: OnClick
@@ -104,6 +250,69 @@ ScriptsOnlyBuild:
     fullTypeName: karte
     methodName: OnClick
   sceneClasses:
+    Assets/Scenes/GameOptions.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1568}
+    - Class: 114
+      Script: {instanceID: 1576}
+    - Class: 114
+      Script: {instanceID: 1578}
+    - Class: 114
+      Script: {instanceID: 1580}
+    - Class: 114
+      Script: {instanceID: 1858}
+    - Class: 114
+      Script: {instanceID: 1876}
+    - Class: 114
+      Script: {instanceID: 2874}
+    - Class: 114
+      Script: {instanceID: 3502}
+    - Class: 114
+      Script: {instanceID: 3964}
+    - Class: 114
+      Script: {instanceID: 4644}
+    - Class: 114
+      Script: {instanceID: 5150}
+    - Class: 114
+      Script: {instanceID: 6076}
+    - Class: 114
+      Script: {instanceID: 6604}
+    - Class: 114
+      Script: {instanceID: 7026}
+    - Class: 114
+      Script: {instanceID: 7120}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Intro.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -126,33 +335,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1570}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 1848}
+      Script: {instanceID: 1578}
     - Class: 114
-      Script: {instanceID: 2348}
+      Script: {instanceID: 1580}
     - Class: 114
-      Script: {instanceID: 2858}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 3480}
+      Script: {instanceID: 1876}
     - Class: 114
-      Script: {instanceID: 4636}
+      Script: {instanceID: 2362}
     - Class: 114
-      Script: {instanceID: 4774}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 5108}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 6036}
+      Script: {instanceID: 3964}
     - Class: 114
-      Script: {instanceID: 6562}
+      Script: {instanceID: 4668}
     - Class: 114
-      Script: {instanceID: 6780}
+      Script: {instanceID: 4806}
     - Class: 114
-      Script: {instanceID: 6984}
+      Script: {instanceID: 5146}
     - Class: 114
-      Script: {instanceID: 7404}
+      Script: {instanceID: 5150}
     - Class: 114
-      Script: {instanceID: 8094}
+      Script: {instanceID: 6076}
+    - Class: 114
+      Script: {instanceID: 6604}
+    - Class: 114
+      Script: {instanceID: 7026}
+    - Class: 114
+      Script: {instanceID: 8144}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,27 +404,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1570}
+      Script: {instanceID: 1572}
     - Class: 114
-      Script: {instanceID: 1848}
+      Script: {instanceID: 1576}
+    - Class: 114
+      Script: {instanceID: 1578}
+    - Class: 114
+      Script: {instanceID: 1580}
+    - Class: 114
+      Script: {instanceID: 1858}
+    - Class: 114
+      Script: {instanceID: 1876}
     - Class: 114
       Script: {instanceID: 2858}
     - Class: 114
-      Script: {instanceID: 3480}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 6036}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 6562}
+      Script: {instanceID: 3964}
     - Class: 114
-      Script: {instanceID: 6780}
+      Script: {instanceID: 4644}
     - Class: 114
-      Script: {instanceID: 6984}
+      Script: {instanceID: 5026}
     - Class: 114
-      Script: {instanceID: 7076}
+      Script: {instanceID: 5150}
     - Class: 114
-      Script: {instanceID: 7404}
+      Script: {instanceID: 5964}
     - Class: 114
-      Script: {instanceID: 9376}
+      Script: {instanceID: 6076}
+    - Class: 114
+      Script: {instanceID: 6514}
+    - Class: 114
+      Script: {instanceID: 6604}
+    - Class: 114
+      Script: {instanceID: 7026}
+    - Class: 114
+      Script: {instanceID: 7248}
+    - Class: 114
+      Script: {instanceID: 8058}
+    - Class: 114
+      Script: {instanceID: 9432}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -246,25 +481,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1570}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 1848}
+      Script: {instanceID: 1578}
     - Class: 114
-      Script: {instanceID: 2858}
+      Script: {instanceID: 1580}
     - Class: 114
-      Script: {instanceID: 3480}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 6036}
+      Script: {instanceID: 1876}
     - Class: 114
-      Script: {instanceID: 6562}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 6780}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 6984}
+      Script: {instanceID: 3964}
     - Class: 114
-      Script: {instanceID: 7076}
+      Script: {instanceID: 5150}
     - Class: 114
-      Script: {instanceID: 7404}
+      Script: {instanceID: 6076}
+    - Class: 114
+      Script: {instanceID: 6604}
+    - Class: 114
+      Script: {instanceID: 7026}
+    - Class: 114
+      Script: {instanceID: 7120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -290,10 +531,46 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
+      Hash: bcaee4c2a83047257b5f47d6ed264b75
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 0dbc3be398b4869a5c8d0d8481ee402c
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: LayoutElement
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 748dd2a2a28da4e618912da5ac45684b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.EventSystems
+    className: StandaloneInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: a1aa98c78061c6f03a8c124cda576e67
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 040dd48e3a027d5424519a5fa2009df4
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ScrollRect
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -320,12 +597,6 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 0dbc3be398b4869a5c8d0d8481ee402c
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: LayoutElement
-  - hash:
-      serializedVersion: 2
       Hash: 6bc76e17f0d5e93f3eea7f5a2fe227f3
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -344,7 +615,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: fbd7a87407e3555ea61f7019258fa71d
+      Hash: 6969909413f2bd1aa379a49795b4c752
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: karte
@@ -354,6 +625,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionStayMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 7e238bb64daf97f87bea9a2ef1175f57
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: dynMulti
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -366,6 +643,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: aafbfe176c7a9a7ce2196a030bf9ff6c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SaveNetwAddr_mobile
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -434,6 +717,12 @@ ScriptsOnlyBuild:
     className: UnityOnBecameVisibleMessageListener
   - hash:
       serializedVersion: 2
+      Hash: ffebb461f2dc2adaefa841a8eac145fa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BackToButton_mobile
+  - hash:
+      serializedVersion: 2
       Hash: 27e5341178f188b89bdc6495710b590c
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -486,6 +775,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Tilemap.Extras.dll
     namespaceName: UnityEngine.Tilemaps
     className: RuleOverrideTile
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WaitingForLocalMMT
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -546,6 +841,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 884de2f2545c4b252d1df24724925989
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadingCircle
   - hash:
       serializedVersion: 2
       Hash: 0784d4fd5b93bd75440d01eb2fac4233
@@ -644,6 +945,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: 3ab1f06298a47e28a851f1fcf708d083
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: dyn2
+  - hash:
+      serializedVersion: 2
       Hash: 7536c3aaa3b668b80f1580147a12d30d
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -654,6 +961,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnControllerColliderHitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 220f1fc5c27018e726c838c93e1c3ab9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LaunchMenue_mobile
   - hash:
       serializedVersion: 2
       Hash: 27ec3360f0c0a6803ba71cc3106480b8
@@ -729,6 +1042,18 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ResetSaveDataButton_mobile
+  - hash:
+      serializedVersion: 2
+      Hash: 229cb7101e3d99d93171bb5dff98495f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: gameoptions_main
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionStay2DMessageListener
@@ -788,6 +1113,12 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
+      Hash: 1761bd7e5b9379a5a8d3b48f5ffb5e98
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelectedNewNetwServer_mobile
+  - hash:
+      serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -800,10 +1131,28 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 8c20cf2cd4e346c5a77cde4b79e6c3a4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenueControl_mobile
+  - hash:
+      serializedVersion: 2
+      Hash: 5738e6da33d395616bcc09f92914da20
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FindIP
+  - hash:
+      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 5f5227733806e711a58e134dd11efee4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: dyn1
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -920,12 +1269,6 @@ ScriptsOnlyBuild:
     className: ShaderPropAnimator
   - hash:
       serializedVersion: 2
-      Hash: bcaee4c2a83047257b5f47d6ed264b75
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Toggle
-  - hash:
-      serializedVersion: 2
       Hash: 3b3bf14021899a113dbb5c9e4f0d86ad
     assemblyName: Unity.2D.Tilemap.Extras.dll
     namespaceName: UnityEngine.Tilemaps
@@ -950,6 +1293,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: dfe4e354eeab92a120146dc9f59800f3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CheckServerPush
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -972,6 +1321,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 374ccf0e194b45bf5cde490e2bb071ca
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelectNetwServer_mobile
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1010,13 +1365,13 @@ ScriptsOnlyBuild:
     className: UnityOnDeselectMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
+      Hash: 7b66bfaad944e6aad01cdb1ca6be9cc5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlOptionsMenue_mobile
   - hash:
       serializedVersion: 2
-      Hash: 4a52657eaac9932d289161ea7652053d
+      Hash: 9a5971620b07d0a88354bafa7ab8f12e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: kartenID_installer
@@ -1034,10 +1389,10 @@ ScriptsOnlyBuild:
     className: Benchmark02
   - hash:
       serializedVersion: 2
-      Hash: a1aa98c78061c6f03a8c124cda576e67
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: CanvasScaler
+      Hash: 276b658e33cd48f984da22f034ea2510
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelectedNetwServer_mobile
   - hash:
       serializedVersion: 2
       Hash: 4d16cfbaa8e821a2b370e80844a0e9bc
@@ -1064,10 +1419,22 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 7b89835ec9e53177ddaaa8d01c32d322
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GraphicOptionsMenue_mobile
+  - hash:
+      serializedVersion: 2
       Hash: b129340fcb39bf9825c8e3050daa984d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SET_controller
+  - hash:
+      serializedVersion: 2
+      Hash: 4c63b5451d08a9c87ec26ad01a72e255
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SystemOptionsMenue_mobile
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1080,12 +1447,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark03
-  - hash:
-      serializedVersion: 2
-      Hash: 748dd2a2a28da4e618912da5ac45684b
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.EventSystems
-    className: StandaloneInputModule
   - hash:
       serializedVersion: 2
       Hash: f7858108331b563fb41b80b729297acd
@@ -1130,6 +1491,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 042cc96b92958063f5d64303a6ff5fc2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameplayOptionsMenue_mobile
+  - hash:
+      serializedVersion: 2
       Hash: bd3f0ca738703903e759f77536ed74fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1170,6 +1537,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 421b179e0f0f33cc6bd8da85a8284250
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlOptionsM_Keyboard_mobile
+  - hash:
+      serializedVersion: 2
+      Hash: 1123ad89e99725c685123d3e59649248
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: uploadMouseCursor
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1238,6 +1617,12 @@ ScriptsOnlyBuild:
     className: UnityOnScrollRectValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 80c0192eea9223632c500efb24260bfa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CheckServer
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -1302,12 +1687,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ControlTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 040dd48e3a027d5424519a5fa2009df4
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: ScrollRect
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1388,6 +1767,12 @@ ScriptsOnlyBuild:
     className: TeleType
   - hash:
       serializedVersion: 2
+      Hash: 30e216626697dec5d018bd06e315a225
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlOptionsMenuePreview_mobile
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1400,10 +1785,22 @@ ScriptsOnlyBuild:
     className: VertexZoom
   - hash:
       serializedVersion: 2
+      Hash: e1299f29d1ba96f2c6148cf27f537ec9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartMenue_mobile
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: gamemode_main
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1445,4 +1842,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Intro.unity
   - Assets/Scenes/MainMenue.unity
   - Assets/Scenes/Stage.unity
+  - Assets/Scenes/GameOptions.unity
   playerPath: C:/Users/o-s-r/Documents/eigene/mitGit/SetsOfMayhem/KlickUndLos/SetsOfMayhem_Android.apk

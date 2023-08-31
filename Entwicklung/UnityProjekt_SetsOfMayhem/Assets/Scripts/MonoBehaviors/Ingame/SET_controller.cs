@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static medium;
+using static algos;
 using static kartenInformationen;
 using static methods_unity;
 using static config_parameters;
@@ -13,18 +14,23 @@ public class SET_controller : MonoBehaviour
     private Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
     private Vector2 cornerBottemLeft = new Vector2(0, 0);
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        LadeKartenMaterial1();
+        //LadeKartenMaterial1(); veraltet
         CreateAndDistributeCardsOnScreen();
+        
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
+        checkForPlayerSetSelection();
+        CheckAndFillCardField();
+        
     }
 
 

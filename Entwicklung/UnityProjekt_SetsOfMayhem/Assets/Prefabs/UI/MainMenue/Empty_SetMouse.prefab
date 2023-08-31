@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7846330457320186410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7813080457042928604}
+  - component: {fileID: 7312916962398103470}
+  m_Layer: 6
+  m_Name: Empty_SetMouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7813080457042928604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846330457320186410}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960.00024, y: -540.00006, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7312916962398103470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846330457320186410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136e377b83ce6084c9b2800c76865def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorArrow_35: {fileID: 2800000, guid: 5220430f15bc26f44a1d67083ad70598, type: 3}
+  cursorArrow_50: {fileID: 2800000, guid: e3f1dc3678ee47d4a9e81418681873f6, type: 3}
+  cursorArrow_60: {fileID: 2800000, guid: b21244787efeae346bf3456d012ef399, type: 3}
+  cursorArrow_70: {fileID: 2800000, guid: ac543c6f7533f124784c485329d8bf2e, type: 3}
+  cursorArrow_100: {fileID: 2800000, guid: 4aa214d7cd5f9b64a926d718a8128ca2, type: 3}
+  cursorArrow_140: {fileID: 2800000, guid: 9c635f241de5cfd4faaf30bad0dfa811, type: 3}
+  cursorArrow_200: {fileID: 2800000, guid: 98be7b3657f5ba04bb0fc92694813a27, type: 3}
+  cursorArrow_300: {fileID: 2800000, guid: c1f9f512debcbc7468cdaff818f96d2f, type: 3}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 66df8f5d2fa2cc140aa2d3eca570e8dd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ScrollPrefab: {fileID: 4092972423235671813, guid: efd7037a57100574780bb26bea0c0683,
+      type: 3}
+  - DetailScreen: {instanceID: 0}
+  - scrollscreenContent: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/FuerBilder/AppIcon 1.unity
+- path: Assets/Scenes/MainMenue.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

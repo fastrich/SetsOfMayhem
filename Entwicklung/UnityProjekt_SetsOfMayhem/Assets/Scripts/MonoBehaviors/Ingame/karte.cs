@@ -10,19 +10,31 @@ using static config_parameters;
 
 public class karte : MonoBehaviour
 {
+    public int rotation_id=0;
+    public int anzahl_id=0;
+    public int farbe_id=0;
+    
+    public bool checkForPlaceID;
     public int place_id;
     public GameObject gobj_mit_placeID;
+
+    public Boolean hasACard= false;
+
+    public string[] KartenWerteAlsString = new string[AnazhlEintraege];
 
     // Start is called before the first frame update
     void Start()
     {
-        string name2 = gobj_mit_placeID.name;
-        int i = Editor_NameCardslots_howmany0;
-        name2 = name2.Substring(name2.Length-i, i );
-        //Debug.Log("n "+name2);
-        place_id = (int)Int32.Parse(name2);
-        //Debug.Log("i "+place_id);
-        array_cards_status[place_id] = 0;
+        if (checkForPlaceID)
+        {
+            string name2 = gobj_mit_placeID.name;
+            int i = Editor_NameCardslots_howmany0;
+            name2 = name2.Substring(name2.Length - i, i);
+            //Debug.Log("n "+name2);
+            place_id = (int)Int32.Parse(name2);
+            //Debug.Log("i "+place_id);
+            array_cards_status[place_id] = 0;
+        }
         
     }
 
@@ -31,8 +43,8 @@ public class karte : MonoBehaviour
     {
         if (array_cards_status[place_id] == 0)
         {
-            pickrandomcardsettings();
-            changeToNotMarked();
+            activChilds(false);
+            hasACard = false;
         }
             
           if(array_cards_status[place_id] == 1)
@@ -44,6 +56,17 @@ public class karte : MonoBehaviour
             changeToMarked();
 
         }
+        if (array_cards_status[place_id] == 3)
+        {
+
+            mapit();
+
+            hasACard = false;
+            activChilds(true);
+            //TODO
+            changeToNotMarked();
+        }
+        mapit();
     }
 
 
@@ -55,42 +78,18 @@ public class karte : MonoBehaviour
         //Debug.Log("stat: " + ArrayToString(array_cards_status));
         //Debug.Log("used: " + ArrayToString(array_cards_used_with_id));
         //Debug.Log(place_id);
+        //Debug.Log(array_cards_status[place_id]);
         switch (array_cards_status[place_id])
         {
             case 2:
                 changeToNotMarked();
                 break;
-            default:
+            case 1:
                 changeToMarked();
-                scanForSelected();
-                if (numberOfSelected >= numberOfSelected_soll)
-                {
-                    for (int i = 0; i < array_cards_status.Length; i++)
-                    {
-                        bool cfs = checkForSetinSelected();
-                        if (cfs == true)
-                        {
-                            //ebug.Log(array_cards_selected + " ; " + array_cards_status + " ; " + array_cards_used_with_id);
-                            if (array_cards_status[i] == 2)
-                            {
-                                changeToMark(i, 0);
-                            }
-                        }
-                        else
-                        {
-                            changeToMark(i, 1);
-                        }
-                    }
-                    
-
-                }
                 break;
-
-
-
-
-
-
+            default:
+                //changeToMarked();                
+                break;
         }
         
 
@@ -99,7 +98,7 @@ public class karte : MonoBehaviour
 
     private void ggg()
     {
-        pickrandomcardsettings();
+        //pickrandomcardsettings();
     }
 
     private void pickrandomcardsettings()
@@ -118,11 +117,12 @@ public class karte : MonoBehaviour
     {
         array_cards_status[place_id] = 2;
         gameObject.transform.localScale = new Vector3((float)1.2, (float)1.2, (float)1.2);
+        //Debug.Log("scaleUP");
     }
     private void changeToNotMarked()
     {
-        array_cards_status[place_id] = 1; 
-        gameObject.transform.localScale = new Vector3((float)1, (float)1, (float)1);
+        array_cards_status[place_id] = 1;
+       gameObject.transform.localScale = new Vector3((float)1, (float)1, (float)1);
     }
     private void changeToMark(int place_id_, int mark)
     {
@@ -131,5 +131,47 @@ public class karte : MonoBehaviour
         if (mark == 2){
             gameObject.transform.localScale = new Vector3((float)1.2, (float)1.2, (float)1.2);
         }
+    }
+
+ 
+
+    public void activChilds(bool act)
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(act);
+
+        }
+    }
+
+    void mapit()
+    {
+        KartenWerteAlsString = new string[AnazhlEintraege];
+        for (int i = 0; i < Max_Anzahl_katProKarte; i++)
+        {
+            try
+            {
+                //Todo
+                Debug.Log("hierBugArray");
+                KartenWerteAlsString[i] = werte_n_sorted[i, fieldOfCards[place_id, i]];
+                if (kategorien_n_sorted[i] == farbe_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); farbe_id = fieldOfCards[place_id, i]; }
+                if (kategorien_n_sorted[i] == ausrichtung_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); rotation_id = fieldOfCards[place_id, i]; }
+                if (kategorien_n_sorted[i] == anzahl_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); anzahl_id = fieldOfCards[place_id, i]; }
+            }
+            catch { }
+
+    // Debug.Log("foc"+i +fieldOfCards[place_id, i]);
+    //Debug.Log("foc" + i + KartenWerteAlsString[i]);
+        }
+        
+        Debug.Log("+Anz "+AnazhlEintraege);
+        for (int i = Max_Anzahl_katProKarte; i < (AnazhlEintraege); i++)
+        {
+
+            KartenWerteAlsString[i] = werte_n_sorted[i, ueberschuessig[i]];
+        }
+
+        Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
+
     }
 }
