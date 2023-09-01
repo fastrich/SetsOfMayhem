@@ -9,7 +9,7 @@ public static class medium {
     public static int numberOfSelected = 2;
     //Version1
     //public static int numberofSlots_max = 12;
-    public static int[] array_cards_status = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update
+    public static int[] array_cards_status = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
     public static int[] array_cards_used_with_id = new int[Game_numberOfCardsOnDeck]; //Kartenabbild_ID
 
     public static int[] array_cards_selected = new int[Game_numberOfCardsOnDeck];//verweise auf array
@@ -32,10 +32,12 @@ public static class medium {
     //Enum 
     public static string[] kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
     public static string[,] werte_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
+    public static int[] werte_n_length = new int[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
     public static int[] ChoosenKats = new int[100];
 
     public static string[] kategorien_n2 = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
     public static int[,] werte_n2 = new int[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
+    public static int[] werte_n2_length = new int[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
     public static int[] ChoosenKats2 = new int[100];
 
     public static int numberOfKatsOnCardsNeeded = Max_Anzahl_katProKarte;
@@ -44,9 +46,15 @@ public static class medium {
     public static string[] kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
     public static string[,] werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
 
+
     public static int[] ueberschuessig = new int[Max_Anzahl_katProKarte_SLIDER_MAX];
     public static int AnazhlEintraege = 10;
     public static int AnazhlEintraege_nurManuell = 10;
+
+    public static int gefundeneSets = 0;
+
+    public static float geschwin_zuLetztemSet = 0;
+    public static int zuLetztemSet_AnzahlSET = 0;
 
 
 }

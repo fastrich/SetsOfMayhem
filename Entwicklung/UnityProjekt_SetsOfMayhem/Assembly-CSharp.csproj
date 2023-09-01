@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\Examples\CheckServer.cs" />
     <Compile Include="Assets\Scripts\Configurations\medium.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviors\Ingame\BackToMainM.cs" />
     <Compile Include="Assets\Scripts\Examples\UIconfig.cs" />
     <Compile Include="Assets\Scripts\Examples\updateMouseCursor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />

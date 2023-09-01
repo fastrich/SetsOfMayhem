@@ -271,6 +271,12 @@ MonoBehaviour:
   place_id: 0
   gobj_mit_placeID: {fileID: 0}
   hasACard: 0
+  KartenWerteAlsString:
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1001 &629427426011414686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -957,6 +963,10 @@ PrefabInstance:
       value: Karte_Default
       objectReference: {fileID: 0}
     - target: {fileID: 6369673067263146213, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

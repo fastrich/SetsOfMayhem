@@ -11,37 +11,51 @@ using UnityEngine.Networking;
 //using static StreamingAssetLoader;
 using static config_parameters;
 using static medium;
+using static methods;
+using static methods_unity;
 using TMPro;
-
+using static algos;
 
 public class gameoptions_main : MonoBehaviour
 {
 
     //public GameObject kindsOfOpt_Slider;
     public GameObject kindsOfOpt_SliderT;
-
+    public GameObject Text_WarnungElemente;
     public GameObject Toogle_opt01;
     public GameObject Toogle_opt01_t;
+    public GameObject Toogle_opt01_ut;
     public GameObject Toogle_opt02;
     public GameObject Toogle_opt02_t;
+    public GameObject Toogle_opt02_ut;
     public GameObject Toogle_opt03;
     public GameObject Toogle_opt03_t;
+    public GameObject Toogle_opt03_ut;
     public GameObject Toogle_opt04;
     public GameObject Toogle_opt04_t;
+    public GameObject Toogle_opt04_ut;
     public GameObject Toogle_opt05;
     public GameObject Toogle_opt05_t;
+    public GameObject Toogle_opt05_ut;
     public GameObject Toogle_opt06;
     public GameObject Toogle_opt06_t;
+    public GameObject Toogle_opt06_ut;
     public GameObject Toogle_opt07;
     public GameObject Toogle_opt07_t;
+    public GameObject Toogle_opt07_ut;
     public GameObject Toogle_opt08;
     public GameObject Toogle_opt08_t;
+    public GameObject Toogle_opt08_ut;
     public GameObject Toogle_opt09;
     public GameObject Toogle_opt09_t;
+    public GameObject Toogle_opt09_ut;
 
     public GameObject Toogle_gen_rotation;
+    public GameObject Toogle_gen_rotation_ut;
     public GameObject Toogle_gen_childs;
+    public GameObject Toogle_gen_childs_ut;
     public GameObject Toogle_gen_colour;
+    public GameObject Toogle_gen_colour_ut;
     //public GameObject Toogle_gen_01;
 
 
@@ -83,8 +97,8 @@ public class gameoptions_main : MonoBehaviour
         //kindsOfOpt_Slider.GetComponent<Slider>().value = (float)(((float)Max_Anzahl_katProKarte - (float)Max_Anzahl_katProKarte_SLIDER_MIN) / ((float)Max_Anzahl_katProKarte_SLIDER_MAX - (float)Max_Anzahl_katProKarte_SLIDER_MIN)); 
         kindsOfOptions_Bttn();
 
-        
-        
+
+
         numberOf1Opt_Slider.GetComponent<Slider>().value = (float)(((float)numberofUnitsPerKat_max - (float)numberofUnitsPerKat_max_SLIDER_MIN) / ((float)numberofUnitsPerKat_max_SLIDER_MAX - (float)numberofUnitsPerKat_max_SLIDER_MIN));
         numOfUperKat_Bttn();
 
@@ -94,11 +108,11 @@ public class gameoptions_main : MonoBehaviour
         nbrOfCardsInField_Slider.GetComponent<Slider>().value = (float)(((float)Game_numberOfCardsOnDeck - (float)Game_numberOfCardsOnDeck_SLIDER_MIN) / ((float)Game_numberOfCardsOnDeck_SLIDER_MAX - (float)Game_numberOfCardsOnDeck_SLIDER_MIN));
         numOfUperKat_Bttn();
 
-        
+
         Toogle_opt01.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[0]];
         Toogle_opt02.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[1]];
         Toogle_opt03.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[2]];
-        Toogle_opt04.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[3]]; 
+        Toogle_opt04.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[3]];
         Toogle_opt05.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[4]];
         Toogle_opt06.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[5]];
         Toogle_opt07.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[6]];
@@ -120,6 +134,42 @@ public class gameoptions_main : MonoBehaviour
         Toogle_opt08_t.GetComponent<TMP_Text>().text = kategorien_n[7];
         Toogle_opt09_t.GetComponent<TMP_Text>().text = kategorien_n[8];
 
+
+
+        check_werte_n_n2_length();
+        //Debug.Log("checkW " + ArrayToString(werte_n_length));
+       
+
+        if (werte_n_length[0] != 0) {Toogle_opt01_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[0].ToString(); } else { Toogle_opt01_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[1] != 0) { Toogle_opt02_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[1].ToString(); } else { Toogle_opt02_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[2] != 0) { Toogle_opt03_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[2].ToString(); } else { Toogle_opt03_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[3] != 0) { Toogle_opt04_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[3].ToString(); } else { Toogle_opt04_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[4] != 0) { Toogle_opt05_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[4].ToString(); } else { Toogle_opt05_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[5] != 0) { Toogle_opt06_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[5].ToString(); } else { Toogle_opt06_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[6] != 0) { Toogle_opt07_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[6].ToString(); } else { Toogle_opt07_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[7] != 0) { Toogle_opt08_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[7].ToString(); } else { Toogle_opt08_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[8] != 0) { Toogle_opt09_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[8].ToString(); } else { Toogle_opt09_ut.GetComponent<TMP_Text>().text = " "; }
+
+
+        Toogle_gen_rotation_ut.GetComponent<TMP_Text>().text = Text_Kat_UT + dyn_ausrichtung.Length.ToString();
+        Toogle_gen_childs_ut.GetComponent<TMP_Text>().text = Text_Kat_UT + dyn_anzahl.Length.ToString();
+        Toogle_gen_colour_ut.GetComponent<TMP_Text>().text= Text_Kat_UT + dyn_farbe.Length.ToString();
+
+        int druber = 0;
+        string nun = " ";
+        for(int i=0; i < werte_n_length.Length; i++)
+        {
+            if (ChoosenKats[i]==1 && werte_n_length[i]< numberofUnitsPerKat_max){ druber++; }
+            if (ChoosenKats2[0] == 1 && dyn_farbe.Length < numberofUnitsPerKat_max) { druber++; }
+            if (ChoosenKats2[1] == 1 && dyn_anzahl.Length < numberofUnitsPerKat_max) { druber++; }
+            if (ChoosenKats2[2] == 1 && dyn_ausrichtung.Length < numberofUnitsPerKat_max) { druber++; }
+
+
+        }
+        if (druber > 0) { nun = " Warnung: Nicht genügend Karten für die aktuellen Einstellungen."; }
+        if (Max_Anzahl_katProKarte==0) { nun = " Bitte wählen sie Kategorien aus."; }
+        Text_WarnungElemente.GetComponent<TMP_Text>().text = nun;
+        //getToSetKatNum();
     }
 
 
@@ -136,7 +186,7 @@ public class gameoptions_main : MonoBehaviour
     {
         numberofUnitsPerKat_max = (int)(numberOf1Opt_Slider.GetComponent<Slider>().value * ((float)numberofUnitsPerKat_max_SLIDER_MAX - (float)numberofUnitsPerKat_max_SLIDER_MIN) + (float)numberofUnitsPerKat_max_SLIDER_MIN);
         double zwischenRechn = numberofUnitsPerKat_max;//100 * (UIconfig.camRotatingSensitivity); // /(UIconfig.camRotatingSensitivity_default);
-        numberOf1Opt_SliderT.GetComponent<TMP_Text>().text = "Arten je Kategorie: " + (int)(zwischenRechn) + " ";
+        numberOf1Opt_SliderT.GetComponent<TMP_Text>().text = "Anzahl der Werte je Kategorie: " + (int)(zwischenRechn) + " ";
     }
 
     public void numOfCardsInASET_Bttn()
@@ -167,79 +217,7 @@ public class gameoptions_main : MonoBehaviour
     public void OnKlickBttn_GenRot() { int i = 1; ChoosenKats2[i] = 1-ChoosenKats2[i]; getToSetKatNum(); }
     public void OnKlickBttn_GenChilds() { int i = 2; ChoosenKats2[i] = 1-ChoosenKats2[i]; getToSetKatNum(); }
     
-    public void getToSetKatNum()
-    {
-        kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
-        Max_Anzahl_katProKarte = 0;
-        int k = 0;
-        AnazhlEintraege_nurManuell = 0;
-        for (int i=0; i<ChoosenKats.Length; i++ )
-        {
-            Max_Anzahl_katProKarte = Max_Anzahl_katProKarte+ChoosenKats[i];
-            if (ChoosenKats[i] == 1) { kategorien_n_sorted[k]=kategorien_n[i]; k++; AnazhlEintraege_nurManuell++; }
-        }
-        numberOfKatsOnCardsNeeded = Max_Anzahl_katProKarte;
-        for (int i = 0; i < ChoosenKats2.Length; i++)
-        {
-            Max_Anzahl_katProKarte = Max_Anzahl_katProKarte + ChoosenKats2[i];
-            if (ChoosenKats2[i] == 1) { kategorien_n_sorted[k] = kategorien_n2[i];k++; }
-        }
 
-        for (int i = 0; i < kategorien_n.Length; i++)
-        {
-            if (ChoosenKats[i] == 0 && !string.IsNullOrEmpty(kategorien_n[i])) { kategorien_n_sorted[k] = kategorien_n[i]; k++; AnazhlEintraege_nurManuell++; }
-        }
-        numberOfKatsOnCardsNeeded = Max_Anzahl_katProKarte;
-        for (int i = 0; i < kategorien_n2.Length; i++)
-        {
-            if (ChoosenKats2[i] == 0 && !string.IsNullOrEmpty(kategorien_n2[i])) { kategorien_n_sorted[k] = kategorien_n2[i]; k++; }
-        }
-        
-       AnazhlEintraege =k;
-
-        //=)=====================================
-        werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX];
-        for (int katj = 0; katj < kategorien_n_sorted.Length; katj++)
-        {
-            for (int katjv = 0; katjv < kategorien_n.Length; katjv++)
-            {
-                if (kategorien_n_sorted[katj] == kategorien_n[katjv])
-                {
-                    for (int j = 0; j < numberofUnitsPerKat_max; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n[katjv, j];
-                    }
-                }
-            }
-            for (int katjv = 0; katjv < kategorien_n2.Length; katjv++)
-            {
-                if (kategorien_n_sorted[katj] == kategorien_n2[katjv])
-                {
-                    for (int j = 0; j < numberofUnitsPerKat_max; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n2[katjv, j].ToString();
-                    }
-                }
-            }
-           
-
-
-        }
-
-       /*
-        for(int i=0; i< numberofUnitsPerKat_max_SLIDER_MAX; i++)
-        {
-
-            for (int ii = 0; ii < Max_Anzahl_katProKarte_SLIDER_MAX + 10; ii++)
-            {
-                Debug.Log("hier "+ ii + " " + i + " "+werte_n_sorted[ii, i]);
-            }
-        }
-       */
-        
-        
-        //Debug.Log("kat "+kategorien_n[0]+ kategorien_n[1]);
-    }
     
 
 }

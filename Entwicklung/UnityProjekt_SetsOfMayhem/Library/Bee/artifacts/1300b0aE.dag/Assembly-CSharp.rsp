@@ -404,6 +404,7 @@
 "Assets/Scripts/Examples/updateMouseCursor.cs"
 "Assets/Scripts/Examples/uploadMouseCursor.cs"
 "Assets/Scripts/Examples/WaitingForLocalMMT.cs"
+"Assets/Scripts/MonoBehaviors/Ingame/BackToMainM.cs"
 "Assets/Scripts/MonoBehaviors/Ingame/dyn1.cs"
 "Assets/Scripts/MonoBehaviors/Ingame/dyn2.cs"
 "Assets/Scripts/MonoBehaviors/Ingame/dynMulti.cs"

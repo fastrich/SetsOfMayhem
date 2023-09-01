@@ -6,14 +6,18 @@ using static algos;
 using static kartenInformationen;
 using static methods_unity;
 using static config_parameters;
+using TMPro;
 
 public class SET_controller : MonoBehaviour
 {
     public GameObject kartenPrefab;
+    public GameObject text_sets;
+    public GameObject text_watt;
     public Canvas canvasForCards;
     private Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
     private Vector2 cornerBottemLeft = new Vector2(0, 0);
 
+    public System.DateTime startTime;
 
 
     // Start is called before the first frame update
@@ -21,6 +25,7 @@ public class SET_controller : MonoBehaviour
     {
         //LadeKartenMaterial1(); veraltet
         CreateAndDistributeCardsOnScreen();
+        startTime = System.DateTime.UtcNow;
         
     }
 
@@ -30,17 +35,43 @@ public class SET_controller : MonoBehaviour
     {
         checkForPlayerSetSelection();
         CheckAndFillCardField();
-        
+        text_sets.GetComponent<TMP_Text>().text = "SETs gefunden: "+ gefundeneSets.ToString();
+        string s = "Zeit Pro SET: -";
+        if (gefundeneSets > 0) {
+            System.TimeSpan ts = System.DateTime.UtcNow - startTime;
+            //Debug.Log(ts.Seconds.ToString());
+            int zeitz=ts.Seconds;
+            float watt = (float)zeitz / (float)gefundeneSets;
+            if (zuLetztemSet_AnzahlSET!= gefundeneSets){ geschwin_zuLetztemSet = watt; zuLetztemSet_AnzahlSET = gefundeneSets; }
+
+
+            s = "Zeit pro SET in Sekunden: "+ geschwin_zuLetztemSet.ToString();
+
+
+        } ;
+        text_watt.GetComponent<TMP_Text>().text = s;
     }
 
 
+    public void bttn_click_kartenInfos() { KartenInfosAnzeigen = 1 - KartenInfosAnzeigen ; }
+    public void bttn_click_frischeKarten() { frischeKarten(); }
+
+    public void frischeKarten()
+    {
+        for (int i = 0; i < array_cards_status.Length; i++)
+        {
+            array_cards_status[i] = 0;
+        }
+
+    }
     void CreateAndDistributeCardsOnScreen()
     {
         string name1;
         int k = 0;
         int n = Game_numberOfCardsOnDeck;
-        int nh = (int)Mathf.Ceil(Mathf.Sqrt(n));
+       
         int nb = (int)Mathf.Ceil(Mathf.Sqrt(n));
+        int nh = (int)Mathf.Ceil((float)n / (float)nb);
         float jh = 0;
         int jb = 0;
         //Debug.Log("nh, nb" + nh + " " + nb);

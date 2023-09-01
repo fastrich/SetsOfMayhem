@@ -62,15 +62,37 @@ public class karte : MonoBehaviour
             mapit();
 
             hasACard = false;
+            
+            StartCoroutine(Waiting(0.5f));
+            array_cards_status[place_id] = 4;
+            gameObject.transform.localScale = new Vector3((float)1, (float)1, (float)1);
             activChilds(true);
-            //TODO
-            changeToNotMarked();
+            StartCoroutine(Waiting(0.1f));
+            
+
         }
+        if (array_cards_status[place_id] == 4)
+        {
+            if (hasACard) { changeToNotMarked(); }
+            mapit();
+
+            
+        }
+
         mapit();
     }
 
 
 
+    
+    
+    
+    IEnumerator Waiting(float t)
+    {
+        yield return new WaitForSeconds(t);
+        changeToNotMarked();
+    }
+    
 
     public void OnClick()
     {
@@ -152,26 +174,33 @@ public class karte : MonoBehaviour
             try
             {
                 //Todo
-                Debug.Log("hierBugArray");
-                KartenWerteAlsString[i] = werte_n_sorted[i, fieldOfCards[place_id, i]];
+                //Debug.Log("hierBugArray");
+                if (string.IsNullOrEmpty(werte_n_sorted[i, fieldOfCards[place_id, i]])) 
+                {
+                    KartenWerteAlsString[i] = i.ToString();
+                }
+                else
+                { KartenWerteAlsString[i] = werte_n_sorted[i, fieldOfCards[place_id, i]]; }
                 if (kategorien_n_sorted[i] == farbe_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); farbe_id = fieldOfCards[place_id, i]; }
                 if (kategorien_n_sorted[i] == ausrichtung_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); rotation_id = fieldOfCards[place_id, i]; }
                 if (kategorien_n_sorted[i] == anzahl_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); anzahl_id = fieldOfCards[place_id, i]; }
             }
-            catch { }
+            catch
+            {  Debug.Log("hierBugArray");}
 
-    // Debug.Log("foc"+i +fieldOfCards[place_id, i]);
-    //Debug.Log("foc" + i + KartenWerteAlsString[i]);
+                // Debug.Log("foc"+i +fieldOfCards[place_id, i]);
+                //Debug.Log("foc" + place_id+ " , "+ i + KartenWerteAlsString[i]);
+                Debug.Log("hey" + werte_n_sorted[0, 0] + werte_n_sorted[0, 1] + werte_n_sorted[0, 2] + werte_n_sorted[0, 3]);
         }
         
-        Debug.Log("+Anz "+AnazhlEintraege);
+        //Debug.Log("+Anz "+AnazhlEintraege);
         for (int i = Max_Anzahl_katProKarte; i < (AnazhlEintraege); i++)
         {
 
             KartenWerteAlsString[i] = werte_n_sorted[i, ueberschuessig[i]];
         }
 
-        Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
+        //Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
 
     }
 }

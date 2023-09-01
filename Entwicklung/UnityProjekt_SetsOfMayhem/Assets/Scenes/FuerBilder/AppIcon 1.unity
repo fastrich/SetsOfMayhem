@@ -545,7 +545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.6}
   m_AnchorMax: {x: 0.8, y: 0.8}
-  m_AnchoredPosition: {x: -82, y: 2.9189}
+  m_AnchoredPosition: {x: -82, y: 2.9188843}
   m_SizeDelta: {x: -258.8639, y: 62.2137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725984005
@@ -1499,7 +1499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.6}
   m_AnchorMax: {x: 0.8, y: 0.8}
-  m_AnchoredPosition: {x: 106, y: 2.9189}
+  m_AnchoredPosition: {x: 106, y: 2.9188843}
   m_SizeDelta: {x: -139.9979, y: 62.214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005982900
@@ -1766,6 +1766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410519776}
     m_Modifications:
+    - target: {fileID: 4852843607682942590, guid: 9746440896306cf438763a8bc252fd3c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6378169443522176998, guid: 9746440896306cf438763a8bc252fd3c, type: 3}
       propertyPath: m_Name
       value: Canvas_Background

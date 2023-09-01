@@ -58,8 +58,17 @@ public class dynMulti : MonoBehaviour
 
                         //==========================================
 
-                        int nh = (int)Mathf.Ceil(Mathf.Sqrt(anzahl));
                         int nb = (int)Mathf.Ceil(Mathf.Sqrt(anzahl));
+
+                        int nh = (int)Mathf.Ceil((float)anzahl / (float)nb);
+                      
+                        if(anzahl== 3)
+                        {
+                            nb = 3; nh = 1;
+                        }
+                        
+                        
+                        
                         
 
                         Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);

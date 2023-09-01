@@ -78,15 +78,18 @@ public class kartenID_installer : MonoBehaviour
     {
         
         TxtInfos.GetComponent<TMP_Text>().text = WhatCard_String();
-        TxtInfos_gross.GetComponent<TMP_Text>().text = WhatCard_String(); //WhatCard_String_g();
+        TxtInfos_gross.GetComponent<TMP_Text>().text = WhatCard_String_g();
 
         if (isDefaultCard == true)
         {
             
             bool hasAChoosenOne = transform.parent.parent.gameObject.GetComponent<karte>().hasACard;
+
             for (int i = 0; i < transform.childCount; i++)
             {
-                transform.GetChild(i).gameObject.SetActive(!hasAChoosenOne);
+                if (!hasAChoosenOne && ( 1 == array_cards_status[transform.parent.parent.gameObject.GetComponent<karte>().place_id] || 2 == array_cards_status[transform.parent.parent.gameObject.GetComponent<karte>().place_id]))
+                { transform.GetChild(i).gameObject.SetActive(true); }
+                else { transform.GetChild(i).gameObject.SetActive(false); }
             }
         }
         else
@@ -140,7 +143,7 @@ public class kartenID_installer : MonoBehaviour
         int zahler = 0;
         for (int i = 0; i < transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString.Length; i++)
         {
-            Debug.Log("katn" + i + "  " + kategorien_n_sorted[i] + " , " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i]);
+            //Debug.Log("katn" + i + "  " + kategorien_n_sorted[i] + " , " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i]);
             if (kategorien_n_sorted[i] == E1_n && transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E1_w) { zahler++; }
             if (kategorien_n_sorted[i] == E2_n && transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E2_w) { zahler++; }
             if (kategorien_n_sorted[i] == E3_n && transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E3_w) { zahler++; }
@@ -152,9 +155,12 @@ public class kartenID_installer : MonoBehaviour
             if (kategorien_n_sorted[i] == E9_n && transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E9_w) { zahler++; }
         }
         //Debug.Log("katn"+kategorien_n_sorted+ " "+ transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString);
-       // Debug.Log("zähler" + zahler + " " + AnazhlEintraege_nurManuell);
+       //Debug.Log("zähler" + zahler + " " + AnazhlEintraege_nurManuell);
         if(zahler< AnazhlEintraege_nurManuell) { return false; }
-        
+
+        //Debug.Log("hey");
+
+
         if(transform.parent.parent.gameObject.GetComponent<karte>().anzahl_id> dyn_anzahl.Length) { return false; }
         if (transform.parent.parent.gameObject.GetComponent<karte>().farbe_id > dyn_farbe.Length) { return false; }
         if (transform.parent.parent.gameObject.GetComponent<karte>().rotation_id > dyn_ausrichtung.Length) { return false; }
@@ -166,7 +172,8 @@ public class kartenID_installer : MonoBehaviour
 
     string WhatCard_String()
     {
-        string s = "";
+        string s = " ";
+        if (KartenInfosAnzeigen==0) { return s; }
         for (int i = 0; i < Max_Anzahl_katProKarte; i++)
         {
             //s = s + " " + IDkat_toString(i) + ": " + IDwert_toString(i, fieldOfCards[transform.parent.parent.gameObject.GetComponent<karte>().place_id, i])  +" | ";
@@ -182,7 +189,7 @@ public class kartenID_installer : MonoBehaviour
         for (int i = 0; i < Max_Anzahl_katProKarte; i++)
         {
             //s = s + " " + IDkat_toString( i) + ": " + IDwert_toString(i,fieldOfCards[transform.parent.parent.gameObject.GetComponent<karte>().place_id, i]) + "\n";
-            s = s + " " + kategorien_n_sorted[i] + ": " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] + "\n";
+            s = s + " " + kategorien_n_sorted[i] + ": " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] + "|";//"\n";
         }
 
         return s;
