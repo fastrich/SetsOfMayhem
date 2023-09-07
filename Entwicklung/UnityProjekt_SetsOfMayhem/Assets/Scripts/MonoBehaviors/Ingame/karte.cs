@@ -190,7 +190,7 @@ public class karte : MonoBehaviour
 
                 // Debug.Log("foc"+i +fieldOfCards[place_id, i]);
                 //Debug.Log("foc" + place_id+ " , "+ i + KartenWerteAlsString[i]);
-                Debug.Log("hey" + werte_n_sorted[0, 0] + werte_n_sorted[0, 1] + werte_n_sorted[0, 2] + werte_n_sorted[0, 3]);
+                //Debug.Log("hey" + werte_n_sorted[0, 0] + werte_n_sorted[0, 1] + werte_n_sorted[0, 2] + werte_n_sorted[0, 3]);
         }
         
         //Debug.Log("+Anz "+AnazhlEintraege);

@@ -13,10 +13,12 @@ public static class medium {
     public static int[] array_cards_used_with_id = new int[Game_numberOfCardsOnDeck]; //Kartenabbild_ID
 
     public static int[] array_cards_selected = new int[Game_numberOfCardsOnDeck];//verweise auf array
-
+    public static int[] array_cards_selected_temp_for_gen_field = new int[Game_numberOfCardsOnDeck];//verweise auf array
 
     public static string[,] KS_kat = new string[Max_Anzahl_Karten, Max_Anzahl_katProKarte];
     public static string[,] KS_wert = new string[Max_Anzahl_Karten, Max_Anzahl_katProKarte];
+
+    public static int SetsFoundInField_gen = 0;
 
 
     public static GameObject[,] array = new GameObject[10, 10];

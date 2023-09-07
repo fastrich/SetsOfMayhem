@@ -10,7 +10,7 @@ public static class algos
 
 
 
-    public static void scanForSelected()
+    public static void scanForSelected_withCardIDs()
     {
         numberOfSelected = 0;
 
@@ -18,7 +18,7 @@ public static class algos
         {
             if (array_cards_status[i] == 2)
             {
-                //Debug.Log("scan: " + array_cards_used_with_id[i]);
+                Debug.Log("scan: " + array_cards_used_with_id[i]);
                 array_cards_selected[numberOfSelected] = array_cards_used_with_id[i];
                 numberOfSelected++;
 
@@ -29,21 +29,200 @@ public static class algos
             }
         }
     }
+    public static void scanForSelected()
+    {
+        numberOfSelected = 0;
 
-    public static bool checkForSet()
+        for (int i = 0; i < array_cards_status.Length; i++)
+        {
+            if (array_cards_status[i] == 2)
+            {
+                //Debug.Log("scan: " + array_cards_used_with_id[i]);
+                array_cards_selected[numberOfSelected] = i;
+                numberOfSelected++;
+
+            }
+            else
+            {
+                array_cards_selected[numberOfSelected] = -1;
+            }
+        }
+    }
+
+    public static int checkForSet()
+    {
+        return 0;
+    }
+
+    public static int checkForSetInField()
+    {
+        int z = 0;
+        int check1;
+        int new1=0;
+        //int[] intarr = new int[numberOfSelected_soll];
+
+        if (numberOfSelected_soll>Game_numberOfCardsOnDeck) { return 0; }
+        for (int j1 = numberOfSelected_soll-1; j1 < Game_numberOfCardsOnDeck; j1++)
+        {
+            array_cards_selected_temp_for_gen_field[0] = j1;
+            if (1 == numberOfSelected_soll) { if (checkForSetinSelected_gen()) { z++; } }
+            for (int j2 = 0; j2 < j1; j2++)
+            {
+                array_cards_selected_temp_for_gen_field[1] = j2;
+                if (2 == numberOfSelected_soll) { if (checkForSetinSelected_gen()) { z++; } }
+                for (int j3 = 0; j3 < j2; j3++)
+                {
+                    array_cards_selected_temp_for_gen_field[2] = j3;
+                    if (3 == numberOfSelected_soll) { if (checkForSetinSelected_gen()) { z++; } }
+                    for (int j4 = 0; j4 < j3; j4++)
+                    {
+                        array_cards_selected_temp_for_gen_field[3] = j4;
+                        if (4 == numberOfSelected_soll) { if (checkForSetinSelected_gen()) { z++; } }
+                        for (int j5 = 0; j5 < j4; j5++)
+                        {
+                            array_cards_selected_temp_for_gen_field[4] = j5;
+                            if (5 == numberOfSelected_soll) { if (checkForSetinSelected_gen()) { z++; } }
+                            for (int j6 = 0; j6 < j5; j6++)
+                            {
+                                array_cards_selected_temp_for_gen_field[5] = j6;
+                                if (6 == numberOfSelected_soll) { if (checkForSetinSelected_gen()) { z++; } }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+
+
+        return z;
+    }
+
+    public static bool checkForSetinSelected()
+    {
+        return checkForSetinSelected_VersionWithField();
+    }
+
+    public static bool checkForSetinSelected_gen_3(int pos)
+    {
+        for (int i2 = 0; i2 < Game_numberOfCardsOnDeck; i2++)
+        {
+            if (checkForSetinSelected_gen_2(pos))
+            {
+                return true;
+            }
+        }
+            
+        return false;
+    }
+
+    public static bool checkForSetinSelected_gen_2(int pos) {
+        array_cards_selected_temp_for_gen_field[0] = pos;
+        for(int i=1; i < numberOfSelected_soll; i++)
+        {
+            int new1= (int)UnityEngine.Random.Range(0, Game_numberOfCardsOnDeck);
+            int check1;
+            for (int i2 = 0; i2 < Max_Anzahl_Versuche_KartePlatzieren; i2++) {
+                check1 = 0;
+                for (int hui=0; hui<i; hui++)
+                {
+                    if(new1== array_cards_selected_temp_for_gen_field[i] || array_cards_status[new1]==0)
+                    {
+                        check1++;
+                    }
+                }
+                
+                
+                if (check1==0) { break; }
+                
+                
+                new1 = (int)UnityEngine.Random.Range(0, Game_numberOfCardsOnDeck - 1); 
+            }
+            array_cards_selected_temp_for_gen_field[i] = new1 ;
+        }
+   
+        
+        return checkForSetinSelected_gen();
+    }
+
+    public static bool checkForSetinSelected_gen()
     {
 
+        return checkForSetinSelected_gen_VersionWithField();
+    }
 
 
+    public static bool checkForSetinSelected_gen_VersionWithField()
+    {
+        for (int i = 0; i < numberOfSelected_soll; i++)
+        {
+            for (int ik = 0; ik < Max_Anzahl_katProKarte; ik++)
+            {
+                int temp_a = 0;
+                for (int j = 0; j < numberOfSelected_soll; j++)
+                {
+                    if (i != j)
+                    {
+
+                        if (fieldOfCards[array_cards_selected_temp_for_gen_field[i], ik] == fieldOfCards[array_cards_selected_temp_for_gen_field[j], ik])
+                        {
+                            temp_a++;
+                        }
+                    }
+                }
+                if (temp_a == 0 || temp_a == numberOfSelected_soll - 1)
+                {
+                }
+                else
+                {
+                    //Debug.Log("Kein_Set");
+                    return false;
+                }
+            }
+        }
+        //Debug.Log("Ein_Set");
         return true;
     }
-    public static bool checkForSetinSelected()
+    public static bool checkForSetinSelected_VersionWithField()
+    {
+        scanForSelected();
+        for (int i = 0; i < numberOfSelected; i++)
+        {
+            for (int ik = 0; ik < Max_Anzahl_katProKarte; ik++)
+            {
+                int temp_a = 0;
+                for (int j = 0; j < numberOfSelected; j++)
+                {
+                    if (i != j)
+                    {
+                        
+                            if (fieldOfCards[array_cards_selected[i], ik]==fieldOfCards[array_cards_selected[j], ik])
+                            {
+                                    temp_a++;
+                            }
+                    }
+                }
+                if (temp_a == 0 || temp_a == numberOfSelected_soll - 1)
+                {
+                }
+                else
+                {
+                    Debug.Log("Kein_Set");
+                    return false;
+                }
+            }
+        }
+        Debug.Log("Ein_Set");
+        return true;
+    }
+
+    public static bool checkForSetinSelected_VersionWithKS()
     {
         scanForSelected();
         for (int i = 0; i < numberOfSelected; i++)
         {
             if (array_cards_selected[i] >= 0) { } else { break; }
-            //Debug.Log("Selected: " + array_cards_selected[i]);
+            Debug.Log("Selected: " + i+ " " + array_cards_selected[i]);
 
             for (int ik = 0; ik < Max_Anzahl_katProKarte; ik++)
             {
@@ -78,7 +257,7 @@ public static class algos
                     }
 
                 }
-                //Debug.Log(KS_kat[array_cards_selected[i], ik] + ": temp:" + temp_a);
+                Debug.Log(KS_kat[array_cards_selected[i], ik] + ": temp:" + temp_a);
                 if (temp_a == 0 || temp_a == numberOfSelected_soll - 1)
                 {
 
@@ -88,20 +267,8 @@ public static class algos
                     Debug.Log("Kein_Set");
                     return false;
                 }
-
-
-
-
-
             }
-
-
         }
-
-
-
-
-
 
         Debug.Log("Ein_Set");
 
@@ -110,14 +277,29 @@ public static class algos
 
     public static void CheckAndFillCardField()
     {
+        bool a= true;
+       
+        bool c = false;
+        for (int i2 = 0; i2 < Max_Anzahl_Versuche_KartePlatzieren; i2++)
+        {
+            for (int i = 0; i < array_cards_status.Length; i++)
+            {
+                if (array_cards_status[i] == 0)
+                {
+                    FillCardInField(i);
+                    c = true;
+                }
+            }
+            if (c) { SetsFoundInField_gen = checkForSetInField(); }
+            if (SetsFoundInField_gen >= numberOfSelected_soll_gen) { a = false; break; }
+        }
+        if (a) { Debug.Log("SetInField MaxVersuche erreicht"); }
 
-
+        Debug.Log("b" + SetsFoundInField_gen);
         for (int i = 0; i < array_cards_status.Length; i++)
         {
             if (array_cards_status[i] == 0)
             {
-
-                FillCardInField(i);
                 array_cards_status[i] = 3;
 
             }
@@ -131,9 +313,12 @@ public static class algos
             for (int i = 0; i < Max_Anzahl_katProKarte; i++)
             {
                 fieldOfCards[pos, i] = (int)UnityEngine.Random.Range(0, numberofUnitsPerKat_max);
-                //fieldOfCards[pos, i] = ;
+                //fieldOfCards[pos, i] = 0;
             }
-            if (!checkForDoubles_rel(pos)) { return ; }
+
+            //if (!checkForDoubles_rel(pos) && checkForSetinSelected_gen_3(pos) ) { return; }
+            //if (!checkForDoubles_rel(pos) && i2 > (Max_Anzahl_Versuche_KartePlatzieren*3/4 )) { Debug.Log("MaxVersuche_Sets erreicht"); return; }
+            if (!checkForDoubles_rel(pos)) { return; }
         }
         Debug.Log("MaxVersuche erreicht");
     }
@@ -203,6 +388,7 @@ public static class algos
     {
 
         scanForSelected();
+
         if (numberOfSelected >= numberOfSelected_soll)
         {
             bool cfs = checkForSetinSelected();
@@ -211,21 +397,29 @@ public static class algos
                 if (cfs == true)
                 {
                      gefundeneSets++;
-                    for (int i = 0; i < array_cards_status.Length; i++)
-                    {
-                        //ebug.Log(array_cards_selected + " ; " + array_cards_status + " ; " + array_cards_used_with_id);
-                        if (array_cards_status[i] == 2)
+                        for (int i = 0; i < array_cards_status.Length; i++)
                         {
-                            array_cards_status[i] = 0;
+                            //ebug.Log(array_cards_selected + " ; " + array_cards_status + " ; " + array_cards_used_with_id);
+                            if (array_cards_status[i] == 2)
+                            {
+                                array_cards_status[i] = 0;
+                            }
                         }
-                    }
-
-                }
+            }
                 else
                 {
-                    //array_cards_status[i] = 1;
-                }
+                        for (int i = 0; i < array_cards_status.Length; i++)
+                        {
+                            //ebug.Log(array_cards_selected + " ; " + array_cards_status + " ; " + array_cards_used_with_id);
+                            if (array_cards_status[i] == 2)
+                            {
+                                array_cards_status[i] = 1;
+                            }
+                        }
+   
+            }
             
+
 
 
         }

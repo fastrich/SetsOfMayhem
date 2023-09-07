@@ -26,7 +26,10 @@ public class SET_controller : MonoBehaviour
         //LadeKartenMaterial1(); veraltet
         CreateAndDistributeCardsOnScreen();
         startTime = System.DateTime.UtcNow;
-        
+        gefundeneSets = 0;
+
+        //Debug.Log("Zeit0");
+
     }
 
 

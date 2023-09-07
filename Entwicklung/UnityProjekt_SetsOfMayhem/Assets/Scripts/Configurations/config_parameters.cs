@@ -12,13 +12,15 @@ public static class config_parameters {
     //================================
     //ImSpiel
     public static int KartenInfosAnzeigen = 0;
+    public static int Set_InfosAnzeigen_Anzahl = 0;
+    public static int Set_InfosAnzeigen_Anzahl_Classic = 0;
 
     //================================
     // Describing Field 
     public static int Game_numberOfCardsOnDeck_Classic = 9;
     public static int Game_numberOfCardsOnDeck = 9;
     public static int Game_numberOfCardsOnDeck_SLIDER_MIN = 4;
-    public static int Game_numberOfCardsOnDeck_SLIDER_MAX = 20;
+    public static int Game_numberOfCardsOnDeck_SLIDER_MAX = 30;
 
 
     //================================
@@ -41,8 +43,12 @@ public static class config_parameters {
     // SET
     public static int numberOfSelected_soll = 3;
     public static int numberOfSelected_soll_Classic = 3;
-    public static int numberOfSelected_soll_SLIDER_MIN = 1;
+    public static int numberOfSelected_soll_SLIDER_MIN = 3;
     public static int numberOfSelected_soll_SLIDER_MAX = 6;
+    public static int numberOfSelected_soll_gen = 1;
+    public static int numberOfSelected_soll_gen_Classic = 1;
+    public static int numberOfSelected_soll_gen_SLIDER_MIN = 0;
+    public static int numberOfSelected_soll_gen_SLIDER_MAX = 15;
 
 
 

@@ -65,6 +65,8 @@ public class mainmenue_main : MonoBehaviour
         numberOfSelected_soll = numberOfSelected_soll_Classic;
         numberofUnitsPerKat_max = numberofUnitsPerKat_max_classic;
         Max_Anzahl_katProKarte = Max_Anzahl_katProKarte_classic;
+        numberOfSelected_soll_gen = numberOfSelected_soll_gen_Classic;
+        Set_InfosAnzeigen_Anzahl = Set_InfosAnzeigen_Anzahl_Classic;
         lade123(classicSET);
         update_arrays();
         //Debug.Log("Kartenwerte123 " + ArrayToString(kategorien_n_sorted));
@@ -78,7 +80,8 @@ public class mainmenue_main : MonoBehaviour
         if (numberofUnitsPerKat_max < 1) { return; }
         if (numberOfSelected_soll < 1) { return; }
         if (Game_numberOfCardsOnDeck < 1) { return; }
-
+        if (numberOfSelected_soll > Game_numberOfCardsOnDeck) { return; }
+        if (numberOfSelected_soll_gen >= (Game_numberOfCardsOnDeck-numberOfSelected_soll)) { return; }
         SceneManager.LoadScene(sceneName: "Stage");
     }
 
