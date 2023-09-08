@@ -256,8 +256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 224.33118, y: 1074.3885}
-  m_SizeDelta: {x: 342.64172, y: 1576.9937}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1269639335233032358
 Canvas:
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5444038968128065006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4816748522587155721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1096,7 +1096,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3584525842391509330, guid: c0127bd8214e979418bc3919bf1e9003, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3946187327021284841, guid: c0127bd8214e979418bc3919bf1e9003, type: 3}
       propertyPath: m_Pivot.x
@@ -1234,11 +1234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 209102913850074361, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -342.64172
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 209102913850074361, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -1576.9937
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 209102913850074361, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1270,11 +1270,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 209102913850074361, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -224.3312
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 209102913850074361, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1074.3884
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 209102913850074361, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1290,7 +1290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 404064794832547906, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 682337264054935954, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: gobj_mit_placeID
@@ -1299,6 +1299,30 @@ PrefabInstance:
     - target: {fileID: 781919886989097964, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
       propertyPath: m_Name
       value: Karten_Pfeile
+      objectReference: {fileID: 0}
+    - target: {fileID: 827587148109903072, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077720899313177545, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090092379836465889, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456376387571772474, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708557827842846646, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420849792497530913, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5c47715aa95504db269d056f0ac921, type: 3}

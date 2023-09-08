@@ -416,6 +416,7 @@
 "Assets/Scripts/MonoBehaviors/Menue/gamemode_main.cs"
 "Assets/Scripts/MonoBehaviors/Menue/gameoptions2_main.cs"
 "Assets/Scripts/MonoBehaviors/Menue/gameoptions_main.cs"
+"Assets/Scripts/MonoBehaviors/Menue/go_costumes_main.cs"
 "Assets/Scripts/MonoBehaviors/Menue/mainmenue_main.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"

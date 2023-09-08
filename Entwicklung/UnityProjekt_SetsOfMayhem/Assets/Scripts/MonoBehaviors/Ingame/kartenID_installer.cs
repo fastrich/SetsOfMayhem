@@ -44,7 +44,7 @@ public class kartenID_installer : MonoBehaviour
     void OnEnable()
     {
          io = new int[Max_Anzahl_katProKarte];
-
+        //Debug.Log("onen");
         //array_cards_used_with_id[transform.parent.gameObject.GetComponent<karte>().place_id]=kartenID;
         numberOfKats = 0;
         numberOfKats+=ubersetzeEnum(E1_n, E1_w);
@@ -173,11 +173,12 @@ public class kartenID_installer : MonoBehaviour
     string WhatCard_String()
     {
         string s = " ";
-        if (KartenInfosAnzeigen==0) { return s; }
+        if (KartenInfosAnzeigen!=1) { return s; }
         for (int i = 0; i < Max_Anzahl_katProKarte; i++)
         {
             //s = s + " " + IDkat_toString(i) + ": " + IDwert_toString(i, fieldOfCards[transform.parent.parent.gameObject.GetComponent<karte>().place_id, i])  +" | ";
-            s = s + " " + kategorien_n_sorted[i] + ": " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] + " | ";
+            //s = s + " " + kategorien_n_sorted[i] + ": " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] + " | ";
+            s = s + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] + " | ";
         }
 
         return s;
@@ -186,10 +187,11 @@ public class kartenID_installer : MonoBehaviour
     string WhatCard_String_g()
     {
         string s = "";
+        if (!(KartenInfosAnzeigen == 2 || isDefaultCard)) { return s; }
         for (int i = 0; i < Max_Anzahl_katProKarte; i++)
         {
             //s = s + " " + IDkat_toString( i) + ": " + IDwert_toString(i,fieldOfCards[transform.parent.parent.gameObject.GetComponent<karte>().place_id, i]) + "\n";
-            s = s + " " + kategorien_n_sorted[i] + ": " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] + "|";//"\n";
+            s = s + " " + kategorien_n_sorted[i] + ": " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] +"\n";
         }
 
         return s;

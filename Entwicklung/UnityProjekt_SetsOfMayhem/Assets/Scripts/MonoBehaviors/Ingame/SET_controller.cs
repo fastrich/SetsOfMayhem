@@ -60,7 +60,7 @@ public class SET_controller : MonoBehaviour
     }
 
 
-    public void bttn_click_kartenInfos() { KartenInfosAnzeigen = 1 - KartenInfosAnzeigen ; }
+    public void bttn_click_kartenInfos() { KartenInfosAnzeigen++; if (KartenInfosAnzeigen > 2) { KartenInfosAnzeigen = 0; } }
     public void bttn_click_frischeKarten() { frischeKarten(); }
 
     public void frischeKarten()

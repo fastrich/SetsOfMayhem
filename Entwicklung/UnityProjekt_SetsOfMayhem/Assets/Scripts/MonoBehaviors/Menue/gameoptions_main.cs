@@ -19,6 +19,7 @@ using static algos;
 public class gameoptions_main : MonoBehaviour
 {
 
+    public GameObject KartenReboot;
     //public GameObject kindsOfOpt_Slider;
     public GameObject kindsOfOpt_SliderT;
     public GameObject Text_WarnungElemente;
@@ -86,9 +87,18 @@ public class gameoptions_main : MonoBehaviour
         getToSetKatNum();
 
     }
+    void OnEnable()
+    {
+        //Debug.Log("onen_GO");
+        getToSetKatNum();
+        
+
+    }
+
 
     private void Update()
     {
+        getToSetKatNum();
 
         //kindsOfOpt_Slider.GetComponent<Slider>().value = (float)(((float)Max_Anzahl_katProKarte - (float)Max_Anzahl_katProKarte_SLIDER_MIN) / ((float)Max_Anzahl_katProKarte_SLIDER_MAX - (float)Max_Anzahl_katProKarte_SLIDER_MIN)); 
         kindsOfOptions_Bttn();
@@ -131,15 +141,15 @@ public class gameoptions_main : MonoBehaviour
         //Debug.Log("checkW " + ArrayToString(werte_n_length));
        
 
-        if (werte_n_length[0] != 0) {Toogle_opt01_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[0].ToString(); } else { Toogle_opt01_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[1] != 0) { Toogle_opt02_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[1].ToString(); } else { Toogle_opt02_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[2] != 0) { Toogle_opt03_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[2].ToString(); } else { Toogle_opt03_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[3] != 0) { Toogle_opt04_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[3].ToString(); } else { Toogle_opt04_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[4] != 0) { Toogle_opt05_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[4].ToString(); } else { Toogle_opt05_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[5] != 0) { Toogle_opt06_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[5].ToString(); } else { Toogle_opt06_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[6] != 0) { Toogle_opt07_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[6].ToString(); } else { Toogle_opt07_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[7] != 0) { Toogle_opt08_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[7].ToString(); } else { Toogle_opt08_ut.GetComponent<TMP_Text>().text = " "; }
-        if (werte_n_length[8] != 0) { Toogle_opt09_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[8].ToString(); } else { Toogle_opt09_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[0] != 0 && !string.IsNullOrEmpty(kategorien_n[0])) {Toogle_opt01_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[0].ToString(); } else { Toogle_opt01_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[1] != 0 && !string.IsNullOrEmpty(kategorien_n[1])) { Toogle_opt02_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[1].ToString(); } else { Toogle_opt02_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[2] != 0 && !string.IsNullOrEmpty(kategorien_n[2])) { Toogle_opt03_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[2].ToString(); } else { Toogle_opt03_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[3] != 0 && !string.IsNullOrEmpty(kategorien_n[3])) { Toogle_opt04_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[3].ToString(); } else { Toogle_opt04_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[4] != 0 && !string.IsNullOrEmpty(kategorien_n[4])) { Toogle_opt05_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[4].ToString(); } else { Toogle_opt05_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[5] != 0 && !string.IsNullOrEmpty(kategorien_n[5])) { Toogle_opt06_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[5].ToString(); } else { Toogle_opt06_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[6] != 0 && !string.IsNullOrEmpty(kategorien_n[6])) { Toogle_opt07_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[6].ToString(); } else { Toogle_opt07_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[7] != 0 && !string.IsNullOrEmpty(kategorien_n[7])) { Toogle_opt08_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[7].ToString(); } else { Toogle_opt08_ut.GetComponent<TMP_Text>().text = " "; }
+        if (werte_n_length[8] != 0 && !string.IsNullOrEmpty(kategorien_n[8])) { Toogle_opt09_ut.GetComponent<TMP_Text>().text = Text_Kat_UT +werte_n_length[8].ToString(); } else { Toogle_opt09_ut.GetComponent<TMP_Text>().text = " "; }
 
 
         Toogle_gen_rotation_ut.GetComponent<TMP_Text>().text = Text_Kat_UT + dyn_ausrichtung.Length.ToString();

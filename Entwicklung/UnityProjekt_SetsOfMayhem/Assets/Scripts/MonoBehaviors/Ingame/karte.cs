@@ -10,16 +10,21 @@ using static config_parameters;
 
 public class karte : MonoBehaviour
 {
+
+    
     
     public int rotation_id=0;
     public int anzahl_id=0;
     public int farbe_id=0;
     
+
     public bool checkForPlaceID;
     public int place_id;
     public GameObject gobj_mit_placeID;
 
     public Boolean hasACard= false;
+
+    public int hoch = 0;
 
     public string[] KartenWerteAlsString = new string[AnazhlEintraege];
 
@@ -42,9 +47,15 @@ public class karte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if (inSettings) { hoch++; }
+        if (inSettings && hoch>1) { hoch = 0; activChilds(false); activChilds(true); }
+
+
+
         if (array_cards_status[place_id] == 0)
         {
-            activChilds(false);
+            if (!inSettings) { activChilds(false); }
             hasACard = false;
         }
             
@@ -82,13 +93,17 @@ public class karte : MonoBehaviour
 
         mapit();
     }
+    void OnEnable()
+    {
+        kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
+        werte_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
+    }
 
 
 
-    
-    
-    
-    IEnumerator Waiting(float t)
+
+
+        IEnumerator Waiting(float t)
     {
         yield return new WaitForSeconds(t);
         changeToNotMarked();

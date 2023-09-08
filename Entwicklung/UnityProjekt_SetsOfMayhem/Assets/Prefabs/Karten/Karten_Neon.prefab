@@ -271,6 +271,7 @@ MonoBehaviour:
   place_id: 0
   gobj_mit_placeID: {fileID: 0}
   hasACard: 0
+  hoch: 0
   KartenWerteAlsString:
   - 
   - 
@@ -370,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -580,7 +581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -952,7 +953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -1162,7 +1163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -1372,7 +1373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -1582,7 +1583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -1792,7 +1793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -2002,7 +2003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -2212,7 +2213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -2422,7 +2423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -2632,7 +2633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -2842,7 +2843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -3052,7 +3053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -3262,7 +3263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -3472,7 +3473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript
@@ -3682,7 +3683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6719755836921137732, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596440516440815340, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: karteScript

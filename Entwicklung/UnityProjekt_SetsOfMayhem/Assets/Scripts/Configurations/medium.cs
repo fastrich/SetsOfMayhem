@@ -59,5 +59,7 @@ public static class medium {
     public static float geschwin_zuLetztemSet = 0;
     public static int zuLetztemSet_AnzahlSET = 0;
 
+    public static bool inSettings = false;
+
 
 }

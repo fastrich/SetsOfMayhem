@@ -19,6 +19,7 @@ public static class config_parameters {
     // Describing Field 
     public static int Game_numberOfCardsOnDeck_Classic = 9;
     public static int Game_numberOfCardsOnDeck = 9;
+    public static int Game_numberOfCardsOnDeck_Intro = 3;
     public static int Game_numberOfCardsOnDeck_SLIDER_MIN = 4;
     public static int Game_numberOfCardsOnDeck_SLIDER_MAX = 30;
 
@@ -46,14 +47,24 @@ public static class config_parameters {
     public static int numberOfSelected_soll_SLIDER_MIN = 3;
     public static int numberOfSelected_soll_SLIDER_MAX = 6;
     public static int numberOfSelected_soll_gen = 1;
+    public static int numberOfSelected_soll_gen_Íntro = 1;
     public static int numberOfSelected_soll_gen_Classic = 1;
     public static int numberOfSelected_soll_gen_SLIDER_MIN = 0;
     public static int numberOfSelected_soll_gen_SLIDER_MAX = 15;
 
     //================================
     // Kostueme und Kartenaussehen
-    public static int kartenKostuem_ID = 0; 
     // 0=Neon3x3, 1=Neon, 2=Pfeile
+    public static int kartenKostuem_ID = 2;
+    public static int kartenKostuem_Pointer = 1;
+    public static int kartenKostuem_Anzahl = 3;
+    public const int kartenKostuem_Anzahl_const = 3;
+    public static int[]     arr_Kostuem_ID =    new int[kartenKostuem_Anzahl_const] { 0, 1, 2 };
+    public static string[]  arr_Kostuem_Name = new string[kartenKostuem_Anzahl_const] { "Neon", "Neon erweitert", "Pfeile" };
+    public static bool[] arr_Kostuem_klassisch = new bool[kartenKostuem_Anzahl_const] { true, true, false};
+    public static string kostuemTyp_klassisch = "Klassisch";
+
+
 
 
 
@@ -64,7 +75,7 @@ public static class config_parameters {
     public static int Editor_NameCardslots_howmany0 = 4;
     public static string Editor_NameCardslots_mu = "KarteMultiplier_0000";
     public static int Editor_NameCardslots_mu_howmany0 = 4;
-    public static string Text_Kat_UT = "Verfügbare Werte: ";
+    public static string Text_Kat_UT = "Werte: "; //"Verfügbare Werte: ";
     public static int Max_Anzahl_Versuche_KartePlatzieren = 10000;
 
 

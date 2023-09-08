@@ -9,13 +9,15 @@ using static algos;
 using static methods;
 public class mainmenue_main : MonoBehaviour
 {
-
+   public GameObject KartenReboot;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //StartCoroutine(Waiting(3));
+        
+        inSettings = true;
         kategorien_n2[0] = farbe_gen;
         kategorien_n2[1] = ausrichtung_gen;
         kategorien_n2[2] = anzahl_gen;
@@ -23,24 +25,61 @@ public class mainmenue_main : MonoBehaviour
             ueberschuessig[i] =0;
                 }
 
+        KartenReboot.SetActive(false);
+
+     
+        StartCoroutine(Waiting2());
 
 
-
-
-             
 
 
     }
 
+    private void OnEnable()
+    {
+        update_arrays();
+        resettonew();
+        StartCoroutine(Waiting2());
+
+    }
     // Update is called once per frame
     void Update()
     {
+        inSettings = true;
         //lade123(classicSET);
+   
+        kartenKostuem_ID = arr_Kostuem_ID[kartenKostuem_Pointer];
     }
+    IEnumerator Waiting2()
+    {
+        float wait = 0.2f;
+        KartenReboot.SetActive(true);
+        yield return new WaitForSeconds(wait);
+        KartenReboot.SetActive(false);
+        yield return new WaitForSeconds(wait);
+        KartenReboot.SetActive(true);
+        yield return new WaitForSeconds(wait);
+            KartenReboot.SetActive(false);
+
+    }
+
     IEnumerator Waiting(int t)
     {
         yield return new WaitForSeconds(t);
         SceneManager.LoadScene(sceneName: "Stage");
+    }
+    private void resettonew()
+    {
+        kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
+        werte_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
+        werte_n_length = new int[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
+        //Debug.Log(werte_n_length[1]);
+        ChoosenKats = new int[100];
+        //kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
+        //werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
+        StartCoroutine(Waiting2());
+
+
     }
 
     public void StartGame_Fast_Random()
@@ -67,11 +106,13 @@ public class mainmenue_main : MonoBehaviour
         Max_Anzahl_katProKarte = Max_Anzahl_katProKarte_classic;
         numberOfSelected_soll_gen = numberOfSelected_soll_gen_Classic;
         Set_InfosAnzeigen_Anzahl = Set_InfosAnzeigen_Anzahl_Classic;
-        kartenKostuem_ID = 0;
+        kartenKostuem_Pointer = 0;
+        kartenKostuem_ID = arr_Kostuem_ID[kartenKostuem_Pointer];
         lade123(classicSET);
         update_arrays();
-        
+        resettonew();
         //Debug.Log("Kartenwerte123 " + ArrayToString(kategorien_n_sorted));
+        inSettings = false;
         SceneManager.LoadScene(sceneName: "Stage");
     }
 
@@ -83,14 +124,16 @@ public class mainmenue_main : MonoBehaviour
         if (numberOfSelected_soll < 1) { return; }
         if (Game_numberOfCardsOnDeck < 1) { return; }
         if (numberOfSelected_soll > Game_numberOfCardsOnDeck) { return; }
-      
+
         //if (numberOfSelected_soll_gen >= (Game_numberOfCardsOnDeck-numberOfSelected_soll)) { return; }
+        inSettings = false;
         SceneManager.LoadScene(sceneName: "Stage");
     }
 
     public void StartGame_withOptionsM2()
     {
         update_arrays();
+        inSettings = false;
         SceneManager.LoadScene(sceneName: "Stage");
     }
 

@@ -19,7 +19,7 @@ using static algos;
 public class gameoptions2_main : MonoBehaviour
 {
 
-    
+
     public GameObject Text_WarnungElemente;
     public GameObject Toogle_gen_SETanz_info;
     public GameObject Toogle_gen_SETanz_info_t;
@@ -104,5 +104,7 @@ public class gameoptions2_main : MonoBehaviour
 
 
     public void OnKlickBttn_InfoShowSETAnz() { Set_InfosAnzeigen_Anzahl = 1 - Set_InfosAnzeigen_Anzahl;}
+
+
 
 }

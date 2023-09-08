@@ -4,20 +4,28 @@ using UnityEngine;
 using static methods_unity;
 using UnityEngine.SceneManagement;
 using static config_parameters;
-
+using static algos;
 public class intro_main : MonoBehaviour
 {
 
     public GameObject Karte1;
     public GameObject Karte2;
     public GameObject Karte3;
+    private int backup_numberField=0;
+    private int backup_genSet = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-    Karte1.SetActive(false);
-    Karte2.SetActive(false); 
-    Karte3.SetActive(false);
+        backup_numberField= Game_numberOfCardsOnDeck;
+        Game_numberOfCardsOnDeck = Game_numberOfCardsOnDeck_Intro;
+        backup_genSet = numberOfSelected_soll_gen;
+        numberOfSelected_soll_gen = numberOfSelected_soll_gen_Íntro;
+        Karte1.SetActive(false);
+        Karte2.SetActive(false); 
+        Karte3.SetActive(false);
+        //lade123(classicSET);
+        update_arrays();
         StartCoroutine(Waiting(Intro_waitTime));
         
     }
@@ -40,6 +48,8 @@ public class intro_main : MonoBehaviour
         yield return new WaitForSeconds(t2);
         Karte3.SetActive(true); 
         yield return new WaitForSeconds(t2);
+        Game_numberOfCardsOnDeck = backup_numberField;
+        numberOfSelected_soll_gen = backup_genSet;
         SceneManager.LoadScene(sceneName: "MainMenue");
     }
 

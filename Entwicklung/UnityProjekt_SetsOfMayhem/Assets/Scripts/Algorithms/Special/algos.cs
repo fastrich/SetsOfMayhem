@@ -297,7 +297,7 @@ public static class algos
         if (a) { Debug.Log("SetInField MaxVersuche erreicht"); loadField2backup(); SetsFoundInField_gen = lastNumOfSets; }
         
 
-        Debug.Log("b" + SetsFoundInField_gen);
+        //Debug.Log("b" + SetsFoundInField_gen);
         for (int i = 0; i < array_cards_status.Length; i++)
         {
             if (array_cards_status[i] == 0)
@@ -528,8 +528,10 @@ public static class algos
         array_cards_used_with_id = new int[Game_numberOfCardsOnDeck]; //Kartenabbild_ID
 
         array_cards_selected = new int[Game_numberOfCardsOnDeck];//verweise auf array
+         //kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
+         //werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
 
-    }
+}
     public static void getToSetKatNum()
     {
         kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
@@ -589,16 +591,18 @@ public static class algos
 
         }
 
-        /*
-         for(int i=0; i< numberofUnitsPerKat_max_SLIDER_MAX; i++)
-         {
+        if (false)
+        {
+            for (int i = 0; i < 5; i++)
+            {
 
-             for (int ii = 0; ii < Max_Anzahl_katProKarte_SLIDER_MAX + 10; ii++)
-             {
-                 Debug.Log("hier "+ ii + " " + i + " "+werte_n_sorted[ii, i]);
-             }
-         }
-        */
+                for (int ii = 0; ii < 2; ii++)
+                {
+                    Debug.Log("hier " + ii + " " + i + " " + werte_n_sorted[ii, i]);
+                }
+            }
+        }
+        
 
 
         //Debug.Log("kat "+kategorien_n[0]+ kategorien_n[1]);
