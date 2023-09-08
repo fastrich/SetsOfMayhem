@@ -13,6 +13,7 @@ public class SET_controller : MonoBehaviour
     public GameObject kartenPrefab;
     public GameObject text_sets;
     public GameObject text_watt;
+    public GameObject text_sets_feld;
     public Canvas canvasForCards;
     private Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
     private Vector2 cornerBottemLeft = new Vector2(0, 0);
@@ -53,6 +54,9 @@ public class SET_controller : MonoBehaviour
 
         } ;
         text_watt.GetComponent<TMP_Text>().text = s;
+        s = "";
+        if (Set_InfosAnzeigen_Anzahl!=0 || KartenInfosAnzeigen!=0) { s= "SETs im Feld: " + SetsFoundInField_gen; }
+        text_sets_feld.GetComponent<TMP_Text>().text = s;
     }
 
 

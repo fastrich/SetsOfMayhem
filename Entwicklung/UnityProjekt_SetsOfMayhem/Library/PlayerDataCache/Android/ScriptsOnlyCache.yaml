@@ -5,12 +5,14 @@ ScriptsOnlyBuild:
     - BackToMainM
     - ControlOptionsM_Keyboard_mobile
     - ControlOptionsMenue_mobile
+    - GObj_OnOff
     - MenueControl_mobile
     - SET_controller
     - SystemOptionsMenue_mobile
     - dyn1
     - dyn2
     - dynMulti
+    - gameoptions2_main
     - gameoptions_main
     - intro_main
     - karte
@@ -20,6 +22,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -98,17 +101,50 @@ ScriptsOnlyBuild:
     fullTypeName: karte
     methodName: OnClick
   - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
     fullTypeName: gameoptions_main
     methodName: OnKlickBttn02
   - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: OnKlickBttn_InfoShowSETAnz
+  - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: SETX_onField_Bttn
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
@@ -131,8 +167,14 @@ ScriptsOnlyBuild:
     fullTypeName: gameoptions_main
     methodName: OnKlickBttn_GenChilds
   - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: SETX_onField_Bttn
+  - assembly: Assembly-CSharp
     fullTypeName: gameoptions_main
     methodName: OnKlickBttn01
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: numOfCardsInField_Bttn
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
@@ -146,8 +188,14 @@ ScriptsOnlyBuild:
     fullTypeName: mainmenue_main
     methodName: StartGame_withOptionsM
   - assembly: Assembly-CSharp
+    fullTypeName: ControlOptionsM_Keyboard_mobile
+    methodName: ChangeMouseCaptureInWindow
+  - assembly: Assembly-CSharp
     fullTypeName: gameoptions_main
     methodName: kindsOfOptions_Bttn
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
@@ -158,8 +206,17 @@ ScriptsOnlyBuild:
     fullTypeName: ControlOptionsM_Keyboard_mobile
     methodName: ChangeMouseCaptureInWindow
   - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: numOfCardsInASET_Bttn
+  - assembly: Assembly-CSharp
     fullTypeName: ControlOptionsMenue_mobile
     methodName: TouchControls
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: numOfCardsInASET_Bttn
   - assembly: Assembly-CSharp
     fullTypeName: gameoptions_main
     methodName: OnKlickBttn09
@@ -167,11 +224,17 @@ ScriptsOnlyBuild:
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
     fullTypeName: gameoptions_main
     methodName: OnKlickBttn_GenRot
   - assembly: Assembly-CSharp
-    fullTypeName: gameoptions_main
-    methodName: numOfCardsInASET_Bttn
+    fullTypeName: mainmenue_main
+    methodName: StartGame_withOptionsM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
@@ -179,8 +242,17 @@ ScriptsOnlyBuild:
     fullTypeName: gameoptions_main
     methodName: OnKlickBttn03
   - assembly: Assembly-CSharp
+    fullTypeName: mainmenue_main
+    methodName: StartGame_withOptionsM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: numOfCardsInField_Bttn
+  - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: mainmenue_main
+    methodName: StartGame_withOptionsM
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
@@ -197,17 +269,26 @@ ScriptsOnlyBuild:
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
     fullTypeName: gameoptions_main
     methodName: numOfUperKat_Bttn
   - assembly: Assembly-CSharp
-    fullTypeName: mainmenue_main
-    methodName: StartGame_withOptionsM
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: gameoptions2_main
+    methodName: OnKlickBttn_InfoShowSETAnz
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: ControlOptionsM_Keyboard_mobile
+    methodName: ChangeMouseCaptureInWindow
   - assembly: Assembly-CSharp
     fullTypeName: gameoptions_main
     methodName: OnKlickBttn_GenColor
@@ -215,8 +296,14 @@ ScriptsOnlyBuild:
     fullTypeName: mainmenue_main
     methodName: StartGame_Fast_Random
   - assembly: Assembly-CSharp
-    fullTypeName: gameoptions_main
-    methodName: numOfCardsInField_Bttn
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: BackToButton_mobile
+    methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
@@ -239,8 +326,23 @@ ScriptsOnlyBuild:
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
   - assembly: Assembly-CSharp
+    fullTypeName: mainmenue_main
+    methodName: StartGame_withOptionsM
+  - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
   - assembly: Assembly-CSharp
     fullTypeName: karte
     methodName: OnClick
@@ -256,6 +358,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: SET_controller
     methodName: bttn_click_frischeKarten
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: karte
+    methodName: OnClick
   - assembly: Assembly-CSharp
     fullTypeName: karte
     methodName: OnClick
@@ -307,6 +415,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7026}
     - Class: 114
       Script: {instanceID: 7120}
+    - Class: 114
+      Script: {instanceID: 499818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -378,6 +488,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7026}
     - Class: 114
       Script: {instanceID: 8144}
+    - Class: 114
+      Script: {instanceID: 499818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -457,6 +569,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8058}
     - Class: 114
       Script: {instanceID: 9434}
+    - Class: 114
+      Script: {instanceID: 95236}
+    - Class: 114
+      Script: {instanceID: 499818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -522,6 +638,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7120}
     - Class: 114
       Script: {instanceID: 8656}
+    - Class: 114
+      Script: {instanceID: 499818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1063,7 +1181,7 @@ ScriptsOnlyBuild:
     className: ResetSaveDataButton_mobile
   - hash:
       serializedVersion: 2
-      Hash: f9ab695f8c77350db5fc5d436749e3b2
+      Hash: fc384ac6a9379da5126eb6761f42bb85
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gameoptions_main
@@ -1441,7 +1559,7 @@ ScriptsOnlyBuild:
     className: GraphicOptionsMenue_mobile
   - hash:
       serializedVersion: 2
-      Hash: 4225f920a10c9b2a51f01380beb10711
+      Hash: c98dfc49103a5890884dd5a5b6589019
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SET_controller
@@ -1859,6 +1977,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 6e4d675e7689fc9c5a347082828cf779
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: gameoptions2_main
+  - hash:
+      serializedVersion: 2
+      Hash: 2ecdbe75f54c8965e9d317f6c9a2e0e3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GObj_OnOff
   platform: 13
   scenePathNames:
   - Assets/Scenes/Intro.unity

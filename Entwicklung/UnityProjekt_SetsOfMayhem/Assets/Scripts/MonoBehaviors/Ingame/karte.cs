@@ -10,6 +10,7 @@ using static config_parameters;
 
 public class karte : MonoBehaviour
 {
+    
     public int rotation_id=0;
     public int anzahl_id=0;
     public int farbe_id=0;

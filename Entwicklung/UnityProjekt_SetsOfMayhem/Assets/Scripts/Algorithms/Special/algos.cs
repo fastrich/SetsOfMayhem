@@ -278,7 +278,7 @@ public static class algos
     public static void CheckAndFillCardField()
     {
         bool a= true;
-       
+        int lastNumOfSets = 0;
         bool c = false;
         for (int i2 = 0; i2 < Max_Anzahl_Versuche_KartePlatzieren; i2++)
         {
@@ -292,8 +292,10 @@ public static class algos
             }
             if (c) { SetsFoundInField_gen = checkForSetInField(); }
             if (SetsFoundInField_gen >= numberOfSelected_soll_gen) { a = false; break; }
-        }
-        if (a) { Debug.Log("SetInField MaxVersuche erreicht"); }
+            if (lastNumOfSets < SetsFoundInField_gen) { saveField2backup(); lastNumOfSets = SetsFoundInField_gen; }
+            }
+        if (a) { Debug.Log("SetInField MaxVersuche erreicht"); loadField2backup(); SetsFoundInField_gen = lastNumOfSets; }
+        
 
         Debug.Log("b" + SetsFoundInField_gen);
         for (int i = 0; i < array_cards_status.Length; i++)
@@ -306,6 +308,33 @@ public static class algos
         }
     }
 
+    public static void saveField2backup()
+    {
+        fieldOfCards_backup = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+        for (int i = 0; i < Game_numberOfCardsOnDeck; i++)
+        {
+            for (int ii = 0; ii < Max_Anzahl_katProKarte; ii++)
+            {
+                fieldOfCards_backup[i, ii] = fieldOfCards[i, ii];
+
+
+            }
+        }
+    }
+    public static void loadField2backup()
+    {
+        for (int i = 0; i < Game_numberOfCardsOnDeck; i++)
+        {
+            for (int ii = 0; ii < Max_Anzahl_katProKarte; ii++)
+            {
+                fieldOfCards[i, ii] = fieldOfCards_backup[i, ii];
+
+
+            }
+        }
+    }
+
+
     public static void FillCardInField(int pos)
     {
         for (int i2 = 0; i2 < Max_Anzahl_Versuche_KartePlatzieren ; i2++)
@@ -315,11 +344,14 @@ public static class algos
                 fieldOfCards[pos, i] = (int)UnityEngine.Random.Range(0, numberofUnitsPerKat_max);
                 //fieldOfCards[pos, i] = 0;
             }
-
+            //Debug.Log(Max_Anzahl_katProKarte +" "+ numberofUnitsPerKat_max +" "+ (Mathf.Pow(Max_Anzahl_katProKarte,numberofUnitsPerKat_max)+ " "+ Mathf.Pow(numberofUnitsPerKat_max, Max_Anzahl_katProKarte)));
             //if (!checkForDoubles_rel(pos) && checkForSetinSelected_gen_3(pos) ) { return; }
             //if (!checkForDoubles_rel(pos) && i2 > (Max_Anzahl_Versuche_KartePlatzieren*3/4 )) { Debug.Log("MaxVersuche_Sets erreicht"); return; }
             if (!checkForDoubles_rel(pos)) { return; }
+            if (Game_numberOfCardsOnDeck>= Mathf.Pow(Max_Anzahl_katProKarte, numberofUnitsPerKat_max)) { return; }
+            if (Game_numberOfCardsOnDeck>= Mathf.Pow(numberofUnitsPerKat_max, Max_Anzahl_katProKarte)) { return; }
         }
+
         Debug.Log("MaxVersuche erreicht");
     }
 

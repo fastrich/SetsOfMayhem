@@ -62,11 +62,7 @@ public class gameoptions_main : MonoBehaviour
     public GameObject numberOf1Opt_Slider;
     public GameObject numberOf1Opt_SliderT;
 
-    public GameObject SET1_nbrOfCards_Slider;
-    public GameObject SET1_nbrOfCards_SliderT;
 
-    public GameObject nbrOfCardsInField_Slider;
-    public GameObject nbrOfCardsInField_SliderT;
 
 
 
@@ -102,11 +98,6 @@ public class gameoptions_main : MonoBehaviour
         numberOf1Opt_Slider.GetComponent<Slider>().value = (float)(((float)numberofUnitsPerKat_max - (float)numberofUnitsPerKat_max_SLIDER_MIN) / ((float)numberofUnitsPerKat_max_SLIDER_MAX - (float)numberofUnitsPerKat_max_SLIDER_MIN));
         numOfUperKat_Bttn();
 
-        SET1_nbrOfCards_Slider.GetComponent<Slider>().value = (float)(((float)numberOfSelected_soll - (float)numberOfSelected_soll_SLIDER_MIN) / ((float)numberOfSelected_soll_SLIDER_MAX - (float)numberOfSelected_soll_SLIDER_MIN));
-        numOfCardsInASET_Bttn();
-
-        nbrOfCardsInField_Slider.GetComponent<Slider>().value = (float)(((float)Game_numberOfCardsOnDeck - (float)Game_numberOfCardsOnDeck_SLIDER_MIN) / ((float)Game_numberOfCardsOnDeck_SLIDER_MAX - (float)Game_numberOfCardsOnDeck_SLIDER_MIN));
-        numOfUperKat_Bttn();
 
 
         Toogle_opt01.GetComponent<Button>().colors = tempColB[(int)ChoosenKats[0]];
@@ -189,19 +180,7 @@ public class gameoptions_main : MonoBehaviour
         numberOf1Opt_SliderT.GetComponent<TMP_Text>().text = "Anzahl der Werte je Kategorie: " + (int)(zwischenRechn) + " ";
     }
 
-    public void numOfCardsInASET_Bttn()
-    {
-        numberOfSelected_soll = (int)(SET1_nbrOfCards_Slider.GetComponent<Slider>().value * ((float)numberOfSelected_soll_SLIDER_MAX - (float)numberOfSelected_soll_SLIDER_MIN) + (float)numberOfSelected_soll_SLIDER_MIN);
-        double zwischenRechn = numberOfSelected_soll;//100 * (UIconfig.camRotatingSensitivity); // /(UIconfig.camRotatingSensitivity_default);
-        SET1_nbrOfCards_SliderT.GetComponent<TMP_Text>().text = "Karten für ein SET: " + (int)(zwischenRechn) + " ";
-    }
 
-    public void numOfCardsInField_Bttn()
-    {
-        Game_numberOfCardsOnDeck = (int)(nbrOfCardsInField_Slider.GetComponent<Slider>().value * ((float)Game_numberOfCardsOnDeck_SLIDER_MAX - (float)Game_numberOfCardsOnDeck_SLIDER_MIN) + (float)Game_numberOfCardsOnDeck_SLIDER_MIN);
-        double zwischenRechn = Game_numberOfCardsOnDeck;//100 * (UIconfig.camRotatingSensitivity); // /(UIconfig.camRotatingSensitivity_default);
-        nbrOfCardsInField_SliderT.GetComponent<TMP_Text>().text = "Karten auf dem Feld: " + (int)(zwischenRechn) + " ";
-    }
 
 
     public void OnKlickBttn01(){ int i = 0; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }

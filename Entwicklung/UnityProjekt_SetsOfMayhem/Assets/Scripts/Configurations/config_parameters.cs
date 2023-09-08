@@ -50,6 +50,12 @@ public static class config_parameters {
     public static int numberOfSelected_soll_gen_SLIDER_MIN = 0;
     public static int numberOfSelected_soll_gen_SLIDER_MAX = 15;
 
+    //================================
+    // Kostueme und Kartenaussehen
+    public static int kartenKostuem_ID = 0; 
+    // 0=Neon3x3, 1=Neon, 2=Pfeile
+
+
 
 
     //=================================
@@ -59,7 +65,7 @@ public static class config_parameters {
     public static string Editor_NameCardslots_mu = "KarteMultiplier_0000";
     public static int Editor_NameCardslots_mu_howmany0 = 4;
     public static string Text_Kat_UT = "Verfügbare Werte: ";
-    public static int Max_Anzahl_Versuche_KartePlatzieren = 1000;
+    public static int Max_Anzahl_Versuche_KartePlatzieren = 10000;
 
 
     //================================
@@ -77,8 +83,8 @@ public static class config_parameters {
     //================================
     //Vorbelegungen
     public static string[] classicSET = new string[] { "Füllung","Form", "Farbe_", "Anzahl_"  };
-    public static string[] classicSET_1 = new string[] { "Leer", "Voll", "Streifen" };
-    public static string[] classicSET_2 = new string[] { "Kreis", "Raute", "S" };
+    public static string[] classicSET_1 = new string[] { "Leer", "Ganz", "Streifen" };
+    public static string[] classicSET_2 = new string[] { "Oval", "Raute", "S" };
 
     //Farben
     public static string farbe_gen = "Farbe_";

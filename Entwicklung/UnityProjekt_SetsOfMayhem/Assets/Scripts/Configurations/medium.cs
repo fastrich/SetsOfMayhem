@@ -31,6 +31,7 @@ public static class medium {
     //Version 3
     //Matrix mit welche Karten liegen auf dem Tisch
     public static int[,] fieldOfCards = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+    public static int[,] fieldOfCards_backup = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
     //Enum 
     public static string[] kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
     public static string[,] werte_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
