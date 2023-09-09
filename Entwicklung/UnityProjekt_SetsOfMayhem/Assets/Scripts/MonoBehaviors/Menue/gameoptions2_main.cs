@@ -68,6 +68,7 @@ public class gameoptions2_main : MonoBehaviour
         numOfCardsInField_Bttn();
 
         string nun = "";
+
         Text_WarnungElemente.GetComponent<TMP_Text>().text = nun;
 
         string titel1 = "Aufzählung der SETs im Feld";

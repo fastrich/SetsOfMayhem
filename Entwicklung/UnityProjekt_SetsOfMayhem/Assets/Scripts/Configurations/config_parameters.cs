@@ -54,15 +54,27 @@ public static class config_parameters {
 
     //================================
     // Kostueme und Kartenaussehen
+    //Karten Inhalt
     // 0=Neon3x3, 1=Neon, 2=Pfeile
     public static int kartenKostuem_ID = 2;
     public static int kartenKostuem_Pointer = 1;
-    public static int kartenKostuem_Anzahl = 3;
-    public const int kartenKostuem_Anzahl_const = 3;
-    public static int[]     arr_Kostuem_ID =    new int[kartenKostuem_Anzahl_const] { 0, 1, 2 };
-    public static string[]  arr_Kostuem_Name = new string[kartenKostuem_Anzahl_const] { "Neon", "Neon erweitert", "Pfeile" };
-    public static bool[] arr_Kostuem_klassisch = new bool[kartenKostuem_Anzahl_const] { true, true, false};
+    public static int kartenKostuem_Pointer_ClassicDefault = 0;
+    public static int kartenKostuem_Anzahl = 5;
+    public const int kartenKostuem_Anzahl_const = 5;
+    public static int[]     arr_Kostuem_ID =    new int[kartenKostuem_Anzahl_const] { 0, 1, 2, 3, 4 };
+    public static string[] arr_Kostuem_Name = new string[kartenKostuem_Anzahl_const] { "Neon", "Neon erweitert", "Pfeile", "Gestein", "Gestein mit Versteckten Rohstoffen" };
+    public static bool[] arr_Kostuem_klassisch = new bool[kartenKostuem_Anzahl_const] { true, true, false, false, false};
     public static string kostuemTyp_klassisch = "Klassisch";
+
+
+    //Karten Hintergrund
+    public static int kartenKostuem_HG_ID = 4;
+    public static int kartenKostuem_HG_Pointer = 5;
+    public static int kartenKostuem_HG_Pointer_Default = 0;
+    public static int kartenKostuem_HG_Anzahl = 29;
+    public const int kartenKostuem_HG_Anzahl_const = 29;
+    public static int[] arr_Kostuem_HG_ID =    new int[kartenKostuem_HG_Anzahl_const] { 0, 1, 6, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
+    public static string[] arr_Kostuem_HG_Name = new string[kartenKostuem_HG_Anzahl_const] { "Transparent", "Weiﬂ", "Vergilbt", "Hellgrau", "Grau", "Dunkelgrau", "Schwarz", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
 
 
 
@@ -99,7 +111,7 @@ public static class config_parameters {
 
     //Farben
     public static string farbe_gen = "Farbe_";
-    public static Color[] dyn_farbe = new Color[9] {Color.red, Color.green, Color.blue, Color.yellow, Color.white, Color.magenta, Color.cyan, Color.gray, Color.black};
+    public static Color[] dyn_farbe = new Color[9] {Color.green, Color.red, Color.blue, Color.yellow, Color.white, Color.magenta, Color.cyan, Color.gray, Color.black};
     //Anzahl
     public static string anzahl_gen = "Anzahl_";
     public static int[] dyn_anzahl = new int[35] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35};

@@ -157,6 +157,7 @@ public class gameoptions_main : MonoBehaviour
         Toogle_gen_colour_ut.GetComponent<TMP_Text>().text= Text_Kat_UT + dyn_farbe.Length.ToString();
 
         int druber = 0;
+        problemInGO_Kat = false;
         string nun = " ";
         for(int i=0; i < werte_n_length.Length; i++)
         {
@@ -167,8 +168,9 @@ public class gameoptions_main : MonoBehaviour
 
 
         }
-        if (druber > 0) { nun = " Warnung: Nicht genügend Karten für die aktuellen Einstellungen."; }
-        if (Max_Anzahl_katProKarte==0) { nun = " Bitte wählen sie Kategorien aus."; }
+        if (druber > 0) { nun = " Warnung: Nicht genügend Karten für die aktuellen Einstellungen."; problemInGO_Kat = true; }
+        if (Max_Anzahl_katProKarte==0) { nun = " Bitte wählen sie Kategorien aus."; problemInGO_Kat = true; }
+        
         Text_WarnungElemente.GetComponent<TMP_Text>().text = nun;
         //getToSetKatNum();
     }

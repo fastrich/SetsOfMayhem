@@ -60,6 +60,6 @@ public static class medium {
     public static int zuLetztemSet_AnzahlSET = 0;
 
     public static bool inSettings = false;
-
+    public static bool problemInGO_Kat = false;
 
 }

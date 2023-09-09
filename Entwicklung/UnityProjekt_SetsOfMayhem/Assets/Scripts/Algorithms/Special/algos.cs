@@ -642,4 +642,16 @@ public static class algos
         }
         return k;
     }
+    public static bool checkParameterForToGo()
+    {
+
+        if (Max_Anzahl_katProKarte < 1) { return false; }
+        if (numberofUnitsPerKat_max < 1) { return false; }
+        if (numberOfSelected_soll < 1) { return false; }
+        if (Game_numberOfCardsOnDeck < 1) { return false; }
+        if (numberOfSelected_soll > Game_numberOfCardsOnDeck) { return false; }
+        return true;
+    }
+
+
 }

@@ -49,6 +49,7 @@ public class mainmenue_main : MonoBehaviour
         //lade123(classicSET);
    
         kartenKostuem_ID = arr_Kostuem_ID[kartenKostuem_Pointer];
+        kartenKostuem_HG_ID = arr_Kostuem_HG_ID[kartenKostuem_HG_Pointer];
     }
     IEnumerator Waiting2()
     {
@@ -60,6 +61,7 @@ public class mainmenue_main : MonoBehaviour
         KartenReboot.SetActive(true);
         yield return new WaitForSeconds(wait);
             KartenReboot.SetActive(false);
+
 
     }
 
@@ -106,8 +108,13 @@ public class mainmenue_main : MonoBehaviour
         Max_Anzahl_katProKarte = Max_Anzahl_katProKarte_classic;
         numberOfSelected_soll_gen = numberOfSelected_soll_gen_Classic;
         Set_InfosAnzeigen_Anzahl = Set_InfosAnzeigen_Anzahl_Classic;
-        kartenKostuem_Pointer = 0;
-        kartenKostuem_ID = arr_Kostuem_ID[kartenKostuem_Pointer];
+        
+        if (!arr_Kostuem_klassisch[kartenKostuem_Pointer])
+        {
+            kartenKostuem_Pointer = kartenKostuem_Pointer_ClassicDefault;
+            kartenKostuem_ID = arr_Kostuem_ID[kartenKostuem_Pointer]; 
+           
+        }
         lade123(classicSET);
         update_arrays();
         resettonew();
@@ -119,11 +126,7 @@ public class mainmenue_main : MonoBehaviour
     public void StartGame_withOptionsM()
     {
         update_arrays();
-        if (Max_Anzahl_katProKarte < 1) { return; }
-        if (numberofUnitsPerKat_max < 1) { return; }
-        if (numberOfSelected_soll < 1) { return; }
-        if (Game_numberOfCardsOnDeck < 1) { return; }
-        if (numberOfSelected_soll > Game_numberOfCardsOnDeck) { return; }
+        checkParameterForToGo();
 
         //if (numberOfSelected_soll_gen >= (Game_numberOfCardsOnDeck-numberOfSelected_soll)) { return; }
         inSettings = false;
