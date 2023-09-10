@@ -13,6 +13,8 @@ using static methods_unity;
 public class GObj_CardBackground_OnOff : MonoBehaviour
 {
     public int id = 0;
+    public int id_kat = 0;
+    public string HG_Beschriftung = "";
 
     void Start()
     {
@@ -31,7 +33,7 @@ public class GObj_CardBackground_OnOff : MonoBehaviour
     {
 
         bool same = false;
-        if (id == kartenKostuem_HG_ID) { same = true; }
+        if (id == kartenKostuem_HG_ID && id_kat == kartenKostuem_HG_Kat_ID) { same = true; karteHG_Beschriftung = HG_Beschriftung; }
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(same);

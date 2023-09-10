@@ -7,9 +7,11 @@ using static config_parameters;
 using static medium;
 using static algos;
 using static methods;
+using TMPro;
 public class mainmenue_main : MonoBehaviour
 {
    public GameObject KartenReboot;
+    public GameObject KlasUTZ;
 
 
     // Start is called before the first frame update
@@ -49,11 +51,17 @@ public class mainmenue_main : MonoBehaviour
         //lade123(classicSET);
    
         kartenKostuem_ID = arr_Kostuem_ID[kartenKostuem_Pointer];
-        kartenKostuem_HG_ID = arr_Kostuem_HG_ID[kartenKostuem_HG_Pointer];
+        kartenKostuem_HG_Kat_ID = arr_Kostuem_HG_Kat_ID[kartenKostuem_HG_Kat_Pointer];
+        UIKHG_Kaz_update(false);
+        kartenKostuem_HG_ID = arr_kartenKostuem_HG_ID[kartenKostuem_HG_Kat_ID];
+        float i = bestzeiten[Game_numberOfCardsOnDeck_Classic, Max_Anzahl_katProKarte_Classic, numberofUnitsPerKat_max_classic, numberOfSelected_soll_Classic, numberOfSelected_soll_gen_Classic];//
+        string s = "";
+        if (i != 0) { s = "Schnellste Zeit: " + i.ToString(); }
+        KlasUTZ.GetComponent<TMP_Text>().text =  s;
     }
     IEnumerator Waiting2()
     {
-        float wait = 0.2f;
+        float wait = 0.4f;
         KartenReboot.SetActive(true);
         yield return new WaitForSeconds(wait);
         KartenReboot.SetActive(false);
@@ -108,7 +116,7 @@ public class mainmenue_main : MonoBehaviour
         Max_Anzahl_katProKarte = Max_Anzahl_katProKarte_classic;
         numberOfSelected_soll_gen = numberOfSelected_soll_gen_Classic;
         Set_InfosAnzeigen_Anzahl = Set_InfosAnzeigen_Anzahl_Classic;
-        
+        Element1_visible = Element1_visible_classic;
         if (!arr_Kostuem_klassisch[kartenKostuem_Pointer])
         {
             kartenKostuem_Pointer = kartenKostuem_Pointer_ClassicDefault;

@@ -34,89 +34,90 @@ public class dynMulti : MonoBehaviour
         anzahl = dyn_anzahl[karteScript.GetComponent<karte>().anzahl_id];
         ausrichtung_wg = karteScript.GetComponent<karte>().rotation_id;
         farbe_wg = karteScript.GetComponent<karte>().farbe_id;
-   activChilds(false);
+        activChilds(false);
         //Debug.Log(karteScript.GetComponent<karte>().anzahl_id);
+        if (Element1_visible==1 || (Element1_visible==2 && array_cards_status[karteScript.GetComponent<karte>().place_id]==2 )) {
+            bool hates;
+            float jh = 0;
+            int jb = 0;
 
-        bool hates;
-        float jh = 0;
-        int jb = 0;
-
-        for (int ii = 0; ii < anzahl; ii++)
-        {
-            hates = false;
-            for (int i = 0; i < transform.childCount; i++)
+            for (int ii = 0; ii < anzahl; ii++)
             {
-                string name2 = transform.GetChild(i).name;
-                int j = Editor_NameCardslots_mu_howmany0;
-                name2 = name2.Substring(name2.Length - j, j);
-                try{
-                    if (ii == (int)Int32.Parse(name2))
-                    {
-                        hates = true;
-
-
-
-                        //==========================================
-
-                        int nb = (int)Mathf.Ceil(Mathf.Sqrt(anzahl));
-
-                        int nh = (int)Mathf.Ceil((float)anzahl / (float)nb);
-                      
-                        if(anzahl== 3)
+                hates = false;
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    string name2 = transform.GetChild(i).name;
+                    int j = Editor_NameCardslots_mu_howmany0;
+                    name2 = name2.Substring(name2.Length - j, j);
+                    try {
+                        if (ii == (int)Int32.Parse(name2))
                         {
-                            nb = 3; nh = 1;
-                        }
-                        
-                        
-                        
-                        
+                            hates = true;
 
-                        Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
-                        Vector2 cornerBottemLeft = new Vector2(0, 0);
 
-                        cornerTopRight = new Vector2((float)(jb + 1) / nb, (float)1 - (jh / nh));
-                        cornerBottemLeft = new Vector2((float)jb / nb, (float)1 - ((1 + jh) / nh));
 
-                        transform.GetChild(i).gameObject.GetComponent<RectTransform>().anchorMax = cornerTopRight;
-                        transform.GetChild(i).gameObject.GetComponent<RectTransform>().anchorMin = cornerBottemLeft;
+                            //==========================================
 
-                        jb++;
-                        if (jb >= nb)
-                        {
-                            jh++;
-                            jb = 0;
-                        }
+                            int nb = (int)Mathf.Ceil(Mathf.Sqrt(anzahl));
 
-                        //``````````````````````````````````````
-                        /*
-                        var rotationvector = transform.rotation.eulerAngles;
-                        rotationvector.z = dyn_ausrichtung[ausrichtung_wg];
-                        transform.rotation = Quaternion.Euler(rotationvector);
-                        for(int jj=0; jj< transform.GetChild(i).gameObject.transform.GetChildCount(); jj++)
-                        transform.GetChild(i).gameObject.transform.rotation = Quaternion.Euler(rotationvector);
-                        transform.GetChild(i).GetChildCount
-                        */
+                            int nh = (int)Mathf.Ceil((float)anzahl / (float)nb);
 
-                        //=========================================
-                        transform.GetChild(i).gameObject.SetActive(true);
+                            if (anzahl == 3)
+                            {
+                                nb = 3; nh = 1;
+                            }
 
 
 
 
 
-                    };
+                            Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
+                            Vector2 cornerBottemLeft = new Vector2(0, 0);
+
+                            cornerTopRight = new Vector2((float)(jb + 1) / nb, (float)1 - (jh / nh));
+                            cornerBottemLeft = new Vector2((float)jb / nb, (float)1 - ((1 + jh) / nh));
+
+                            transform.GetChild(i).gameObject.GetComponent<RectTransform>().anchorMax = cornerTopRight;
+                            transform.GetChild(i).gameObject.GetComponent<RectTransform>().anchorMin = cornerBottemLeft;
+
+                            jb++;
+                            if (jb >= nb)
+                            {
+                                jh++;
+                                jb = 0;
+                            }
+
+                            //``````````````````````````````````````
+                            /*
+                            var rotationvector = transform.rotation.eulerAngles;
+                            rotationvector.z = dyn_ausrichtung[ausrichtung_wg];
+                            transform.rotation = Quaternion.Euler(rotationvector);
+                            for(int jj=0; jj< transform.GetChild(i).gameObject.transform.GetChildCount(); jj++)
+                            transform.GetChild(i).gameObject.transform.rotation = Quaternion.Euler(rotationvector);
+                            transform.GetChild(i).GetChildCount
+                            */
+
+                            //=========================================
+                            transform.GetChild(i).gameObject.SetActive(true);
+
+
+
+
+
+                        };
+                    }
+                    catch { }
+
+
+
                 }
-                catch { }
-               
-
-                
-            }
-            if (hates == false)
-            {
-                erstellen(ii);
-            }
+                if (hates == false)
+                {
+                    erstellen(ii);
+                }
 
 
+            } 
         }
 
         

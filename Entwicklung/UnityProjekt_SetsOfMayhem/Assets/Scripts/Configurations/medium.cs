@@ -44,7 +44,7 @@ public static class medium {
     public static int[] ChoosenKats2 = new int[100];
 
     public static int numberOfKatsOnCardsNeeded = Max_Anzahl_katProKarte;
-    
+
 
     public static string[] kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
     public static string[,] werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
@@ -61,5 +61,21 @@ public static class medium {
 
     public static bool inSettings = false;
     public static bool problemInGO_Kat = false;
+
+    public static string karteHG_Beschriftung = "";
+    public static int[] range1 = new int[arr_Kostuem_HG_Kat_ID.Length]; //Saved array ranges from Background images
+
+    //__________________________
+
+    public static float[,,,,] bestzeiten = new float[Game_numberOfCardsOnDeck_SLIDER_MAX, Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX, numberOfSelected_soll_SLIDER_MAX, numberOfSelected_soll_gen_SLIDER_MAX];//
+    public static int arr_listeUberSetZeitenInSpiel_pointer_alt = 0;
+    public static int arr_listeUberSetZeitenInSpiel_pointer_neu = 0;
+    public static System.DateTime[] arr_listeUberSetZeitenInSpiel = new System.DateTime[SETsBisZurWertung+1];
+    public static float[] arr_listeUberSetZeitenInSpiel_korrektur = new float[SETsBisZurWertung + 1];
+    public static bool neuerRekord = false;
+    public static bool neuerRekord_lokal_temp = false;
+    public static float bestzeiten_lokal_temp = 0f;
+    public static float korrekturZeit = 0;
+    //__________________________
 
 }

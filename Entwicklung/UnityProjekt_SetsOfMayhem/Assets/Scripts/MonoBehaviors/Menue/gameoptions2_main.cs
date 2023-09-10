@@ -21,6 +21,10 @@ public class gameoptions2_main : MonoBehaviour
 
 
     public GameObject Text_WarnungElemente;
+    public GameObject Toogle_visib_info;
+    public GameObject Toogle_visib_info_t;
+    public GameObject Toogle_visib_info_ut;
+
     public GameObject Toogle_gen_SETanz_info;
     public GameObject Toogle_gen_SETanz_info_t;
     public GameObject Toogle_gen_SETanz_info_ut;
@@ -41,7 +45,7 @@ public class gameoptions2_main : MonoBehaviour
     private Color colChangeable = new Color(1f, 1f, 1f, 0.5f);
     private Color colChangeable2 = new Color(1f, 1f, 1f, 0.5f);
     private float transCol;
-    private ColorBlock[] tempColB = new ColorBlock[2];
+    private ColorBlock[] tempColB = new ColorBlock[3];
 
 
 
@@ -53,6 +57,9 @@ public class gameoptions2_main : MonoBehaviour
         tempColB[1] = Toogle_gen_SETanz_info.GetComponent<Button>().colors;
         tempColB[1].normalColor = colOptionEnabled;
         tempColB[1].selectedColor = colOptionEnabled;
+        tempColB[2] = Toogle_gen_SETanz_info.GetComponent<Button>().colors;
+        tempColB[2].normalColor = colOptionEnabled2;
+        tempColB[2].selectedColor = colOptionEnabled2;
     }
 
     private void Update()
@@ -70,13 +77,24 @@ public class gameoptions2_main : MonoBehaviour
         string nun = "";
 
         Text_WarnungElemente.GetComponent<TMP_Text>().text = nun;
-
+        //_________________________________________________
         string titel1 = "Aufzählung der SETs im Feld";
         string titelUT = "AUS";
         if (Set_InfosAnzeigen_Anzahl==1) { titel1 = "Aufzählung der SETs im Feld"; titelUT = "AN"; } 
         Toogle_gen_SETanz_info_ut.GetComponent<TMP_Text>().text = titelUT;
         Toogle_gen_SETanz_info_t.GetComponent<TMP_Text>().text = titel1;
         Toogle_gen_SETanz_info.GetComponent<Button>().colors = tempColB[Set_InfosAnzeigen_Anzahl];
+
+        //___________________________________
+         titel1 = "";
+         titelUT = "";
+        int tcol = 0;
+        if (Element1_visible == 0) { titel1 = "Sichtbarkeit"; titelUT = "AUS"; tcol = 0; }
+        if (Element1_visible == 1) { titel1 = "Sichtbarkeit"; titelUT = "AN"; tcol = 2; }
+        if (Element1_visible == 2) { titel1 = "Sichtbarkeit"; titelUT = "Wenn Karte ausgewählt"; tcol = 1; }
+        Toogle_visib_info_ut.GetComponent<TMP_Text>().text = titelUT;
+        Toogle_visib_info_t.GetComponent<TMP_Text>().text = titel1;
+        Toogle_visib_info.GetComponent<Button>().colors = tempColB[tcol];
 
     }
 
@@ -105,6 +123,7 @@ public class gameoptions2_main : MonoBehaviour
 
 
     public void OnKlickBttn_InfoShowSETAnz() { Set_InfosAnzeigen_Anzahl = 1 - Set_InfosAnzeigen_Anzahl;}
+    public void OnKlickBttn_ChangeVisibli() { Element1_visible++; if (Element1_visible > 2) { Element1_visible = 0; } }
 
 
 

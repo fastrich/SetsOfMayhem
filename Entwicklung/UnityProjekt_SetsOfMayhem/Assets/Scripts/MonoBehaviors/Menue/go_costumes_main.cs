@@ -24,6 +24,10 @@ public class go_costumes_main : MonoBehaviour
     public GameObject UIskin_typ;
     public GameObject KartenReboot;
     public GameObject UIKHGskin_name;
+    public GameObject UIKHGskin_thema;
+    public GameObject UIKHGskin_name_z;
+    public GameObject UIKHGskin_thema_z;
+
 
 
 
@@ -50,12 +54,22 @@ public class go_costumes_main : MonoBehaviour
     private void Update()
     {
         string nun = "";
+        int nun2 = 0;
         UIskin_name.GetComponent<TMP_Text>().text = arr_Kostuem_Name[kartenKostuem_Pointer];
         if (arr_Kostuem_klassisch[kartenKostuem_Pointer]) { nun = nun + kostuemTyp_klassisch; };
         UIskin_typ.GetComponent<TMP_Text>().text = nun;
-        UIKHGskin_name.GetComponent<TMP_Text>().text = arr_Kostuem_HG_Name[kartenKostuem_HG_Pointer];
+        
+        nun = "Hintergrundmotiv: ";
+        if (string.IsNullOrEmpty(karteHG_Beschriftung)) { nun = nun + kartenKostuem_HG_ID; }else { nun = nun+karteHG_Beschriftung; };
+        nun = nun + "\n";
+        UIKHGskin_name.GetComponent<TMP_Text>().text = "" + nun;
+        UIKHGskin_thema.GetComponent<TMP_Text>().text = arr_Kostuem_HG_Kat_Name[kartenKostuem_HG_Kat_Pointer];
+        nun2 = arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] + 1;
+        UIKHGskin_name_z.GetComponent<TMP_Text>().text = ""+ nun2 + " / " + range1[kartenKostuem_HG_Kat_ID];
+        nun2 = kartenKostuem_HG_Kat_Pointer + 1;
+        UIKHGskin_thema_z.GetComponent<TMP_Text>().text= "" + nun2 + " / " + arr_Kostuem_HG_Kat_ID.Length;
 
-    }
+}
 
     private void resettonew()
     {
@@ -72,26 +86,37 @@ public class go_costumes_main : MonoBehaviour
 
     public void OnKlickBttn_UI_links() { kartenKostuem_Pointer--; if (kartenKostuem_Pointer < 0) { kartenKostuem_Pointer = (arr_Kostuem_ID.Length - 1); } resettonew(); }
     public void OnKlickBttn_UI_rechts() { kartenKostuem_Pointer++; if (kartenKostuem_Pointer > (arr_Kostuem_ID.Length - 1)) { kartenKostuem_Pointer = 0; } resettonew(); }
-    public void OnKlickBttn_UIKHG_links() { kartenKostuem_HG_Pointer--; if (kartenKostuem_HG_Pointer < 0) { kartenKostuem_HG_Pointer = (arr_Kostuem_HG_ID.Length - 1); }  }
-    public void OnKlickBttn_UIKHG_rechts() { kartenKostuem_HG_Pointer++; if (kartenKostuem_HG_Pointer > (arr_Kostuem_HG_ID.Length - 1)) { kartenKostuem_HG_Pointer = 0; }  }
-    public void OnKlickBttn_UI_random() { kartenKostuem_Pointer = (int)Random.Range(0, arr_Kostuem_ID.Length-1); resettonew(); }
-    public void OnKlickBttn_UIKHG_random() { kartenKostuem_HG_Pointer = (int)Random.Range(0, arr_Kostuem_HG_ID.Length - 1); }
+    public void OnKlickBttn_UI_random() { kartenKostuem_Pointer = (int)Random.Range(0, arr_Kostuem_ID.Length - 1); resettonew(); }
     public void OnKlickBttn_UI_0() { kartenKostuem_Pointer = kartenKostuem_Pointer_ClassicDefault; resettonew(); }
-    public void OnKlickBttn_UIKHG_0() { kartenKostuem_HG_Pointer = kartenKostuem_HG_Pointer_Default; }
+    public void OnKlickBttn_UIKHG_Kat_links() { kartenKostuem_HG_Kat_Pointer--; if (kartenKostuem_HG_Kat_Pointer < 0) { kartenKostuem_HG_Kat_Pointer = (arr_Kostuem_HG_Kat_ID.Length - 1); } resettonew(); }
+    public void OnKlickBttn_UIKHG_Kat_rechts() { kartenKostuem_HG_Kat_Pointer++; if (kartenKostuem_HG_Kat_Pointer > (arr_Kostuem_HG_Kat_ID.Length - 1)) { kartenKostuem_HG_Kat_Pointer = 0; } resettonew(); }
+    public void OnKlickBttn_UIKHG_Kat_random() { kartenKostuem_HG_Kat_Pointer = (int)Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1); resettonew(); }
+    public void OnKlickBttn_UIKHG_Kat_0() { kartenKostuem_HG_Kat_Pointer = kartenKostuem_HG_Kat_Pointer_Default; resettonew(); }
 
+    public void OnKlickBttn_UIKHG_0() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] = arr_kartenKostuem_HG_Pointer_Default[kartenKostuem_HG_Kat_ID]; resettonew(); }
+    public void OnKlickBttn_UIKHG_links() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]--; resettonew(); }
+    public void OnKlickBttn_UIKHG_rechts() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]++; resettonew(); }
+    public void OnKlickBttn_UIKHG_random() { UIKHG_Kaz_update(true); resettonew(); }
+
+  
+
+  
+ 
     IEnumerator Waiting2()
     {
-        float wait = 0.3f;
-        float wait2 = 0.1f;
+        float wait = 0.4f;
+        float wait2 = 0.4f;
         KartenReboot.SetActive(false);
         yield return new WaitForSeconds(wait2);
         KartenReboot.SetActive(true);
-        yield return new WaitForSeconds(wait);
+        /*
+         * yield return new WaitForSeconds(wait);
         KartenReboot.SetActive(false);
         yield return new WaitForSeconds(wait2);
         KartenReboot.SetActive(true);
         //yield return new WaitForSeconds(wait);
         //KartenReboot.SetActive(false);
+        */
     }
 
 
