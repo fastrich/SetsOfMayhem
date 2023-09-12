@@ -132,6 +132,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
+--root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.Services.Core.Telemetry.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
@@ -140,7 +141,6 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
---root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
 --root-assembly=C:\Users\o-s-r\Documents\eigene\mitGit\SetsOfMayhem\Entwicklung\UnityProjekt_SetsOfMayhem\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll

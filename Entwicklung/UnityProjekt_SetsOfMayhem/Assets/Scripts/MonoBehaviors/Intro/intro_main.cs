@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using static methods_unity;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,9 @@ public class intro_main : MonoBehaviour
     private int backup_numberField=0;
     private int backup_genSet = 0;
 
+
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,11 @@ public class intro_main : MonoBehaviour
         Karte1.SetActive(false);
         Karte2.SetActive(false); 
         Karte3.SetActive(false);
+        kartenKostuem_HG_Kat_Pointer = (int)Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1);
+        kartenKostuem_HG_Kat_ID = arr_Kostuem_HG_Kat_ID[kartenKostuem_HG_Kat_Pointer];
+        //Debug.Log(Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1) + " "+ Random.Range(0, 3));
+        UIKHG_Kaz_update(true);
+        kartenKostuem_HG_ID = arr_kartenKostuem_HG_ID[kartenKostuem_HG_Kat_ID];
         //lade123(classicSET);
         update_arrays();
         StartCoroutine(Waiting(Intro_waitTime));
@@ -50,7 +59,7 @@ public class intro_main : MonoBehaviour
         yield return new WaitForSeconds(t2);
         Game_numberOfCardsOnDeck = backup_numberField;
         numberOfSelected_soll_gen = backup_genSet;
-        SceneManager.LoadScene(sceneName: "MainMenue");
+       SceneManager.LoadScene(sceneName: "MainMenue");
     }
 
 
