@@ -7,6 +7,7 @@ using static kartenInformationen;
 using static algos;
 using System;
 using static config_parameters;
+using static bruecke;
 
 public class karte_HG : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class karte_HG : MonoBehaviour
     public bool checkForPlaceID;
     public int place_id;
     public GameObject gobj_mit_placeID;
-
+    public int whichFieldIam = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,7 @@ public class karte_HG : MonoBehaviour
             //Debug.Log("n "+name2);
             place_id = (int)Int32.Parse(name2);
             //Debug.Log("i "+place_id);
-            array_cards_status[place_id] = 0;
+            array_cards_status_SetIt(whichFieldIam, place_id, 0);
         }
     }
 
@@ -41,11 +42,11 @@ public class karte_HG : MonoBehaviour
     {
 
 
-        if (array_cards_status[place_id] != 2)
+        if (array_cards_status_GetIt(whichFieldIam, place_id) != 2)
         {
             gameObject.transform.localScale = new Vector3((float)1, (float)1, (float)1);
         }
-        if (array_cards_status[place_id] == 2)
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 2)
         {
             gameObject.transform.localScale = new Vector3((float)1.1, (float)1.1, (float)1.1);
 

@@ -7,6 +7,7 @@ using static medium;
 using static kartenInformationen;
 using static config_parameters;
 using static algos;
+using static bruecke;
 
 public class kartenID_installer : MonoBehaviour
 {
@@ -38,7 +39,8 @@ public class kartenID_installer : MonoBehaviour
 
 
     private int[] io = new int[Max_Anzahl_katProKarte];
-   
+
+    public int whichFieldIam=0;
 
 
     void OnEnable()
@@ -87,7 +89,7 @@ public class kartenID_installer : MonoBehaviour
 
             for (int i = 0; i < transform.childCount; i++)
             {
-                if (!hasAChoosenOne && ( 1 == array_cards_status[transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id] || 2 == array_cards_status[transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id]))
+                if (!hasAChoosenOne && ( 1 == array_cards_status_GetIt(whichFieldIam, transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id) || 2 == array_cards_status_GetIt(whichFieldIam, transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id)))
                 { transform.GetChild(i).gameObject.SetActive(true); }
                 else { transform.GetChild(i).gameObject.SetActive(false); }
             }

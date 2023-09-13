@@ -7,6 +7,7 @@ using static kartenInformationen;
 using static methods_unity;
 using static config_parameters;
 using TMPro;
+using static bruecke;
 
 public class SET_controller : MonoBehaviour
 {
@@ -49,8 +50,8 @@ public class SET_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkForPlayerSetSelection();
-        CheckAndFillCardField();
+        checkForPlayerSetSelection(0);
+        CheckAndFillCardField(0);
 
         //=====================================
         if (gefundeneSets > SETsBisZurWertung) { text_sets.GetComponent<TMP_Text>().text = "SETs gefunden: " + gefundeneSets.ToString(); }
@@ -139,13 +140,13 @@ public class SET_controller : MonoBehaviour
 
 
     public void bttn_click_kartenInfos() { KartenInfosAnzeigen++; if (KartenInfosAnzeigen > 2) { KartenInfosAnzeigen = 0; } }
-    public void bttn_click_frischeKarten() { frischeKarten(); if (SetsFoundInField_gen>0) { korrekturZeit += Wertung_Strafzeit_NeuesFeld_inSekunden; } }
+    public void bttn_click_frischeKarten() { frischeKarten(0); if (SetsFoundInField_gen>0) { korrekturZeit += Wertung_Strafzeit_NeuesFeld_inSekunden; } }
 
-    public void frischeKarten()
+    public void frischeKarten(int whichField)
     {
-        for (int i = 0; i < array_cards_status.Length; i++)
+        for (int i = 0; i < array_cards_status_LengthIt(whichField,1); i++)
         {
-            array_cards_status[i] = 0;
+            array_cards_status_SetIt(whichField, i,0);
         }
 
     }

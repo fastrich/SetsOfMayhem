@@ -9,6 +9,7 @@ using static algos;
 using System;
 using static config_parameters;
 using static methods_unity;
+using static bruecke;
 
 public class dynMulti : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class dynMulti : MonoBehaviour
     public int anzahl =0;
     public int ausrichtung_wg = 0;
     public int farbe_wg = 0;
+    public int whichFieldIam = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,7 @@ public class dynMulti : MonoBehaviour
         farbe_wg = karteScript.GetComponent<karte>().farbe_id;
         activChilds(false);
         //Debug.Log(karteScript.GetComponent<karte>().anzahl_id);
-        if (Element1_visible==1 || (Element1_visible==2 && array_cards_status[karteScript.GetComponent<karte>().place_id]==2 )) {
+        if (Element1_visible==1 || (Element1_visible==2 && array_cards_status_GetIt(whichFieldIam, karteScript.GetComponent<karte>().place_id)==2 )) {
             bool hates;
             float jh = 0;
             int jb = 0;

@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Configurations\kartenInformationen.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Examples\SelectedNewNetwServer_mobile.cs" />
+    <Compile Include="Assets\Scripts\Configurations\bruecke.cs" />
     <Compile Include="Assets\Scripts\Examples\MenueControl_mobile.cs" />
     <Compile Include="Assets\Scripts\Examples\FindIP.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviors\Ingame\dyn1.cs" />

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static config_parameters;
+using static bruecke;
 
 public static class medium {
 
@@ -9,7 +10,7 @@ public static class medium {
     public static int numberOfSelected = 2;
     //Version1
     //public static int numberofSlots_max = 12;
-    public static int[] array_cards_status = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
+    
     public static int[] array_cards_used_with_id = new int[Game_numberOfCardsOnDeck]; //Kartenabbild_ID
 
     public static int[] array_cards_selected = new int[Game_numberOfCardsOnDeck];//verweise auf array
@@ -30,7 +31,9 @@ public static class medium {
 
     //Version 3
     //Matrix mit welche Karten liegen auf dem Tisch
-    public static int[,] fieldOfCards = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+
+    public static int howManyExtraDecks_withSizeOfSETS=2;
+
     public static int[,] fieldOfCards_backup = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
     //Enum 
     public static string[] kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
@@ -77,5 +80,13 @@ public static class medium {
     public static float bestzeiten_lokal_temp = 0f;
     public static float korrekturZeit = 0;
     //__________________________
+
+    //================================================================================
+    //Version 4, Mit Get und Set
+    public static int[] array_cards_status_Field = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
+    public static int[,] array_cards_status_SETs = new int[howManyExtraDecks_withSizeOfSETS, Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
+    public static int[,] fieldOfCards_Field = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+    public static int[,,] fieldOfCards_SETs = new int[howManyExtraDecks_withSizeOfSETS, Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+
 
 }

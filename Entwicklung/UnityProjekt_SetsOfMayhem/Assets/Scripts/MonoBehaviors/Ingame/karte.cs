@@ -7,6 +7,7 @@ using static kartenInformationen;
 using static algos;
 using System;
 using static config_parameters;
+using static bruecke;
 
 public class karte : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class karte : MonoBehaviour
     public int hoch = 0;
 
     public string[] KartenWerteAlsString = new string[AnazhlEintraege];
+    public int whichFieldIam = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,7 @@ public class karte : MonoBehaviour
             //Debug.Log("n "+name2);
             place_id = (int)Int32.Parse(name2);
             //Debug.Log("i "+place_id);
-            array_cards_status[place_id] = 0;
+            array_cards_status_SetIt(whichFieldIam, place_id, 0);
         }
         
     }
@@ -53,22 +55,22 @@ public class karte : MonoBehaviour
 
 
 
-        if (array_cards_status[place_id] == 0)
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 0)
         {
             if (!inSettings) { activChilds(false); }
             hasACard = false;
         }
             
-          if(array_cards_status[place_id] == 1)
+          if(array_cards_status_GetIt(whichFieldIam, place_id) == 1)
         {
             changeToNotMarked();
         }
-        if (array_cards_status[place_id] == 2)
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 2)
         {
             changeToMarked();
 
         }
-        if (array_cards_status[place_id] == 3)
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 3)
         {
 
             mapit();
@@ -76,14 +78,14 @@ public class karte : MonoBehaviour
             hasACard = false;
             
             StartCoroutine(Waiting(0.5f));
-            array_cards_status[place_id] = 4;
+            array_cards_status_SetIt(whichFieldIam, place_id, 4);
             gameObject.transform.localScale = new Vector3((float)1, (float)1, (float)1);
             activChilds(true);
             StartCoroutine(Waiting(0.1f));
             
 
         }
-        if (array_cards_status[place_id] == 4)
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 4)
         {
             if (hasACard) { changeToNotMarked(); }
             mapit();
@@ -117,7 +119,7 @@ public class karte : MonoBehaviour
         //Debug.Log("used: " + ArrayToString(array_cards_used_with_id));
         //Debug.Log(place_id);
         //Debug.Log(array_cards_status[place_id]);
-        switch (array_cards_status[place_id])
+        switch (array_cards_status_GetIt(whichFieldIam, place_id))
         {
             case 2:
                 changeToNotMarked();
@@ -153,18 +155,18 @@ public class karte : MonoBehaviour
     }
     private void changeToMarked()
     {
-        array_cards_status[place_id] = 2;
+        array_cards_status_SetIt(whichFieldIam, place_id, 2);
         gameObject.transform.localScale = new Vector3((float)1.2, (float)1.2, (float)1.2);
         //Debug.Log("scaleUP");
     }
     private void changeToNotMarked()
     {
-        array_cards_status[place_id] = 1;
+        array_cards_status_SetIt(whichFieldIam, place_id, 1);
        gameObject.transform.localScale = new Vector3((float)1, (float)1, (float)1);
     }
     private void changeToMark(int place_id_, int mark)
     {
-        array_cards_status[place_id_] = mark;
+        array_cards_status_SetIt(whichFieldIam, place_id, mark);
         gameObject.transform.localScale = new Vector3((float)1, (float)1, (float)1);
         if (mark == 2){
             gameObject.transform.localScale = new Vector3((float)1.2, (float)1.2, (float)1.2);
@@ -191,15 +193,15 @@ public class karte : MonoBehaviour
             {
                 //Todo
                 //Debug.Log("hierBugArray");
-                if (string.IsNullOrEmpty(werte_n_sorted[i, fieldOfCards[place_id, i]])) 
+                if (string.IsNullOrEmpty(werte_n_sorted[i, fieldOfCards_GetIt(whichFieldIam, place_id, i)])) 
                 {
                     KartenWerteAlsString[i] = i.ToString();
                 }
                 else
-                { KartenWerteAlsString[i] = werte_n_sorted[i, fieldOfCards[place_id, i]]; }
-                if (kategorien_n_sorted[i] == farbe_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); farbe_id = fieldOfCards[place_id, i]; }
-                if (kategorien_n_sorted[i] == ausrichtung_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); rotation_id = fieldOfCards[place_id, i]; }
-                if (kategorien_n_sorted[i] == anzahl_gen) { KartenWerteAlsString[i] = fieldOfCards[place_id, i].ToString(); anzahl_id = fieldOfCards[place_id, i]; }
+                { KartenWerteAlsString[i] = werte_n_sorted[i, fieldOfCards_GetIt(whichFieldIam, place_id, i)]; }
+                if (kategorien_n_sorted[i] == farbe_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); farbe_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
+                if (kategorien_n_sorted[i] == ausrichtung_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); rotation_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
+                if (kategorien_n_sorted[i] == anzahl_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); anzahl_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
             }
             catch
             {  Debug.Log("hierBugArray");}
