@@ -95,6 +95,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\Special\backend.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviors\Ingame\GObj_CardBackground_OnOff.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Examples\GraphicOptionsMenue_mobile.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviors\Ingame\SET_controller.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviors\Menue\internalScenesManager.cs" />
     <Compile Include="Assets\Scripts\Examples\SystemOptionsMenue_mobile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Examples\GameplayOptionsMenue_mobile.cs" />
@@ -140,7 +142,6 @@
     <Compile Include="Assets\Scripts\MonoBehaviors\Menue\gamemode_main.cs" />
     <Compile Include="Assets\Scripts\Algorithms\Special\algos.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviors\Menue\internalScenesManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

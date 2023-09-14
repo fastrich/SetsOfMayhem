@@ -8393,6 +8393,7 @@ GameObject:
   - component: {fileID: 4009887538854154046}
   - component: {fileID: 4009887538854154041}
   - component: {fileID: 4009887538854154040}
+  - component: {fileID: 7618244730843120563}
   m_Layer: 5
   m_Name: CostumesM_1_MnCtrl
   m_TagString: Untagged
@@ -8496,6 +8497,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child1_GObj: {fileID: 4009887539485544775}
+--- !u!114 &7618244730843120563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009887538854154042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa56395c7b4aed1418cc6e19d467daf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KartenReboot: {fileID: 0}
+  kindsOfOpt_SliderT: {fileID: 0}
+  Text_WarnungElemente: {fileID: 0}
+  Toogle_opt01: {fileID: 0}
+  Toogle_opt01_t: {fileID: 0}
+  Toogle_opt01_ut: {fileID: 0}
+  Toogle_opt02: {fileID: 0}
+  Toogle_opt02_t: {fileID: 0}
+  Toogle_opt02_ut: {fileID: 0}
+  Toogle_opt03: {fileID: 0}
+  Toogle_opt03_t: {fileID: 0}
+  Toogle_opt03_ut: {fileID: 0}
+  Toogle_opt04: {fileID: 0}
+  Toogle_opt04_t: {fileID: 0}
+  Toogle_opt04_ut: {fileID: 0}
+  Toogle_opt05: {fileID: 0}
+  Toogle_opt05_t: {fileID: 0}
+  Toogle_opt05_ut: {fileID: 0}
+  Toogle_opt06: {fileID: 0}
+  Toogle_opt06_t: {fileID: 0}
+  Toogle_opt06_ut: {fileID: 0}
+  Toogle_opt07: {fileID: 0}
+  Toogle_opt07_t: {fileID: 0}
+  Toogle_opt07_ut: {fileID: 0}
+  Toogle_opt08: {fileID: 0}
+  Toogle_opt08_t: {fileID: 0}
+  Toogle_opt08_ut: {fileID: 0}
+  Toogle_opt09: {fileID: 0}
+  Toogle_opt09_t: {fileID: 0}
+  Toogle_opt09_ut: {fileID: 0}
+  Toogle_gen_rotation: {fileID: 0}
+  Toogle_gen_rotation_ut: {fileID: 0}
+  Toogle_gen_childs: {fileID: 0}
+  Toogle_gen_childs_ut: {fileID: 0}
+  Toogle_gen_colour: {fileID: 0}
+  Toogle_gen_colour_ut: {fileID: 0}
+  numberOf1Opt_Slider: {fileID: 0}
+  numberOf1Opt_SliderT: {fileID: 0}
 --- !u!1 &4009887538866565658
 GameObject:
   m_ObjectHideFlags: 0
