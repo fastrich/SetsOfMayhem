@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // sadly, this does not compile because of primitive vs complexe data types
-//using Card = uint[];
-using Card = System.Collections.Generic.List<uint>;
+//using Card = int[];
+using Card = System.Collections.Generic.List<int>;
 
-public enum GameState : uint {
+public enum GameState {
 	Init,       // game not initialized yet, call init() first
 	Ready,      // ready for user input, call step(user_input)
 	Again,      // user input is not a valid SET, try again
@@ -17,26 +17,26 @@ public enum GameState : uint {
 
 public class Game {
 	/* card properties: array of length N, each value 0 <= c[i] < M */
-	private uint N; // features
-	private uint M; // values per feature
-	private uint defaultSize;
-	private uint currentSize;
-	private uint maximumSize;
-	private uint cardsLeft;
+	private int N; // features
+	private int M; // values per feature
+	private int defaultSize;
+	private int currentSize;
+	private int maximumSize;
+	private int cardsLeft;
 	private Card[] field;
 	private Card[] cards;
 	private Card[] helpSET;
 	private GameState state;
 
-	public Game(uint n, uint m) {
+	public Game(int n, int m) {
 		N = n;
 		M = m;
 		defaultSize = n*m;
 		currentSize = 0;
 		maximumSize = defaultSize*2;
 		cardsLeft = m^n;
-		uint[] field = new uint[maximumSize];
-		uint[,] cards = new uint[cardsLeft,n];
+		int[] field = new int[maximumSize];
+		int[,] cards = new int[cardsLeft,n];
 		helpSET = null;
 		state = GameState.Init;
 	}
@@ -52,7 +52,7 @@ public class Game {
 	private void generateCards() {
 		// generate cards
 		for (int depth = 0; depth < N; depth++) {
-			uint c = 0;
+			int c = 0;
 			for (int i = 0; i < cardsLeft; i++) {
 				cards[i][depth] = c;
 				if ((i+1) % (M^depth) == 0) {
@@ -62,7 +62,7 @@ public class Game {
 		}
 		// shuffle cards
 		System.Random rand = new System.Random();
-		int c = (int)cardsLeft;
+		int c = cardsLeft;
 		while (c > 1) {
 			int k = rand.Next(c--);
 			Card tmp = cards[c];
@@ -72,11 +72,11 @@ public class Game {
 	}
 
 	public GameState init() {
-		if (N < M) return GameState.Error;
+		if (N < M || N < 1 || M < 1) return GameState.Error;
 
 		generateCards();
 		// initially fill field
-		for (uint i = 0; i < defaultSize; i++) {
+		for (int i = 0; i < defaultSize; i++) {
 			field[currentSize++] = cards[--cardsLeft];
 		}
 		return (fillField() ? GameState.Error : GameState.Ready);
@@ -85,7 +85,7 @@ public class Game {
 	public bool isSET(Card[] set) {
 		if (set.Length != M) return false;
 
-		uint[] feature = new uint[M];
+		int[] feature = new int[M];
 		for (int n = 0; n < N; n++) {
 			for (int m = 0; m < M; m++) {
 				feature[m] = set[m][n];
@@ -94,7 +94,7 @@ public class Game {
 			Array.Sort(feature);
 			bool equal = false;
 			bool different = false;
-			uint tmp = feature[0];
+			int tmp = feature[0];
 			for (int m = 1; m < M; m++) {
 				if (tmp == feature[m]) {
 					equal = true;
@@ -110,7 +110,7 @@ public class Game {
 		return true;
 	}
 
-	private Card[] findSEThelper(uint indexSET, uint indexField, Card[] set) {
+	private Card[] findSEThelper(int indexSET, int indexField, Card[] set) {
 		if (indexSET >= M) return (isSET(set) ? set : null);
 
 		for (int f = indexField; f < currentSize; f++) {
@@ -137,7 +137,7 @@ public class Game {
 				return false;
 			} else {
 				if (cardsLeft > M) {
-					for (uint m = 0; m < M; m++) {
+					for (int m = 0; m < M; m++) {
 						// TODO if currentSize >= maximumSize ...
 						field[currentSize++] = cards[--cardsLeft];
 					}
@@ -151,13 +151,14 @@ public class Game {
 
 	// argument: user input indices of possible SET
 	// return state after processing field
-	public GameState step(uint[] iSET) {
+	public GameState step(int[] iSET) {
 		if (iSET.Length != M) return GameState.Again;
 
 		bool allEqual = true;
-		uint tmp = iSET[0];
+		int tmp = iSET[0];
 		Card[] set = new Card[M];
-		for (uint m = 0; m < M; m++) {
+		for (int m = 0; m < M; m++) {
+			if (iSET[m] < 0 || iSET[m] >= currentSize) return GameState.Error;
 			set[m] = field[iSET[m]];
 			if (iSET[m] != tmp) allEqual = false;
 			tmp = iSET[m];
