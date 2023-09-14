@@ -1357,11 +1357,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2851121621779165224, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6768969557366612555, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
       propertyPath: m_Name
-      value: KarteA_0000
+      value: KarteA_00_0000
       objectReference: {fileID: 0}
     - target: {fileID: 6768969557366612555, guid: d930ec396ee4d434fb28ceff26743e61, type: 3}
       propertyPath: m_IsActive
@@ -2312,7 +2312,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2439274394466714466, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2749657516412412742, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099982510592411441, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419147190829410190, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
@@ -2324,6 +2336,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6309275956360605142, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542587627286627331, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
       propertyPath: m_Name
       value: Canvas_Kartenhintergrund
@@ -2331,6 +2347,10 @@ PrefabInstance:
     - target: {fileID: 8542587627286627331, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778072896056212612, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}

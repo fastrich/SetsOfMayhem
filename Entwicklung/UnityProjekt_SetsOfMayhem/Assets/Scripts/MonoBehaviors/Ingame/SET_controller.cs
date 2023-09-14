@@ -16,6 +16,8 @@ public class SET_controller : MonoBehaviour
     public GameObject text_watt;
     public GameObject text_sets_feld;
     public Canvas canvasForCards;
+    public Canvas canvasForCards_lastSET;
+    public Canvas canvasForCards_player2;
     private Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
     private Vector2 cornerBottemLeft = new Vector2(0, 0);
 
@@ -35,7 +37,9 @@ public class SET_controller : MonoBehaviour
         neuerRekord_lokal_temp = false;
         bestzeiten_lokal_temp = 0;
         //LadeKartenMaterial1(); veraltet
-        CreateAndDistributeCardsOnScreen();
+        CreateAndDistributeCardsOnScreen(0,kartenPrefab,canvasForCards);
+        CreateAndDistributeCardsOnScreen(3, kartenPrefab, canvasForCards_lastSET);
+        CreateAndDistributeCardsOnScreen(4, kartenPrefab, canvasForCards_player2);
         startTime = System.DateTime.UtcNow;
         gefundeneSets = 0;
         arr_listeUberSetZeitenInSpiel_pointer_neu = 0;
@@ -52,6 +56,14 @@ public class SET_controller : MonoBehaviour
     {
         checkForPlayerSetSelection(0);
         CheckAndFillCardField(0);
+        if (gefundeneSets > 0)
+        {
+              canvasForCards_lastSET.gameObject.SetActive(true);
+        }
+        else{
+            canvasForCards_lastSET.gameObject.SetActive(false);
+        }
+
 
         //=====================================
         if (gefundeneSets > SETsBisZurWertung) { text_sets.GetComponent<TMP_Text>().text = "SETs gefunden: " + gefundeneSets.ToString(); }
@@ -150,43 +162,5 @@ public class SET_controller : MonoBehaviour
         }
 
     }
-    void CreateAndDistributeCardsOnScreen()
-    {
-        string name1;
-        int k = 0;
-        int n = Game_numberOfCardsOnDeck;
-       
-        int nb = (int)Mathf.Ceil(Mathf.Sqrt(n));
-        int nh = (int)Mathf.Ceil((float)n / (float)nb);
-        float jh = 0;
-        int jb = 0;
-        //Debug.Log("nh, nb" + nh + " " + nb);
-        //CreateGameObjectFromPrefab(kartenPrefab, canvasForCards, cornerTopRight, cornerBottemLeft);
-        Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
-        Vector2 cornerBottemLeft = new Vector2(0, 0);
-
-        while (k < n)
-        {
-
-            string name2 = k.ToString();
-            name1 = Editor_NameCardslots;
-            name1 = name1.Substring(0, name1.Length - name2.Length);
-            name1 = name1 + name2;
-            cornerTopRight = new Vector2((float)(jb + 1) / nb, (float)1 - (jh / nh));
-            cornerBottemLeft = new Vector2((float)jb / nb, (float)1 - ((1 + jh) / nh));
-            //Debug.Log("k" + k+ " ctr" + cornerTopRight + " cbl " + cornerBottemLeft);
-            CreateGameObjectFromPrefab(name1, kartenPrefab, canvasForCards, cornerTopRight, cornerBottemLeft);
-
-            jb++;
-            if (jb >= nb)
-            {
-                jh++;
-                jb = 0;
-            }
-            k++;
-
-        }
-
-
-    }
+   
 }

@@ -27,13 +27,9 @@ public class karte_HG : MonoBehaviour
     {
         if (checkForPlaceID)
         {
-            string name2 = gobj_mit_placeID.name;
-            int i = Editor_NameCardslots_howmany0;
-            name2 = name2.Substring(name2.Length - i, i);
-            //Debug.Log("n "+name2);
-            place_id = (int)Int32.Parse(name2);
-            //Debug.Log("i "+place_id);
-            array_cards_status_SetIt(whichFieldIam, place_id, 0);
+            whichFieldIam = Karte_get_FieldID_From_ObjektName(gobj_mit_placeID);
+            place_id = Karte_get_placeID_From_ObjektName(gobj_mit_placeID);
+            //array_cards_status_SetIt(whichFieldIam, place_id, 0);
         }
     }
 

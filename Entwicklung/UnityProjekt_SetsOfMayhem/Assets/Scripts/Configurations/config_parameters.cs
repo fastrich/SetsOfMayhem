@@ -6,7 +6,8 @@ public static class config_parameters {
 
     //================================
     // Intro
-    public static int Intro_waitTime = 3;
+    public static int Intro_waitTime = 5;//3
+    
 
 
     //================================
@@ -106,9 +107,12 @@ public const int _2_kartenKostuem_HG_Anzahl_const = 22;
 
     //=================================
     // EDITOR
-    public static string Editor_NameCardslots = "Kartenplatz_0000";
+    public static string Editor_NameCardslots = "Kartenplatz_00_0000";
+    public static int Editor_NameCardslots_fieldID_howmany0 = 2;
+    public static int Editor_NameCardslots_fieldID_HowManyCharsBetween = 1;
+    //public static string Editor_NameCardslots_fieldID_whichCharsBetween = "_";
     public static int Editor_NameCardslots_howmany0 = 4;
-    public static string Editor_NameCardslots_mu = "KarteMultiplier_0000";
+    public static string Editor_NameCardslots_mu = "KarteMultiplier_00_0000";
     public static int Editor_NameCardslots_mu_howmany0 = 4;
     public static string Text_Kat_UT = "Werte: "; //"Verfügbare Werte: ";
     public static int Max_Anzahl_Versuche_KartePlatzieren = 10000;

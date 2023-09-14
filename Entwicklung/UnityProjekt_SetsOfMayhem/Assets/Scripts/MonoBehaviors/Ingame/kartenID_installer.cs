@@ -38,30 +38,35 @@ public class kartenID_installer : MonoBehaviour
     public string E9_w;
 
 
-    private int[] io = new int[Max_Anzahl_katProKarte];
+    //private int[] io = new int[Max_Anzahl_katProKarte];
 
     public int whichFieldIam=0;
+    public int place_id;
 
 
     void OnEnable()
     {
-         io = new int[Max_Anzahl_katProKarte];
+
+        // io = new int[Max_Anzahl_katProKarte];
         //Debug.Log("onen");
         //array_cards_used_with_id[transform.parent.gameObject.GetComponent<karte>().place_id]=kartenID;
-        numberOfKats = 0;
-        numberOfKats+=ubersetzeEnum(E1_n, E1_w);
-        numberOfKats+=ubersetzeEnum(E2_n, E2_w);
-        numberOfKats+=ubersetzeEnum(E3_n, E3_w);
-        numberOfKats += ubersetzeEnum(E4_n, E4_w);
-        numberOfKats += ubersetzeEnum(E5_n, E5_w);
-        numberOfKats += ubersetzeEnum(E6_n, E6_w);
-        numberOfKats += ubersetzeEnum(E7_n, E7_w);
-        numberOfKats += ubersetzeEnum(E8_n, E8_w);
-        numberOfKats += ubersetzeEnum(E9_n, E9_w);
-        //numberOfKats += ubersetzeEnum(E10_n, E10_w);
+        if (inSettings)
+        {
+            numberOfKats = 0;
+            numberOfKats += ubersetzeEnum(E1_n, E1_w);
+            numberOfKats += ubersetzeEnum(E2_n, E2_w);
+            numberOfKats += ubersetzeEnum(E3_n, E3_w);
+            numberOfKats += ubersetzeEnum(E4_n, E4_w);
+            numberOfKats += ubersetzeEnum(E5_n, E5_w);
+            numberOfKats += ubersetzeEnum(E6_n, E6_w);
+            numberOfKats += ubersetzeEnum(E7_n, E7_w);
+            numberOfKats += ubersetzeEnum(E8_n, E8_w);
+            numberOfKats += ubersetzeEnum(E9_n, E9_w);
+            //numberOfKats += ubersetzeEnum(E10_n, E10_w);
 
-        //transform.parent.gameObject.GetComponent<karte>().
-        //kartenGobj_nachEigenschaften_roh[transform.parent.gameObject.GetComponent<karte>().place_id, io[0], io[1], io[2], io[3], io[4], io[5], io[6], io[7], io[8], io[9]] = gameObject;
+            //transform.parent.gameObject.GetComponent<karte>().
+            //kartenGobj_nachEigenschaften_roh[transform.parent.gameObject.GetComponent<karte>().place_id, io[0], io[1], io[2], io[3], io[4], io[5], io[6], io[7], io[8], io[9]] = gameObject;
+        }
 
     }
 
@@ -81,6 +86,9 @@ public class kartenID_installer : MonoBehaviour
         
         TxtInfos.GetComponent<TMP_Text>().text = WhatCard_String();
         TxtInfos_gross.GetComponent<TMP_Text>().text = WhatCard_String_g();
+        place_id = transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id;
+        whichFieldIam = transform.parent.parent.parent.gameObject.GetComponent<karte>().whichFieldIam ;
+
 
         if (isDefaultCard == true)
         {
@@ -89,7 +97,7 @@ public class kartenID_installer : MonoBehaviour
 
             for (int i = 0; i < transform.childCount; i++)
             {
-                if (!hasAChoosenOne && ( 1 == array_cards_status_GetIt(whichFieldIam, transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id) || 2 == array_cards_status_GetIt(whichFieldIam, transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id)))
+                if (!hasAChoosenOne && ( 1 == array_cards_status_GetIt(whichFieldIam, place_id) || 2 == array_cards_status_GetIt(whichFieldIam, place_id)))
                 { transform.GetChild(i).gameObject.SetActive(true); }
                 else { transform.GetChild(i).gameObject.SetActive(false); }
             }

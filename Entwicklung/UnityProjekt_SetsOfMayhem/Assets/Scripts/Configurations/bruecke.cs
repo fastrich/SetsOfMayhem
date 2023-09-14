@@ -8,10 +8,18 @@ public static class bruecke {
 
     private static int anzahlVersucheDatenEinzutragen = 2;
 
+    public static int howManyExtraDecks_withSizeOfSETS = 4;
+
+
     //------------------------------------------------------------------------------------------------------------
     // FieldOfCards
-    
-	public static void fieldOfCards_SetIt(int WhichField, int ID_OfCardInField, int ID_OfCatOfCard, int neuerWert)
+    //------------------------------------------------------------------------------------------------------------
+    // KnownFields: 0=MainGame, 1=Intro, 2=MainMenue, 3=LastSET, 4=Player2 
+    public static int[,] fieldOfCards_Field = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+    public static int[,,] fieldOfCards_SETs = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll, Max_Anzahl_katProKarte];
+   
+
+    public static void fieldOfCards_SetIt(int WhichField, int ID_OfCardInField, int ID_OfCatOfCard, int neuerWert)
     {
         for (int i = 0; i < anzahlVersucheDatenEinzutragen; i++) {
             try {
@@ -34,9 +42,9 @@ public static class bruecke {
     public static int fieldOfCards_LengthIt(int WhichField, int dim)
 
     {
-        if (WhichField == 0) { if (dim == 0) { return 1; } }
-        if (WhichField > 0) { if (dim == 0) { return howManyExtraDecks_withSizeOfSETS; } }
-        if (dim == 1) { return Game_numberOfCardsOnDeck; } if (dim == 2) { return Max_Anzahl_katProKarte; } 
+        if (WhichField == 0) { if (dim == 0) { return 1; } if (dim == 1) { return Game_numberOfCardsOnDeck; } if (dim == 2) { return Max_Anzahl_katProKarte; } }
+        if (WhichField > 0) { if (dim == 0) { return howManyExtraDecks_withSizeOfSETS; } if (dim == 1) { return numberOfSelected_soll; } if (dim == 2) { return Max_Anzahl_katProKarte; } }
+
         return -1;
     }
     public static void fieldOfCards_SizeIt(int WhichField)
@@ -46,12 +54,15 @@ public static class bruecke {
     public static void fieldOfCards_RenewIt()
     {
         fieldOfCards_Field = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
-        fieldOfCards_SETs = new int[howManyExtraDecks_withSizeOfSETS, Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+        fieldOfCards_SETs = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll, Max_Anzahl_katProKarte];
     }
 
 
     //------------------------------------------------------------------------------------------------------------
     // Array_cards_status
+    //------------------------------------------------------------------------------------------------------------
+    public static int[] array_cards_status_Field = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
+    public static int[,] array_cards_status_SETs = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
 
     public static void array_cards_status_SetIt(int WhichField, int ID_OfCardInField, int neuerWert)
     {
@@ -81,9 +92,9 @@ public static class bruecke {
     }
     public static int array_cards_status_LengthIt(int WhichField, int dim)
     {
-        if (WhichField == 0) { if (dim == 0) { return 1; } }
-        if (WhichField > 0) { if (dim == 0) { return howManyExtraDecks_withSizeOfSETS; } }
-        if (dim == 1) { return Game_numberOfCardsOnDeck; }
+        if (WhichField == 0) { if (dim == 0) { return 1; } if (dim == 1) { return Game_numberOfCardsOnDeck; } }
+        if (WhichField > 0) { if (dim == 0) { return howManyExtraDecks_withSizeOfSETS; } if (dim == 1) { return numberOfSelected_soll; } }
+        
         return -1;
     }
     public static void array_cards_status_SizeIt(int WhichField)
@@ -93,7 +104,52 @@ public static class bruecke {
     public static void array_cards_status_RenewIt()
     {
         array_cards_status_Field = new int[Game_numberOfCardsOnDeck];
-        array_cards_status_SETs = new int[howManyExtraDecks_withSizeOfSETS, Game_numberOfCardsOnDeck];
+        array_cards_status_SETs = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];
+    }
+
+    //------------------------------------------------------------------------------------------------------------
+    // Array_cards_selected
+    //------------------------------------------------------------------------------------------------------------
+    public static int[,] array_cards_selected = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];//0=Player1, 1=LastSet, 2=Player2, 3=SetFound
+    public static void array_cards_selected_SetIt(int WhichField, int ID_OfCardInField, int neuerWert)
+    {
+        for (int i = 0; i < anzahlVersucheDatenEinzutragen; i++)
+        {
+            try
+            {
+                array_cards_selected[WhichField, ID_OfCardInField] = neuerWert; return;
+            }
+            catch { array_cards_selected_SizeIt(WhichField); }
+        }
+
+    }
+    public static int array_cards_selected_GetIt(int WhichField, int ID_OfCardInField)
+    {
+        for (int i = 0; i < anzahlVersucheDatenEinzutragen; i++)
+        {
+            try
+            {
+                return array_cards_selected[WhichField, ID_OfCardInField]; 
+            }
+            catch { array_cards_selected_SizeIt(WhichField); }
+        }
+
+
+        return -1;
+    }
+    public static int array_cards_selected_LengthIt(int WhichField, int dim)
+    {
+        if (dim == 0) { return howManyExtraDecks_withSizeOfSETS; } if (dim == 1) { return numberOfSelected_soll; } 
+
+        return -1;
+    }
+    public static void array_cards_selected_SizeIt(int WhichField)
+    {
+        array_cards_selected_RenewIt();
+    }
+    public static void array_cards_selected_RenewIt()
+    {
+        array_cards_selected = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];
     }
 
 }

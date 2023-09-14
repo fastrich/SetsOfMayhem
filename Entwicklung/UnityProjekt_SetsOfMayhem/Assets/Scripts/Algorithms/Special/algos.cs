@@ -4,6 +4,9 @@ using UnityEngine;
 using static medium;
 using static config_parameters;
 using static bruecke;
+using System;
+using static methods_unity;
+using static player2;
 
 public static class algos
 {
@@ -20,13 +23,13 @@ public static class algos
             if (array_cards_status_GetIt(whichField,i) == 2)
             {
                 Debug.Log("scan: " + array_cards_used_with_id[i]);
-                array_cards_selected[numberOfSelected] = array_cards_used_with_id[i];
+                array_cards_selected_SetIt(0, numberOfSelected, array_cards_used_with_id[i]);
                 numberOfSelected++;
 
             }
             else
             {
-                array_cards_selected[numberOfSelected] = -1;
+                array_cards_selected_SetIt(0, numberOfSelected,-1);
             }
         }
     }
@@ -38,14 +41,8 @@ public static class algos
         {
             if (array_cards_status_GetIt(whichField, i) == 2)
             {
-                //Debug.Log("scan: " + array_cards_used_with_id[i]);
-                array_cards_selected[numberOfSelected] = i;
+                array_cards_selected_SetIt(0, numberOfSelected, i);
                 numberOfSelected++;
-
-            }
-            else
-            {
-                array_cards_selected[numberOfSelected] = -1;
             }
         }
     }
@@ -55,49 +52,57 @@ public static class algos
         return 0;
     }
 
-    public static int checkForSetInField(int whichField)
+    public static int checkForSetInField(int whichField, bool saveFirstFoundSET)
     {
         int z = 0;
         int check1;
         int new1 = 0;
         //int[] intarr = new int[numberOfSelected_soll];
+        
 
         if (numberOfSelected_soll > Game_numberOfCardsOnDeck) { return 0; }
         for (int j1 = numberOfSelected_soll - 1; j1 < Game_numberOfCardsOnDeck; j1++)
         {
+            
             array_cards_selected_temp_for_gen_field[0] = j1;
-            if (1 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; } }
+            if (1 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; if (saveFirstFoundSET) { array_cards_selected_SetIt(3, 0, j1); } } }
             for (int j2 = 0; j2 < j1; j2++)
             {
+                
                 array_cards_selected_temp_for_gen_field[1] = j2;
-                if (2 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; } }
+                if (2 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; if (saveFirstFoundSET) { array_cards_selected_SetIt(3, 0, j1); array_cards_selected_SetIt(3, 1, j2); } } }
                 for (int j3 = 0; j3 < j2; j3++)
                 {
+                        
                     array_cards_selected_temp_for_gen_field[2] = j3;
-                    if (3 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; } }
+                    if (3 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; if (saveFirstFoundSET) { array_cards_selected_SetIt(3, 0, j1); array_cards_selected_SetIt(3, 1, j2); array_cards_selected_SetIt(3, 2, j3); } } }
                     for (int j4 = 0; j4 < j3; j4++)
                     {
                         array_cards_selected_temp_for_gen_field[3] = j4;
-                        if (4 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; } }
+                        if (4 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; if (saveFirstFoundSET) { array_cards_selected_SetIt(3, 0, j1); array_cards_selected_SetIt(3, 1, j2); array_cards_selected_SetIt(3, 2, j3); array_cards_selected_SetIt(3, 3, j4); } } }
                         for (int j5 = 0; j5 < j4; j5++)
                         {
                             array_cards_selected_temp_for_gen_field[4] = j5;
-                            if (5 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; } }
-                            for (int j6 = 0; j6 < j5; j6++)
-                            {
-                                array_cards_selected_temp_for_gen_field[5] = j6;
-                                if (6 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; } }
-                            }
+                            if (5 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; if (saveFirstFoundSET) { array_cards_selected_SetIt(3, 0, j1); array_cards_selected_SetIt(3, 1, j2); array_cards_selected_SetIt(3, 2, j3); array_cards_selected_SetIt(3, 3, j4); array_cards_selected_SetIt(3, 4, j5); } } }
+                             
+                             for (int j6 = 0; j6 < j5; j6++)
+                             {
+                                    array_cards_selected_temp_for_gen_field[5] = j6;
+                                    if (6 == numberOfSelected_soll) { if (checkForSetinSelected_gen(whichField)) { z++; if (saveFirstFoundSET) { array_cards_selected_SetIt(3, 0, j1); array_cards_selected_SetIt(3, 1, j2); array_cards_selected_SetIt(3, 2, j3); array_cards_selected_SetIt(3, 3, j4); array_cards_selected_SetIt(3, 4, j5); array_cards_selected_SetIt(3, 5, j6); } } }
+                             }
+                             
                         }
                     }
                 }
+                
             }
+            
         }
-
-
-
+        
         return z;
     }
+
+    
 
     public static bool checkForSetinSelected(int whichField)
     {
@@ -199,7 +204,7 @@ public static class algos
                     if (i != j)
                     {
 
-                        if (fieldOfCards_GetIt(whichField, array_cards_selected[i], ik) == fieldOfCards_GetIt(whichField, array_cards_selected[j], ik))
+                        if (fieldOfCards_GetIt(whichField, array_cards_selected_GetIt(0,i), ik) == fieldOfCards_GetIt(whichField, array_cards_selected_GetIt(0,j), ik))
                         {
                             temp_a++;
                         }
@@ -223,9 +228,10 @@ public static class algos
     {
         bool a = true;
         int lastNumOfSets = 0;
-        bool c = false;
+        bool c=false;
         for (int i2 = 0; i2 < Max_Anzahl_Versuche_KartePlatzieren; i2++)
         {
+            c = false;
             for (int i = 0; i < array_cards_status_LengthIt(whichField, 1); i++)
             {
                 if (array_cards_status_GetIt(whichField, i) == 0)
@@ -234,12 +240,12 @@ public static class algos
                     c = true;
                 }
             }
-            if (c) { SetsFoundInField_gen = checkForSetInField(whichField); }
+            if (c) { SetsFoundInField_gen = checkForSetInField(whichField, false); }
             if (SetsFoundInField_gen >= numberOfSelected_soll_gen) { a = false; break; }
             if (lastNumOfSets < SetsFoundInField_gen) { saveField2backup(whichField); lastNumOfSets = SetsFoundInField_gen; }
         }
         if (a) { Debug.Log("SetInField MaxVersuche erreicht"); loadField2backup(whichField); SetsFoundInField_gen = lastNumOfSets; }
-
+        if (c) { player2_thereIsNewField(); }
 
         //Debug.Log("b" + SetsFoundInField_gen);
         for (int i = 0; i < array_cards_status_LengthIt(whichField, 1); i++)
@@ -372,29 +378,36 @@ public static class algos
             if (cfs == true)
             {
                 gefundeneSets++;
-                for (int i = 0; i < array_cards_status_LengthIt(whichField, 1); i++)
+                //Debug.Log("k: " + array_cards_selected_LengthIt(0, 1) + " " + fieldOfCards_LengthIt(0, 2));
+                for (int i=0; i < array_cards_selected_LengthIt(0,1); i++)
                 {
-                    //ebug.Log(array_cards_selected + " ; " + array_cards_status + " ; " + array_cards_used_with_id);
-                    if (array_cards_status_GetIt(whichField, i) == 2)
+                    //array_cards_selected_SetIt(1, i, array_cards_selected_GetIt(0,i));
+                    
+                    for (int ik = 0; ik < fieldOfCards_LengthIt(0, 2); ik++)
                     {
-                        array_cards_status_SetIt(whichField, i, 0);
+                        //Debug.Log("aj: "+ array_cards_selected_GetIt(0, i) + " "+ik);
+                        fieldOfCards_SetIt(3, i, ik, fieldOfCards_GetIt(0, array_cards_selected_GetIt(0, i), ik));
                     }
+
+                    array_cards_status_SetIt(whichField, array_cards_selected_GetIt(0, i), 0);
+
                 }
+
+
             }
-            else
-            {
+            else { korrekturZeit += Wertung_Strafzeit_inSekunden; }
                 
-                korrekturZeit+= Wertung_Strafzeit_inSekunden;
-                for (int i = 0; i < array_cards_status_LengthIt(whichField, 1); i++)
-                {
+            
+            for (int i = 0; i < array_cards_status_LengthIt(whichField, 1); i++)
+            {
                     //ebug.Log(array_cards_selected + " ; " + array_cards_status + " ; " + array_cards_used_with_id);
                     if (array_cards_status_GetIt(whichField,i) == 2)
                     {
                         array_cards_status_SetIt(whichField, i, 1);
                     }
-                }
-
             }
+
+            
 
 
 
@@ -471,7 +484,7 @@ public static class algos
         array_cards_status_RenewIt();
         array_cards_used_with_id = new int[Game_numberOfCardsOnDeck]; //Kartenabbild_ID
 
-        array_cards_selected = new int[Game_numberOfCardsOnDeck];//verweise auf array
+        array_cards_selected_RenewIt();
                                                                  //kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
                                                                  //werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
 
@@ -605,7 +618,7 @@ public static class algos
         range1[2] = _2_arr_Kostuem_HG_ID.Length;
         range1[3] = _3_arr_Kostuem_HG_ID.Length;
 
-        if (random) { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] = (int)Random.Range(0, range1[kartenKostuem_HG_Kat_ID] - 1); }
+        if (random) { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] = (int)UnityEngine.Random.Range(0, range1[kartenKostuem_HG_Kat_ID] - 1); }
 
         for (int i = 0; i < range1.Length; i++)
         {
@@ -618,6 +631,99 @@ public static class algos
         arr_kartenKostuem_HG_ID[3] = _3_arr_Kostuem_HG_ID[arr_kartenKostuem_HG_Pointer[3]];
 
         
+
+    }
+
+    public static int Karte_get_placeID_From_ObjektName(GameObject gobj_mit_placeID)
+    {
+        string name2 = gobj_mit_placeID.name;
+        int laenge = Editor_NameCardslots_howmany0;
+        name2 = name2.Substring(name2.Length - laenge, laenge);
+       // Debug.Log("n "+name2);
+        // return 0;
+        int i = (int)int.Parse(name2);
+       // Debug.Log("ni " + i);
+        return i;
+
+        //Debug.Log("i "+place_id);
+    }
+    public static int Karte_get_FieldID_From_ObjektName(GameObject gobj_mit_placeID)
+    {
+        int hui = Editor_NameCardslots_howmany0 + Editor_NameCardslots_fieldID_HowManyCharsBetween;
+        string name2 = gobj_mit_placeID.name;
+        int laenge= Editor_NameCardslots_fieldID_howmany0;
+        int anfang = name2.Length - hui - laenge;
+        int i;
+        name2 = name2.Substring(anfang, laenge);
+        //Debug.Log("n "+name2 + " a "+ anfang + " h "+ hui );
+        // return 0;
+        i = (int)int.Parse(name2);
+        //Debug.Log("ni " + i);
+        return i;
+        //Debug.Log("i "+place_id);
+
+    }
+    public static string buildCardNameWithPlaceIDinName(int whichField, int placeID)
+    {
+        
+        int hui =  Editor_NameCardslots_howmany0 + Editor_NameCardslots_fieldID_HowManyCharsBetween;
+        string name0 = Editor_NameCardslots;
+        string name00 = name0;
+        //return name0;
+        string name3 = whichField.ToString();
+        string name4 = placeID.ToString();
+        string name1 = name0.Substring(0, name0.Length - name3.Length - hui);
+        //Debug.Log(name1);
+        string name2 = name00.Substring(name00.Length - hui, hui);
+        //Debug.Log(name2);
+        name1 = name1 + name3;
+        //Debug.Log(name1);
+        name1 = name1 + name2;
+        //Debug.Log(name1);
+        name1 = name1.Substring(0, name1.Length - name4.Length);
+        //Debug.Log(name1);
+        name1 = name1 + name4;
+        //Debug.Log(name1);
+        
+        return name1;
+        
+    }
+
+
+    public static void CreateAndDistributeCardsOnScreen(int whichField, GameObject kartenPrefab, Canvas canvasForCards)
+    {
+        string name1;
+        int k = 0;
+        int n = array_cards_status_LengthIt(whichField,1);
+
+        int nb = (int)Mathf.Ceil(Mathf.Sqrt(n));
+        int nh = (int)Mathf.Ceil((float)n / (float)nb);
+        float jh = 0;
+        int jb = 0;
+        //Debug.Log("nh, nb" + nh + " " + nb);
+        //CreateGameObjectFromPrefab(kartenPrefab, canvasForCards, cornerTopRight, cornerBottemLeft);
+        Vector2 cornerTopRight = new Vector2(0.5f, 0.6f);
+        Vector2 cornerBottemLeft = new Vector2(0, 0);
+
+        while (k < n)
+        {
+
+            name1= buildCardNameWithPlaceIDinName(whichField, k);
+            cornerTopRight = new Vector2((float)(jb + 1) / nb, (float)1 - (jh / nh));
+            cornerBottemLeft = new Vector2((float)jb / nb, (float)1 - ((1 + jh) / nh));
+            //Debug.Log("k" + k+ " ctr" + cornerTopRight + " cbl " + cornerBottemLeft);
+            CreateGameObjectFromPrefab(name1, kartenPrefab, canvasForCards, cornerTopRight, cornerBottemLeft);
+
+            jb++;
+            if (jb >= nb)
+            {
+                jh++;
+                jb = 0;
+            }
+            k++;
+
+        }
+
 
     }
 }

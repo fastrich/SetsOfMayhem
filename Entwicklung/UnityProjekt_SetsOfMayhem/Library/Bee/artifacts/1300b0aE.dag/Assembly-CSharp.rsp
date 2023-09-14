@@ -375,6 +375,7 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Algorithms/Common/methods.cs"
 "Assets/Scripts/Algorithms/Special/algos.cs"
+"Assets/Scripts/Algorithms/Special/player2.cs"
 "Assets/Scripts/Algorithms/Unity/methods_unity.cs"
 "Assets/Scripts/Configurations/bruecke.cs"
 "Assets/Scripts/Configurations/config_parameters.cs"

@@ -13,7 +13,7 @@ public static class medium {
     
     public static int[] array_cards_used_with_id = new int[Game_numberOfCardsOnDeck]; //Kartenabbild_ID
 
-    public static int[] array_cards_selected = new int[Game_numberOfCardsOnDeck];//verweise auf array
+    
     public static int[] array_cards_selected_temp_for_gen_field = new int[Game_numberOfCardsOnDeck];//verweise auf array
 
     public static string[,] KS_kat = new string[Max_Anzahl_Karten, Max_Anzahl_katProKarte];
@@ -32,7 +32,7 @@ public static class medium {
     //Version 3
     //Matrix mit welche Karten liegen auf dem Tisch
 
-    public static int howManyExtraDecks_withSizeOfSETS=2;
+   
 
     public static int[,] fieldOfCards_backup = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
     //Enum 
@@ -80,13 +80,9 @@ public static class medium {
     public static float bestzeiten_lokal_temp = 0f;
     public static float korrekturZeit = 0;
     //__________________________
+    //public static 
 
-    //================================================================================
-    //Version 4, Mit Get und Set
-    public static int[] array_cards_status_Field = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
-    public static int[,] array_cards_status_SETs = new int[howManyExtraDecks_withSizeOfSETS, Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
-    public static int[,] fieldOfCards_Field = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
-    public static int[,,] fieldOfCards_SETs = new int[howManyExtraDecks_withSizeOfSETS, Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
+
 
 
 }
