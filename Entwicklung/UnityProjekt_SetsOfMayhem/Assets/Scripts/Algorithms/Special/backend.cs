@@ -50,9 +50,10 @@ public class Game {
 	}
 
 	private void generateCards() {
+		int c;
 		// generate cards
 		for (int depth = 0; depth < N; depth++) {
-			int c = 0;
+			c = 0;
 			for (int i = 0; i < cardsLeft; i++) {
 				cards[i][depth] = c;
 				if ((i+1) % (M^depth) == 0) {
@@ -62,7 +63,7 @@ public class Game {
 		}
 		// shuffle cards
 		System.Random rand = new System.Random();
-		int c = cardsLeft;
+		c = cardsLeft;
 		while (c > 1) {
 			int k = rand.Next(c--);
 			Card tmp = cards[c];
