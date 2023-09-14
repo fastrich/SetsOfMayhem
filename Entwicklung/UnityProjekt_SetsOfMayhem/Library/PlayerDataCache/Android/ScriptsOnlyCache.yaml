@@ -17,6 +17,7 @@ ScriptsOnlyBuild:
     - gameoptions2_main
     - gameoptions_main
     - go_costumes_main
+    - internalScenesManager
     - intro_main
     - karte
     - karte_HG
@@ -135,6 +136,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: karte
     methodName: OnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: intro_main
+    methodName: onClickSetBackground
   - assembly: Assembly-CSharp
     fullTypeName: BackToButton_mobile
     methodName: goBackButtonOPTM
@@ -540,89 +544,8 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: karte
     methodName: OnClick
-  - assembly: Assembly-CSharp
-    fullTypeName: karte
-    methodName: OnClick
-  - assembly: Assembly-CSharp
-    fullTypeName: karte
-    methodName: OnClick
-  - assembly: Assembly-CSharp
-    fullTypeName: karte
-    methodName: OnClick
-  - assembly: Assembly-CSharp
-    fullTypeName: karte
-    methodName: OnClick
   sceneClasses:
-    Assets/Scenes/Einzelne/GameOptions.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1568}
-    - Class: 114
-      Script: {instanceID: 1574}
-    - Class: 114
-      Script: {instanceID: 1578}
-    - Class: 114
-      Script: {instanceID: 1580}
-    - Class: 114
-      Script: {instanceID: 1608}
-    - Class: 114
-      Script: {instanceID: 1860}
-    - Class: 114
-      Script: {instanceID: 1878}
-    - Class: 114
-      Script: {instanceID: 2876}
-    - Class: 114
-      Script: {instanceID: 3504}
-    - Class: 114
-      Script: {instanceID: 3968}
-    - Class: 114
-      Script: {instanceID: 4648}
-    - Class: 114
-      Script: {instanceID: 5156}
-    - Class: 114
-      Script: {instanceID: 5476}
-    - Class: 114
-      Script: {instanceID: 6088}
-    - Class: 114
-      Script: {instanceID: 6616}
-    - Class: 114
-      Script: {instanceID: 6824}
-    - Class: 114
-      Script: {instanceID: 7044}
-    - Class: 114
-      Script: {instanceID: 7138}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Einzelne/MainMenue.unity:
+    Assets/Scenes/Hauptspiel.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -692,82 +615,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7044}
     - Class: 114
+      Script: {instanceID: 7138}
+    - Class: 114
+      Script: {instanceID: 7196}
+    - Class: 114
       Script: {instanceID: 7268}
     - Class: 114
       Script: {instanceID: 8078}
     - Class: 114
-      Script: {instanceID: 9454}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Einzelne/Stage.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1568}
-    - Class: 114
-      Script: {instanceID: 1572}
-    - Class: 114
-      Script: {instanceID: 1574}
-    - Class: 114
-      Script: {instanceID: 1578}
-    - Class: 114
-      Script: {instanceID: 1580}
-    - Class: 114
-      Script: {instanceID: 1608}
-    - Class: 114
-      Script: {instanceID: 1860}
-    - Class: 114
-      Script: {instanceID: 1878}
-    - Class: 114
-      Script: {instanceID: 2876}
-    - Class: 114
-      Script: {instanceID: 3504}
-    - Class: 114
-      Script: {instanceID: 3968}
-    - Class: 114
-      Script: {instanceID: 5156}
-    - Class: 114
-      Script: {instanceID: 5476}
-    - Class: 114
-      Script: {instanceID: 6088}
-    - Class: 114
-      Script: {instanceID: 6616}
-    - Class: 114
-      Script: {instanceID: 6824}
-    - Class: 114
-      Script: {instanceID: 7044}
-    - Class: 114
-      Script: {instanceID: 7138}
-    - Class: 114
       Script: {instanceID: 8676}
+    - Class: 114
+      Script: {instanceID: 9454}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1950,7 +1808,7 @@ ScriptsOnlyBuild:
     className: VertexJitter
   - hash:
       serializedVersion: 2
-      Hash: 5cd40f3051fa514f5ceac9bfc9086b89
+      Hash: 7f8eaa2def8279182993f2927be1caf8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: intro_main
@@ -2227,7 +2085,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Intro.unity
-  - Assets/Scenes/Einzelne/MainMenue.unity
-  - Assets/Scenes/Einzelne/Stage.unity
-  - Assets/Scenes/Einzelne/GameOptions.unity
+  - Assets/Scenes/Hauptspiel.unity
   playerPath: C:/Users/o-s-r/Documents/fau/eigene/SetsOfMayhem/KlickUndLos/SetsOfMayhem_Android.apk

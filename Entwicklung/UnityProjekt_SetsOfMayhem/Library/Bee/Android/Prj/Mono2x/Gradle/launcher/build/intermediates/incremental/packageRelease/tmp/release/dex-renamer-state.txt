@@ -1,4 +1,4 @@
-#Thu Sep 14 18:26:58 CEST 2023
+#Thu Sep 14 22:35:07 CEST 2023
 base.0=C\:\\Users\\o-s-r\\Documents\\fau\\eigene\\SetsOfMayhem\\Entwicklung\\UnityProjekt_SetsOfMayhem\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

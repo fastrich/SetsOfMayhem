@@ -6,7 +6,7 @@ public static class config_parameters {
 
     //================================
     // Intro
-    public static int Intro_waitTime = 5;//3
+    public static int Intro_waitTime = 3;//3
     
 
 
