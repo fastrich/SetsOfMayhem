@@ -11,6 +11,7 @@ using TMPro;
 public class mainmenue_main : MonoBehaviour
 {
    public GameObject KartenReboot;
+    public GameObject IntSceneMng;
     public GameObject KlasUTZ;
 
 
@@ -39,6 +40,7 @@ public class mainmenue_main : MonoBehaviour
 
     private void OnEnable()
     {
+        inSettings = true;
         update_arrays();
         resettonew();
         StartCoroutine(Waiting2());
@@ -62,6 +64,7 @@ public class mainmenue_main : MonoBehaviour
     IEnumerator Waiting2()
     {
         float wait = 0.4f;
+        wait = 1;
         KartenReboot.SetActive(true);
         yield return new WaitForSeconds(wait);
         KartenReboot.SetActive(false);
@@ -101,8 +104,10 @@ public class mainmenue_main : MonoBehaviour
         getToSetKatNum();
         lade123(classicSET);
         update_arrays();
+        inSettings = false;
         Debug.Log("Kartenwerte123 " + ArrayToString(kategorien_n_sorted));
-        SceneManager.LoadScene(sceneName: "Stage");
+        if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
+        IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene("Stage");
 
 
 
@@ -128,7 +133,8 @@ public class mainmenue_main : MonoBehaviour
         resettonew();
         //Debug.Log("Kartenwerte123 " + ArrayToString(kategorien_n_sorted));
         inSettings = false;
-        SceneManager.LoadScene(sceneName: "Stage");
+        if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
+        IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene("Stage");
     }
 
     public void StartGame_withOptionsM()
@@ -138,14 +144,16 @@ public class mainmenue_main : MonoBehaviour
 
         //if (numberOfSelected_soll_gen >= (Game_numberOfCardsOnDeck-numberOfSelected_soll)) { return; }
         inSettings = false;
-        SceneManager.LoadScene(sceneName: "Stage");
+        if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
+        IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene("Stage");
     }
 
     public void StartGame_withOptionsM2()
     {
         update_arrays();
         inSettings = false;
-        SceneManager.LoadScene(sceneName: "Stage");
+        if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
+        IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene("Stage");
     }
 
 

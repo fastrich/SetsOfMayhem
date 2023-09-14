@@ -43,13 +43,13 @@ public class karte : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-        if (inSettings) { hoch++; }
-        if (inSettings && hoch>1) { hoch = 0; activChilds(false); activChilds(true); }
+    void Update() { 
+        //Debug.Log("h"+ hoch);
+        if (inSettings && hoch == 0) { activChilds(false); activChilds(true); }
+            if (inSettings) { hoch++; }
+        if (inSettings && hoch>1) { hoch = 0;  }
 
-
+        //Debug.Log(whichFieldIam + " " + place_id + " "+ array_cards_status_GetIt(whichFieldIam, place_id));
 
         if (array_cards_status_GetIt(whichFieldIam, place_id) == 0)
         {
@@ -85,9 +85,20 @@ public class karte : MonoBehaviour
         {
             if (hasACard) { changeToNotMarked(); }
             mapit();
-
-            
         }
+
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 5)
+        {
+            activChilds(true);
+            mapit();
+            changeToMark(place_id, 6);
+
+        }
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 6)
+        {
+           
+        }
+
 
         if (inSettings) { mapit(); }
     }

@@ -367,7 +367,7 @@ public static class algos
 
     public static void checkForPlayerSetSelection(int whichField)
     {
-
+        whichField=0;
         scanForSelected( whichField);
 
         if (numberOfSelected >= numberOfSelected_soll)
@@ -382,7 +382,8 @@ public static class algos
                 for (int i=0; i < array_cards_selected_LengthIt(0,1); i++)
                 {
                     //array_cards_selected_SetIt(1, i, array_cards_selected_GetIt(0,i));
-                    
+                    array_cards_status_SetIt(3, i, 5);
+
                     for (int ik = 0; ik < fieldOfCards_LengthIt(0, 2); ik++)
                     {
                         //Debug.Log("aj: "+ array_cards_selected_GetIt(0, i) + " "+ik);
@@ -694,10 +695,15 @@ public static class algos
     {
         string name1;
         int k = 0;
-        int n = array_cards_status_LengthIt(whichField,1);
+        int n = array_cards_status_LengthIt(whichField,1); 
 
         int nb = (int)Mathf.Ceil(Mathf.Sqrt(n));
         int nh = (int)Mathf.Ceil((float)n / (float)nb);
+        if (n == 3)
+        {
+            nb = 3; nh = 1;
+        }
+
         float jh = 0;
         int jb = 0;
         //Debug.Log("nh, nb" + nh + " " + nb);

@@ -46,14 +46,21 @@ public class SET_controller : MonoBehaviour
         arr_listeUberSetZeitenInSpiel_pointer_alt = 0;
         arr_listeUberSetZeitenInSpiel[arr_listeUberSetZeitenInSpiel_pointer_neu]=startTime;
     
-        //Debug.Log("Zeit0");
+        Debug.Log("Zeit0");
 
     }
-
+    private void OnEnable()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("LastSet " + array_cards_selected_GetIt(1,0));
+      //  Debug.Log("Player2 " + array_cards_selected_GetIt(2, 0) + " " +fieldOfCards_GetIt(4,0,0)+ " "+ fieldOfCards_GetIt(4, 0, 1));
+        //Debug.Log("SetFound " + array_cards_selected_GetIt(3, 0));
+
         checkForPlayerSetSelection(0);
         CheckAndFillCardField(0);
         if (gefundeneSets > 0)

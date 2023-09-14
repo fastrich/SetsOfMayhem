@@ -10,8 +10,8 @@ using UnityEngine.SceneManagement;
 
 public class BackToMainM : MonoBehaviour
 {
-   
 
+    public GameObject IntSceneMng;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +30,10 @@ public class BackToMainM : MonoBehaviour
 
    public void onClickClick()
     {
+
+        if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "MainMenue"); }
+        IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene("MainMenue");
         
-            
-            SceneManager.LoadScene(sceneName: "MainMenue");
         
     }
 }

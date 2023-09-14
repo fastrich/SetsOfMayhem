@@ -8,13 +8,13 @@ public static class bruecke {
 
     private static int anzahlVersucheDatenEinzutragen = 2;
 
-    public static int howManyExtraDecks_withSizeOfSETS = 4;
+    public static int howManyExtraDecks_withSizeOfSETS = 5;
 
 
     //------------------------------------------------------------------------------------------------------------
     // FieldOfCards
     //------------------------------------------------------------------------------------------------------------
-    // KnownFields: 0=MainGame, 1=Intro, 2=MainMenue, 3=LastSET, 4=Player2 
+    // KnownFields: 0=MainGame, 1=Intro, 2=MainMenue, 3=LastSET, 4=Player2, 
     public static int[,] fieldOfCards_Field = new int[Game_numberOfCardsOnDeck, Max_Anzahl_katProKarte];
     public static int[,,] fieldOfCards_SETs = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll, Max_Anzahl_katProKarte];
    
@@ -61,8 +61,9 @@ public static class bruecke {
     //------------------------------------------------------------------------------------------------------------
     // Array_cards_status
     //------------------------------------------------------------------------------------------------------------
-    public static int[] array_cards_status_Field = new int[Game_numberOfCardsOnDeck];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
-    public static int[,] array_cards_status_SETs = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];//0=nothing, 1=updated, 2=selected, 3=update, 4=update2
+    //0=nothing, 1=updated, 2=selected, 3=update, 4=update2, 5=OhneSelection_Neu, 6=OhneSelection2, 
+    public static int[] array_cards_status_Field = new int[Game_numberOfCardsOnDeck];
+    public static int[,] array_cards_status_SETs = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];
 
     public static void array_cards_status_SetIt(int WhichField, int ID_OfCardInField, int neuerWert)
     {
@@ -110,7 +111,8 @@ public static class bruecke {
     //------------------------------------------------------------------------------------------------------------
     // Array_cards_selected
     //------------------------------------------------------------------------------------------------------------
-    public static int[,] array_cards_selected = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];//0=Player1, 1=LastSet, 2=Player2, 3=SetFound
+    //0=Player1, 1=LastSet, 2=Player2, 3=SetFound
+    public static int[,] array_cards_selected = new int[howManyExtraDecks_withSizeOfSETS, numberOfSelected_soll];
     public static void array_cards_selected_SetIt(int WhichField, int ID_OfCardInField, int neuerWert)
     {
         for (int i = 0; i < anzahlVersucheDatenEinzutragen; i++)
