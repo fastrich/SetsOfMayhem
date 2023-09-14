@@ -1,12 +1,11 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 // sadly, this does not compile because of primitive vs complexe data types
 //using Card = uint[];
 using Card = System.Collections.Generic.List<uint>;
-
 
 public enum GameState : uint {
 	Init,       // game not initialized yet, call init() first
@@ -52,10 +51,10 @@ public class Game {
 
 	private void generateCards() {
 		// generate cards
-		for (uint depth = 0; depth < N; depth++) {
+		for (int depth = 0; depth < N; depth++) {
 			uint c = 0;
-			for (uint i = 0; i < cardsLeft; i++) {
-				cards[i][(int)depth] = c;
+			for (int i = 0; i < cardsLeft; i++) {
+				cards[i][depth] = c;
 				if ((i+1) % (M^depth) == 0) {
 					c++;
 				}
@@ -63,11 +62,11 @@ public class Game {
 		}
 		// shuffle cards
 		System.Random rand = new System.Random();
-		int c2 = (int)cardsLeft;
-		while (c2 > 1) {
-			int k = rand.Next(c2--);
-			Card tmp = cards[c2];
-			cards[c2] = cards[k];
+		int c = (int)cardsLeft;
+		while (c > 1) {
+			int k = rand.Next(c--);
+			Card tmp = cards[c];
+			cards[c] = cards[k];
 			cards[k] = tmp;
 		}
 	}
@@ -87,17 +86,16 @@ public class Game {
 		if (set.Length != M) return false;
 
 		uint[] feature = new uint[M];
-		for (uint n = 0; n < N; n++) {
-			for (uint m = 0; m < M; m++) {
-				feature[m] = set[m][(int)n];
+		for (int n = 0; n < N; n++) {
+			for (int m = 0; m < M; m++) {
+				feature[m] = set[m][n];
 			}
 			
-			//feature.sort();
 			Array.Sort(feature);
 			bool equal = false;
 			bool different = false;
 			uint tmp = feature[0];
-			for (uint m = 1; m < M; m++) {
+			for (int m = 1; m < M; m++) {
 				if (tmp == feature[m]) {
 					equal = true;
 				} else {
@@ -115,7 +113,7 @@ public class Game {
 	private Card[] findSEThelper(uint indexSET, uint indexField, Card[] set) {
 		if (indexSET >= M) return (isSET(set) ? set : null);
 
-		for (uint f = indexField; f < currentSize; f++) {
+		for (int f = indexField; f < currentSize; f++) {
 			set[indexSET] = field[f];
 			Card[] maybeSET = findSEThelper(indexSET+1, f+1, set);
 			if (maybeSET != null) {
@@ -126,15 +124,13 @@ public class Game {
 	}
 
 	private Card[] findSET() {
-		//return findSEThelper(0, 0, new uint[M][]);
-		Card[] nc = new Card[M];
-		return findSEThelper(0, 0, nc);
+		Card[] set = new Card[M];
+		return findSEThelper(0, 0, set);
 	}
 
 	// return true if game is won
 	private bool fillField() {
 		while (true) {
-			//uint[,] SET = findSET();
 			Card[] SET = findSET();
 			if (SET != null) {
 				helpSET = SET;
@@ -168,20 +164,17 @@ public class Game {
 		}
 		if (allEqual) return GameState.Again;
 		if (!isSET(set)) return GameState.Again;
-		//iSET.sort();
+
 		Array.Sort(iSET);
-		//iSET.reverse();
 		Array.Reverse(iSET);
 		if (currentSize > defaultSize || cardsLeft < M) {
-			//for(i in iSET {
-			for (int i=0; i< iSET.Length; i++) {
+			for (int i = 0; i < M; i++) {
 					if (i != --currentSize) {
 					field[i] = field[currentSize];
 				}
 			}
 		} else {
-			for (int i = 0; i < iSET.Length; i++)
-			{
+			for (int i = 0; i < M; i++) {
 				field[i] = cards[--cardsLeft];
 			}
 		}
