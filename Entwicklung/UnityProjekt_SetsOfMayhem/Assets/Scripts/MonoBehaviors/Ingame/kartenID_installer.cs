@@ -83,7 +83,7 @@ public class kartenID_installer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        OnEnable();
         TxtInfos.GetComponent<TMP_Text>().text = WhatCard_String();
         TxtInfos_gross.GetComponent<TMP_Text>().text = WhatCard_String_g();
         place_id = transform.parent.parent.parent.gameObject.GetComponent<karte>().place_id;

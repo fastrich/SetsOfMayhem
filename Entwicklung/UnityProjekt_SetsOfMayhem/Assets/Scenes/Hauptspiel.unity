@@ -438,6 +438,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3458421096679110946, guid: e636493492253964f8dc722cd1ecd118, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3458421096679110948, guid: e636493492253964f8dc722cd1ecd118, type: 3}
       propertyPath: m_Name
       value: PreFab_KlassischesSET_Feld
@@ -452,6 +456,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6347994251663910166, guid: e636493492253964f8dc722cd1ecd118, type: 3}
       propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937949059455038619, guid: e636493492253964f8dc722cd1ecd118, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -723,11 +731,23 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6066304998085377655, guid: 7e4a8f89075e52e4996e33e3fe0732ad, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6583304926365455317, guid: 7e4a8f89075e52e4996e33e3fe0732ad, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6757073648400742891, guid: 7e4a8f89075e52e4996e33e3fe0732ad, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922910210391438614, guid: 7e4a8f89075e52e4996e33e3fe0732ad, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574881089200959849, guid: 7e4a8f89075e52e4996e33e3fe0732ad, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}

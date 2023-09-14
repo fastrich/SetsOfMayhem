@@ -26,7 +26,9 @@ public class dyn2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("sss");
+        Debug.Log("sss");
+        farbe_wg3 = karteWG.GetComponent<dynMulti>().farbe_wg;
+        gameObject.GetComponent<Image>().color = dyn_farbe[farbe_wg3];
 
     }
     void OnEnable()

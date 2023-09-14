@@ -735,15 +735,16 @@ public static class algos
 
     public static void CreateAndDistributeCardsOnScreen_v2(int whichFieldIam, GameObject vorlageGobj, Canvas canvasEntp, int anzahl, GameObject vater)
     {
-        activChilds(canvasEntp.gameObject, false);
+        //activChilds(canvasEntp.gameObject, false);
         //Debug.Log(karteScript.GetComponent<karte>().anzahl_id);
         // if (Element1_visible == 1 || (Element1_visible == 2 && array_cards_status_GetIt(whichFieldIam, karteScript.GetComponent<karte>().place_id) == 2))
         //int anzahl = array_cards_status_LengthIt(whichFieldIam, 1);
+        List<int> hui_list = new List<int>();
+        //Debug.Log(kinder[0]);
         if (true)
         {
-            
-
-            for (int p = 0; p < 2; p++) {
+            int p_max = 2;
+            for (int p = 0; p < (p_max); p++) {
                 bool hates;
                 float jh = 0;
                 int jb = 0;
@@ -761,9 +762,7 @@ public static class algos
                             if (ii == (int)Int32.Parse(name2))
                             {
                                 hates = true;
-
-
-
+                                if (p == p_max - 1) { hui_list.Add(i); }
                                 //==========================================
 
                                 int nb = (int)Mathf.Ceil(Mathf.Sqrt(anzahl));
@@ -827,6 +826,11 @@ public static class algos
 
                 }
             }
+        }
+        for (int i = 0; i < vater.transform.childCount; i++)
+        {
+           // Debug.Log("h +" +i+  ""+hui_list.Contains(i));
+            if (!hui_list.Contains(i)) { vater.transform.GetChild(i).gameObject.SetActive(false); }
         }
 
     }

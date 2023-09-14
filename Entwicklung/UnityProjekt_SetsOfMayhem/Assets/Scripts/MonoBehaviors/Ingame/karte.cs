@@ -112,6 +112,7 @@ public class karte : MonoBehaviour
     }
     void OnEnable()
     {
+        KartenWerteAlsString = new string[AnazhlEintraege];
         kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
         werte_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
     }
@@ -257,7 +258,8 @@ public class karte : MonoBehaviour
             KartenWerteAlsString[i] = werte_n_sorted[i, ueberschuessig[i]];
         }
 
-        //Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
+        Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
+        Debug.Log("KartenKatAlsString " + ArrayToString(kategorien_n_sorted));
 
     }
 }

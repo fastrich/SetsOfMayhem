@@ -37,8 +37,8 @@ public class dynMulti : MonoBehaviour
         farbe_wg = karteScript.GetComponent<karte>().farbe_id;
         CreateAndDistributeCardsOnScreen_v2(whichFieldIam, vorlageGobj, canvasEntp, anzahl, gameObject);
 
-        if (false) { 
-            activChilds(false);
+        if (false) {
+            //activChilds(false);
             //Debug.Log(karteScript.GetComponent<karte>().anzahl_id);
             if (Element1_visible==1 || (Element1_visible==2 && array_cards_status_GetIt(whichFieldIam, karteScript.GetComponent<karte>().place_id)==2 )) {
                 bool hates;

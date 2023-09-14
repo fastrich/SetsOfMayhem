@@ -30,19 +30,12 @@ public class intro_main : MonoBehaviour
         Game_numberOfCardsOnDeck = Game_numberOfCardsOnDeck_Intro;
         backup_genSet = numberOfSelected_soll_gen;
         numberOfSelected_soll_gen = numberOfSelected_soll_gen_Íntro;
+        backup_kartenKostuem_HG_Kat_Pointer = kartenKostuem_HG_Kat_Pointer;
+        backup_arr_kartenKostuem_HG_Pointer = arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID];
         Karte1.SetActive(false);
         Karte2.SetActive(false); 
         Karte3.SetActive(false);
-        backup_kartenKostuem_HG_Kat_Pointer = kartenKostuem_HG_Kat_Pointer;
-        backup_arr_kartenKostuem_HG_Pointer = arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID];
-        kartenKostuem_HG_Kat_Pointer = (int)Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1);
-        kartenKostuem_HG_Kat_ID = arr_Kostuem_HG_Kat_ID[kartenKostuem_HG_Kat_Pointer];
-        //Debug.Log(Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1) + " "+ Random.Range(0, 3));
-        UIKHG_Kaz_update(true);
-        kartenKostuem_HG_ID = arr_kartenKostuem_HG_ID[kartenKostuem_HG_Kat_ID];
-        //kartenKostuem_Pointer = (int)Random.Range(0, arr_Kostuem_ID.Length - 1); resettonew();
-        //lade123(classicSET);
-        update_arrays();
+
         StartCoroutine(Waiting(Intro_waitTime));
         
     }
@@ -62,6 +55,18 @@ public class intro_main : MonoBehaviour
             SceneManager.LoadScene(sceneName: "Hauptspiel");
         }
     }
+    public void randomIt()
+    {
+
+        kartenKostuem_HG_Kat_Pointer = (int)Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1);
+        kartenKostuem_HG_Kat_ID = arr_Kostuem_HG_Kat_ID[kartenKostuem_HG_Kat_Pointer];
+        //Debug.Log(Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1) + " "+ Random.Range(0, 3));
+        UIKHG_Kaz_update(true);
+        kartenKostuem_HG_ID = arr_kartenKostuem_HG_ID[kartenKostuem_HG_Kat_ID];
+        //kartenKostuem_Pointer = (int)Random.Range(0, arr_Kostuem_ID.Length - 1); resettonew();
+        //lade123(classicSET);
+        update_arrays();
+    }
 
 
     IEnumerator Waiting(int t)
@@ -69,14 +74,20 @@ public class intro_main : MonoBehaviour
 
         float t2 = t;
         t2=   (float)t / (float)5;
-
+        float t3 = t2 / 5;
+        randomIt();
         yield return new WaitForSeconds(t2);
         Karte1.SetActive(true);
         yield return new WaitForSeconds(t2);
         Karte2.SetActive(true);
         yield return new WaitForSeconds(t2);
         Karte3.SetActive(true); 
-        yield return new WaitForSeconds(t2*2);
+        yield return new WaitForSeconds(t2);
+        Karte1.SetActive(false);
+        yield return new WaitForSeconds(t3);
+        Karte2.SetActive(false);
+        yield return new WaitForSeconds(t3);
+        Karte3.SetActive(false);
         if (!BeispielBehalten) {
             Game_numberOfCardsOnDeck = backup_numberField;
             numberOfSelected_soll_gen = backup_genSet;
@@ -86,6 +97,7 @@ public class intro_main : MonoBehaviour
             arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] = backup_arr_kartenKostuem_HG_Pointer;
             kartenKostuem_HG_ID = arr_kartenKostuem_HG_ID[kartenKostuem_HG_Kat_ID];
         }
+        
         if (weiter) { 
             //SceneManager.LoadScene(sceneName: "MainMenue");
             SceneManager.LoadScene(sceneName: "Hauptspiel");
