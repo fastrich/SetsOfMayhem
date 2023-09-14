@@ -30,28 +30,27 @@ public class SET_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+    private void OnEnable()
+    {
         arr_listeUberSetZeitenInSpiel = new System.DateTime[SETsBisZurWertung + 1];
         arr_listeUberSetZeitenInSpiel_korrektur = new float[SETsBisZurWertung + 1];
         korrekturZeit = 0;
         neuerRekord = false;
         neuerRekord_lokal_temp = false;
         bestzeiten_lokal_temp = 0;
-        //LadeKartenMaterial1(); veraltet
-        CreateAndDistributeCardsOnScreen(0,kartenPrefab,canvasForCards);
-        CreateAndDistributeCardsOnScreen(3, kartenPrefab, canvasForCards_lastSET);
-        CreateAndDistributeCardsOnScreen(4, kartenPrefab, canvasForCards_player2);
+        CreateAndDistributeCardsOnScreen_v2(0, kartenPrefab, canvasForCards, array_cards_status_LengthIt(0, 1), canvasForCards.gameObject);
+        CreateAndDistributeCardsOnScreen_v2(3, kartenPrefab, canvasForCards_lastSET, array_cards_status_LengthIt(3, 1), canvasForCards_lastSET.gameObject);
+        CreateAndDistributeCardsOnScreen_v2(4, kartenPrefab, canvasForCards_player2, array_cards_status_LengthIt(4, 1), canvasForCards_player2.gameObject);
+
+
+        highscoreWorthy = true;
         startTime = System.DateTime.UtcNow;
         gefundeneSets = 0;
         arr_listeUberSetZeitenInSpiel_pointer_neu = 0;
         arr_listeUberSetZeitenInSpiel_pointer_alt = 0;
-        arr_listeUberSetZeitenInSpiel[arr_listeUberSetZeitenInSpiel_pointer_neu]=startTime;
-    
-        Debug.Log("Zeit0");
-
-    }
-    private void OnEnable()
-    {
-        
+        arr_listeUberSetZeitenInSpiel[arr_listeUberSetZeitenInSpiel_pointer_neu] = startTime;
     }
 
     // Update is called once per frame

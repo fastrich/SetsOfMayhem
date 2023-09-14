@@ -85,6 +85,14 @@ public static class medium {
     public static int player2_type = 1; //0=zeige karten der reihe nach, 1= zeige karte punktuell
 
 
+    //____________________________________
+    public static bool highscoreWorthy = true;
+
+  // public static list
+
+
+
+
 
 
 }
