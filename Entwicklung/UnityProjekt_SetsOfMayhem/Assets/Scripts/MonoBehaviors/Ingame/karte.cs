@@ -12,8 +12,8 @@ using static bruecke;
 public class karte : MonoBehaviour
 {
 
-    
-    
+
+    public GameObject button;
     public int rotation_id=0;
     public int anzahl_id=0;
     public int farbe_id=0;
@@ -29,6 +29,8 @@ public class karte : MonoBehaviour
 
     public string[] KartenWerteAlsString = new string[AnazhlEintraege];
     public int whichFieldIam = 0;
+
+    private int HideYourself = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -89,14 +91,20 @@ public class karte : MonoBehaviour
 
         if (array_cards_status_GetIt(whichFieldIam, place_id) == 5)
         {
-            activChilds(true);
+            HideYourself = 1;
             mapit();
             changeToMark(place_id, 6);
 
         }
         if (array_cards_status_GetIt(whichFieldIam, place_id) == 6)
         {
-           
+            if (whichFieldIam == 3) { activChilds(true); }
+
+            if (whichFieldIam == 4) { 
+                if (player2_type==0) { if (place_id < numberOfSelected_player2_field) { activChildsOfChilds(true); } else { activChildsOfChilds(false); } }
+                if (player2_type ==1) { activChildsOfChilds(HideYourself==0);  }
+            }
+            
         }
 
 
@@ -133,6 +141,10 @@ public class karte : MonoBehaviour
                 break;
             case 1:
                 changeToMarked();
+                break;
+            case 6:
+                HideYourself = 1-HideYourself;
+                //Debug.Log("uhi");
                 break;
             default:
                 //changeToMarked();                
@@ -189,6 +201,26 @@ public class karte : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(act);
 
         }
+    }
+    public void activChildsOfChilds(bool act)
+    {
+        for (int i = 0; i < button.transform.childCount; i++)
+        {
+            button.transform.GetChild(i).gameObject.SetActive(act);
+
+        }
+        /*
+         * for (int i = 0; i < transform.childCount; i++)
+         {
+
+             for (int ii = 0; i < transform.GetChild(i).gameObject.transform.childCount; ii++)
+             {
+                 transform.GetChild(i).GetChild(ii).gameObject.SetActive(act);
+
+             }
+
+         }
+        */
     }
 
     void mapit()

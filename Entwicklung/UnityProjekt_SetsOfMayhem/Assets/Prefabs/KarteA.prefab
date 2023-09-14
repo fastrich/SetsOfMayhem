@@ -195,10 +195,6 @@ PrefabInstance:
       propertyPath: gobj_mit_placeID
       value: 
       objectReference: {fileID: 6768969557366612555}
-    - target: {fileID: 1424628427440864878, guid: a4cc8f21317b97d4f8177272b843f888, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2788573933761430627, guid: a4cc8f21317b97d4f8177272b843f888, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -432,3 +428,4 @@ MonoBehaviour:
   checkForPlaceID: 1
   place_id: 0
   gobj_mit_placeID: {fileID: 6768969557366612555}
+  whichFieldIam: 0

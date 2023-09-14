@@ -80,7 +80,9 @@ public static class medium {
     public static float bestzeiten_lokal_temp = 0f;
     public static float korrekturZeit = 0;
     //__________________________
-    //public static 
+    
+    public static int numberOfSelected_player2_field=2;
+    public static int player2_type = 1; //0=zeige karten der reihe nach, 1= zeige karte punktuell
 
 
 
