@@ -389,9 +389,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2439274394466714466, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2749657516412412742, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987857192017827886, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
+      propertyPath: m_Name
+      value: Thema_RockRaiders_original
       objectReference: {fileID: 0}
     - target: {fileID: 7936364863958759998, guid: 5e3cde662034b4c41b678c462729d61c, type: 3}
       propertyPath: id

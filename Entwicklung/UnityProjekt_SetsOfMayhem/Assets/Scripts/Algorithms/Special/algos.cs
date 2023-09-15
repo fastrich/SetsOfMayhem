@@ -618,6 +618,7 @@ public static class algos
         range1[1] = _1_arr_Kostuem_HG_ID.Length;
         range1[2] = _2_arr_Kostuem_HG_ID.Length;
         range1[3] = _3_arr_Kostuem_HG_ID.Length;
+        range1[4] = _4_arr_Kostuem_HG_ID.Length;
 
         if (random) { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] = (int)UnityEngine.Random.Range(0, range1[kartenKostuem_HG_Kat_ID] - 1); }
 
@@ -630,8 +631,8 @@ public static class algos
         arr_kartenKostuem_HG_ID[1] = _1_arr_Kostuem_HG_ID[arr_kartenKostuem_HG_Pointer[1]];
         arr_kartenKostuem_HG_ID[2] = _2_arr_Kostuem_HG_ID[arr_kartenKostuem_HG_Pointer[2]];
         arr_kartenKostuem_HG_ID[3] = _3_arr_Kostuem_HG_ID[arr_kartenKostuem_HG_Pointer[3]];
+        arr_kartenKostuem_HG_ID[4] = _4_arr_Kostuem_HG_ID[arr_kartenKostuem_HG_Pointer[4]];
 
-        
 
     }
 

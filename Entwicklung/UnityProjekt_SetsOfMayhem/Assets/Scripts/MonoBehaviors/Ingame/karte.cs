@@ -258,8 +258,8 @@ public class karte : MonoBehaviour
             KartenWerteAlsString[i] = werte_n_sorted[i, ueberschuessig[i]];
         }
 
-        Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
-        Debug.Log("KartenKatAlsString " + ArrayToString(kategorien_n_sorted));
+       // Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
+       // Debug.Log("KartenKatAlsString " + ArrayToString(kategorien_n_sorted));
 
     }
 }

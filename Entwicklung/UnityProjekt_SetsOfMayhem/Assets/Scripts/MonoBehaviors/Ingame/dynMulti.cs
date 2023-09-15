@@ -25,8 +25,8 @@ public class dynMulti : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        whichFieldIam = karteScript.GetComponent<karte>().whichFieldIam;
+
     }
 
     // Update is called once per frame
@@ -35,7 +35,17 @@ public class dynMulti : MonoBehaviour
         anzahl = dyn_anzahl[karteScript.GetComponent<karte>().anzahl_id];
         ausrichtung_wg = karteScript.GetComponent<karte>().rotation_id;
         farbe_wg = karteScript.GetComponent<karte>().farbe_id;
-        CreateAndDistributeCardsOnScreen_v2(whichFieldIam, vorlageGobj, canvasEntp, anzahl, gameObject);
+        
+
+        if (Element1_visible == 1 || (Element1_visible == 2 && array_cards_status_GetIt(whichFieldIam, karteScript.GetComponent<karte>().place_id) == 2) || whichFieldIam!=0)
+        {
+            CreateAndDistributeCardsOnScreen_v2(whichFieldIam, vorlageGobj, canvasEntp, anzahl, gameObject);
+        }
+        else
+        {
+            activChilds(false);
+        }
+
 
         if (false) {
             //activChilds(false);

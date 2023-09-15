@@ -80,18 +80,18 @@ public static class config_parameters {
     //Karten Hintergrund
     
     public static int kartenKostuem_HG_ID = 4;
-    public static int[] arr_kartenKostuem_HG_ID = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0 };
-    public static int[] arr_kartenKostuem_HG_Pointer = new int[kartenKostuem_HG_Kat_Anzahl_const] {0,5,0,0 };
-    public static int[] arr_kartenKostuem_HG_Pointer_Default = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0 };
+    public static int[] arr_kartenKostuem_HG_ID = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0, 0};
+    public static int[] arr_kartenKostuem_HG_Pointer = new int[kartenKostuem_HG_Kat_Anzahl_const] {0,5,0,0, 0  };
+    public static int[] arr_kartenKostuem_HG_Pointer_Default = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0 , 0};
 
 
     public static int kartenKostuem_HG_Kat_ID = 1;
     public static int kartenKostuem_HG_Kat_Pointer = 1;
     public static int kartenKostuem_HG_Kat_Pointer_Default = 1;
-    public static int kartenKostuem_HG_Kat_Anzahl = 4;
-    public const int kartenKostuem_HG_Kat_Anzahl_const = 4;
-    public static int[] arr_Kostuem_HG_Kat_ID = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 1, 2, 3 };
-    public static string[] arr_Kostuem_HG_Kat_Name = new string[kartenKostuem_HG_Kat_Anzahl_const] { "Andere", "Abstrakt", "Rock Raiders", "Fotos" };
+    public static int kartenKostuem_HG_Kat_Anzahl = 5;
+    public const int kartenKostuem_HG_Kat_Anzahl_const = 5;
+    public static int[] arr_Kostuem_HG_Kat_ID = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 1, 2, 4, 3 };
+    public static string[] arr_Kostuem_HG_Kat_Name = new string[kartenKostuem_HG_Kat_Anzahl_const] { "Andere", "Abstrakt", "Rock Raiders", "Rock Raiders C.", "Fotos" };
 
     public const int _0_kartenKostuem_HG_Anzahl_const = 1;
     public static int[] _0_arr_Kostuem_HG_ID = new int[_0_kartenKostuem_HG_Anzahl_const] {0 };
@@ -101,6 +101,8 @@ public const int _2_kartenKostuem_HG_Anzahl_const = 22;
     public static int[] _2_arr_Kostuem_HG_ID = new int[_2_kartenKostuem_HG_Anzahl_const] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
     public const int _3_kartenKostuem_HG_Anzahl_const = 1;
     public static int[] _3_arr_Kostuem_HG_ID = new int[_3_kartenKostuem_HG_Anzahl_const] {0 };
+    public const int _4_kartenKostuem_HG_Anzahl_const = 43;
+    public static int[] _4_arr_Kostuem_HG_ID = new int[_4_kartenKostuem_HG_Anzahl_const] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 };
 
 
 
