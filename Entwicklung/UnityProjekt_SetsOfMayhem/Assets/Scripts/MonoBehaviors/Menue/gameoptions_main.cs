@@ -93,7 +93,7 @@ public class gameoptions_main : MonoBehaviour
     {
         //Debug.Log("onen_GO");
         getToSetKatNum();
-        inSettings = true;
+        //inSettings = true;
 
     }
     private void OnDisable()
@@ -105,6 +105,7 @@ public class gameoptions_main : MonoBehaviour
     private void Update()
     {
         getToSetKatNum();
+        inSettings = true;
         //resettonew();
 
         //kindsOfOpt_Slider.GetComponent<Slider>().value = (float)(((float)Max_Anzahl_katProKarte - (float)Max_Anzahl_katProKarte_SLIDER_MIN) / ((float)Max_Anzahl_katProKarte_SLIDER_MAX - (float)Max_Anzahl_katProKarte_SLIDER_MIN)); 

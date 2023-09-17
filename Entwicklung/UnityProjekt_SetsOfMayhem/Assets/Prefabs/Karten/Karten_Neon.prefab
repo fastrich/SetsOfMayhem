@@ -263,6 +263,17 @@ MonoBehaviour:
   - 
   - 
   - 
+  KartenKatAlsString:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   whichFieldIam: 0
 --- !u!1 &7085349508219516161
 GameObject:
@@ -3043,7 +3054,7 @@ PrefabInstance:
     - target: {fileID: 8834216663791195581, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 18ae493af621b1d4e88607194de5bdf8, type: 3}
+      objectReference: {fileID: 21300000, guid: 18fce44c7a88b8f44a936d005483f39e, type: 3}
     - target: {fileID: 8834216663791195581, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: m_Color.b
       value: 1
