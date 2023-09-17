@@ -10,6 +10,8 @@ using System;
 using static config_parameters;
 using static methods_unity;
 using static bruecke;
+using static setsUndFelder;
+using static karteZuBild;
 
 public class dynMulti : MonoBehaviour
 {

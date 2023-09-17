@@ -22,16 +22,17 @@ public class GObj_OnOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    }
-    void OnEnable()
-    {
-
         bool same = false;
-        if(id== kartenKostuem_ID) { same = true; }
+        if (id == kartenKostuem_ID) { same = true; }
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(same);
         }
+    }
+    void OnEnable()
+    {
+
+
         
         
     }

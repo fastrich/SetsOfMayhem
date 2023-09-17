@@ -8,6 +8,8 @@ using static methods_unity;
 using static config_parameters;
 using TMPro;
 using static bruecke;
+using static setsUndFelder;
+using static karteZuBild;
 
 public class SET_controller : MonoBehaviour
 {
@@ -51,6 +53,7 @@ public class SET_controller : MonoBehaviour
         arr_listeUberSetZeitenInSpiel_pointer_neu = 0;
         arr_listeUberSetZeitenInSpiel_pointer_alt = 0;
         arr_listeUberSetZeitenInSpiel[arr_listeUberSetZeitenInSpiel_pointer_neu] = startTime;
+        //resettonew();
     }
 
     // Update is called once per frame

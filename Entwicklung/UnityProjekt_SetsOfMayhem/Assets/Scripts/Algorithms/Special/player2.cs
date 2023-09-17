@@ -7,6 +7,8 @@ using static bruecke;
 using System;
 using static methods_unity;
 using static algos;
+using static setsUndFelder;
+using static karteZuBild;
 
 public static class player2
 {

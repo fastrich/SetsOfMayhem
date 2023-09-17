@@ -7,7 +7,7 @@ public static class config_parameters {
     //================================
     // Intro
     public static int Intro_waitTime = 3;//3
-    
+
 
 
     //================================
@@ -16,7 +16,7 @@ public static class config_parameters {
     public static int Set_InfosAnzeigen_Anzahl = 0;
     public static int Set_InfosAnzeigen_Anzahl_Classic = 0;
     public static bool VetoFuerKarten = false;
-    public static int SETsBisZurWertung=10;
+    public static int SETsBisZurWertung = 10;
     public static float Wertung_Strafzeit_inSekunden = 20;
     public static float Wertung_Strafzeit_NeuesFeld_inSekunden = 10;
 
@@ -37,7 +37,7 @@ public static class config_parameters {
     public static int Max_Anzahl_katProKarte = 4; //Prüfe kartenGobj_nachEigenschaften
     public static int Max_Anzahl_katProKarte_SLIDER_MIN = 1;
     public static int Max_Anzahl_katProKarte_SLIDER_MAX = 9; //aufräumen
-    public static int Max_Anzahl_katProKarte_Classic =4;
+    public static int Max_Anzahl_katProKarte_Classic = 4;
 
     //Werte
     public static int numberofUnitsPerKat_max = 3;
@@ -71,18 +71,18 @@ public static class config_parameters {
     public static int kartenKostuem_Pointer_ClassicDefault = 0;
     public static int kartenKostuem_Anzahl = 4;
     public const int kartenKostuem_Anzahl_const = 4;
-    public static int[]     arr_Kostuem_ID =    new int[kartenKostuem_Anzahl_const] { 0, 1, 2, 3 };
+    public static int[] arr_Kostuem_ID = new int[kartenKostuem_Anzahl_const] { 0, 1, 2, 3 };
     public static string[] arr_Kostuem_Name = new string[kartenKostuem_Anzahl_const] { "Neon", "Neon erweitert", "Pfeile", "Gestein" };
-    public static bool[] arr_Kostuem_klassisch = new bool[kartenKostuem_Anzahl_const] { true, true, false, false};
+    public static bool[] arr_Kostuem_klassisch = new bool[kartenKostuem_Anzahl_const] { true, true, false, false };
     public static string kostuemTyp_klassisch = "Klassisch";
 
 
     //Karten Hintergrund
-    
+
     public static int kartenKostuem_HG_ID = 4;
-    public static int[] arr_kartenKostuem_HG_ID = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0, 0};
-    public static int[] arr_kartenKostuem_HG_Pointer = new int[kartenKostuem_HG_Kat_Anzahl_const] {0,5,0,0, 0  };
-    public static int[] arr_kartenKostuem_HG_Pointer_Default = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0 , 0};
+    public static int[] arr_kartenKostuem_HG_ID = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0, 0 };
+    public static int[] arr_kartenKostuem_HG_Pointer = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 5, 0, 0, 0 };
+    public static int[] arr_kartenKostuem_HG_Pointer_Default = new int[kartenKostuem_HG_Kat_Anzahl_const] { 0, 0, 0, 0, 0 };
 
 
     public static int kartenKostuem_HG_Kat_ID = 1;
@@ -94,13 +94,13 @@ public static class config_parameters {
     public static string[] arr_Kostuem_HG_Kat_Name = new string[kartenKostuem_HG_Kat_Anzahl_const] { "Andere", "Abstrakt", "Rock Raiders", "Rock Raiders C.", "Fotos" };
 
     public const int _0_kartenKostuem_HG_Anzahl_const = 1;
-    public static int[] _0_arr_Kostuem_HG_ID = new int[_0_kartenKostuem_HG_Anzahl_const] {0 };
-public const int _1_kartenKostuem_HG_Anzahl_const = 7;
+    public static int[] _0_arr_Kostuem_HG_ID = new int[_0_kartenKostuem_HG_Anzahl_const] { 0 };
+    public const int _1_kartenKostuem_HG_Anzahl_const = 7;
     public static int[] _1_arr_Kostuem_HG_ID = new int[_1_kartenKostuem_HG_Anzahl_const] { 0, 1, 6, 2, 3, 4, 5 };
-public const int _2_kartenKostuem_HG_Anzahl_const = 22;
+    public const int _2_kartenKostuem_HG_Anzahl_const = 22;
     public static int[] _2_arr_Kostuem_HG_ID = new int[_2_kartenKostuem_HG_Anzahl_const] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
     public const int _3_kartenKostuem_HG_Anzahl_const = 1;
-    public static int[] _3_arr_Kostuem_HG_ID = new int[_3_kartenKostuem_HG_Anzahl_const] {0 };
+    public static int[] _3_arr_Kostuem_HG_ID = new int[_3_kartenKostuem_HG_Anzahl_const] { 0 };
     public const int _4_kartenKostuem_HG_Anzahl_const = 43;
     public static int[] _4_arr_Kostuem_HG_ID = new int[_4_kartenKostuem_HG_Anzahl_const] { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 };
 
@@ -135,12 +135,13 @@ public const int _2_kartenKostuem_HG_Anzahl_const = 22;
 
     //================================
     //Vorbelegungen
-    public static string[] classicSET = new string[] { "Füllung","Form", "Farbe_", "Anzahl_"  };
+    public static string[] classicSET = new string[] { "Füllung", "Form", "Farbe_", "Anzahl_" };
     public static string[] classicSET_1 = new string[] { "Leer", "Ganz", "Streifen" };
     public static string[] classicSET_2 = new string[] { "Oval", "Raute", "S" };
 
     //Farben
     public static string farbe_gen = "Farbe_";
+    //public static string[] dyn_farbe new string{} 
     public static Color[] dyn_farbe = new Color[9] {Color.green, Color.red, Color.blue, Color.yellow, Color.white, Color.magenta, Color.cyan, Color.gray, Color.black};
     //Anzahl
     public static string anzahl_gen = "Anzahl_";

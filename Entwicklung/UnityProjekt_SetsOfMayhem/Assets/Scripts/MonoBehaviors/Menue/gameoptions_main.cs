@@ -15,6 +15,8 @@ using static methods;
 using static methods_unity;
 using TMPro;
 using static algos;
+using static setsUndFelder;
+using static karteZuBild;
 
 public class gameoptions_main : MonoBehaviour
 {
@@ -91,14 +93,19 @@ public class gameoptions_main : MonoBehaviour
     {
         //Debug.Log("onen_GO");
         getToSetKatNum();
-        
+        inSettings = true;
 
+    }
+    private void OnDisable()
+    {
+        inSettings = false;
     }
 
 
     private void Update()
     {
         getToSetKatNum();
+        //resettonew();
 
         //kindsOfOpt_Slider.GetComponent<Slider>().value = (float)(((float)Max_Anzahl_katProKarte - (float)Max_Anzahl_katProKarte_SLIDER_MIN) / ((float)Max_Anzahl_katProKarte_SLIDER_MAX - (float)Max_Anzahl_katProKarte_SLIDER_MIN)); 
         kindsOfOptions_Bttn();

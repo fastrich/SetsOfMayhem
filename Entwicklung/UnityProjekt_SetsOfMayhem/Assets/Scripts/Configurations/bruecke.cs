@@ -37,7 +37,7 @@ public static class bruecke {
                 if (WhichField > 0) { return fieldOfCards_SETs[WhichField - 1, ID_OfCardInField, ID_OfCatOfCard]; }
             } catch { fieldOfCards_SizeIt(WhichField); }
         }
-        return -1;
+        return -2;
     }
     public static int fieldOfCards_LengthIt(int WhichField, int dim)
 

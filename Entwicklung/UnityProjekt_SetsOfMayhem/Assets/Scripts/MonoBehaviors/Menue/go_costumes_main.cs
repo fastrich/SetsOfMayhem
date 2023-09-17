@@ -15,6 +15,8 @@ using static methods;
 using static methods_unity;
 using TMPro;
 using static algos;
+using static setsUndFelder;
+using static karteZuBild;
 
 public class go_costumes_main : MonoBehaviour
 {
@@ -71,17 +73,7 @@ public class go_costumes_main : MonoBehaviour
 
 }
 
-    private void resettonew()
-    {
-      kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
-     werte_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
-    werte_n_length = new int[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
-        //Debug.Log(kategorien_n[0]);
-    ChoosenKats = new int[100];
-        kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
-    werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
-        StartCoroutine(Waiting2());
-    }
+
 
 
     public void OnKlickBttn_UI_links() { kartenKostuem_Pointer--; if (kartenKostuem_Pointer < 0) { kartenKostuem_Pointer = (arr_Kostuem_ID.Length - 1); } resettonew(); }
@@ -97,27 +89,6 @@ public class go_costumes_main : MonoBehaviour
     public void OnKlickBttn_UIKHG_links() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]--; resettonew(); }
     public void OnKlickBttn_UIKHG_rechts() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]++; resettonew(); }
     public void OnKlickBttn_UIKHG_random() { UIKHG_Kaz_update(true); resettonew(); }
-
-  
-
-  
- 
-    IEnumerator Waiting2()
-    {
-        float wait = 0.4f;
-        float wait2 = 0.4f;
-        KartenReboot.SetActive(false);
-        yield return new WaitForSeconds(wait2);
-        KartenReboot.SetActive(true);
-        /*
-         * yield return new WaitForSeconds(wait);
-        KartenReboot.SetActive(false);
-        yield return new WaitForSeconds(wait2);
-        KartenReboot.SetActive(true);
-        //yield return new WaitForSeconds(wait);
-        //KartenReboot.SetActive(false);
-        */
-    }
 
 
 }

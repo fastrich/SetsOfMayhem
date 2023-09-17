@@ -7,11 +7,13 @@ using static medium;
 using static kartenInformationen;
 using static config_parameters;
 using static algos;
+using static setsUndFelder;
+using static karteZuBild;
 using static bruecke;
 
 public class kartenID_installer : MonoBehaviour
 {
-    private int numberOfKats = 0;
+    public int numberOfKats = 0;
 
     public bool isDefaultCard;
     public GameObject TxtInfos_gross;
@@ -36,6 +38,7 @@ public class kartenID_installer : MonoBehaviour
     public string E8_w;
     public string E9_n;
     public string E9_w;
+    public int zahler = 0;
 
 
     //private int[] io = new int[Max_Anzahl_katProKarte];
@@ -48,9 +51,10 @@ public class kartenID_installer : MonoBehaviour
     {
 
         // io = new int[Max_Anzahl_katProKarte];
-        //Debug.Log("onen");
-        //array_cards_used_with_id[transform.parent.gameObject.GetComponent<karte>().place_id]=kartenID;
-        if (inSettings)
+        Debug.Log("onen");
+        //
+        if(transform.parent.parent.parent.parent.gameObject.GetComponent<GObj_OnOff>().id== kartenKostuem_ID && inSettings)//inSettings || true)
+        //if(true)
         {
             numberOfKats = 0;
             numberOfKats += ubersetzeEnum(E1_n, E1_w);
@@ -63,6 +67,7 @@ public class kartenID_installer : MonoBehaviour
             numberOfKats += ubersetzeEnum(E8_n, E8_w);
             numberOfKats += ubersetzeEnum(E9_n, E9_w);
             //numberOfKats += ubersetzeEnum(E10_n, E10_w);
+            
 
             //transform.parent.gameObject.GetComponent<karte>().
             //kartenGobj_nachEigenschaften_roh[transform.parent.gameObject.GetComponent<karte>().place_id, io[0], io[1], io[2], io[3], io[4], io[5], io[6], io[7], io[8], io[9]] = gameObject;
@@ -150,25 +155,27 @@ public class kartenID_installer : MonoBehaviour
             }
         }
         */
-        int zahler = 0;
+        zahler = 0;
         for (int i = 0; i < transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString.Length; i++)
         {
+            if (string.IsNullOrEmpty(kategorien_n_sorted[i])){ continue; }
             //Debug.Log("katn" + i + "  " + kategorien_n_sorted[i] + " , " + transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i]);
             if (kategorien_n_sorted[i] == E1_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E1_w) { zahler++; }
-            if (kategorien_n_sorted[i] == E2_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E2_w) { zahler++; }
+            if (kategorien_n_sorted[i] == E2_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E2_w) { zahler++;  }
             if (kategorien_n_sorted[i] == E3_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E3_w) { zahler++; }
-            if (kategorien_n_sorted[i] == E4_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E4_w) { zahler++; }
-            if (kategorien_n_sorted[i] == E5_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E5_w) { zahler++; }
-            if (kategorien_n_sorted[i] == E6_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E6_w) { zahler++; }
-            if (kategorien_n_sorted[i] == E7_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E7_w) { zahler++; }
+            if (kategorien_n_sorted[i] == E4_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E4_w) { zahler++;  }
+            if (kategorien_n_sorted[i] == E5_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E5_w) { zahler++;  }
+            if (kategorien_n_sorted[i] == E6_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E6_w) { zahler++;  }
+            if (kategorien_n_sorted[i] == E7_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E7_w) { zahler++;  }
             if (kategorien_n_sorted[i] == E8_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E8_w) { zahler++; }
             if (kategorien_n_sorted[i] == E9_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E9_w) { zahler++; }
         }
         //Debug.Log("katn"+kategorien_n_sorted+ " "+ transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString);
-       //Debug.Log("zähler" + zahler + " " + AnazhlEintraege_nurManuell);
+      Debug.Log("zähler" + zahler + "AnzhlMAnuell " + AnazhlEintraege_nurManuell);
         if(zahler< AnazhlEintraege_nurManuell) { return false; }
 
-        //Debug.Log("hey");
+
+        Debug.Log("hey"+ transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[2] == E2_w + " 2 u hui " + E2_w);
 
 
         if(transform.parent.parent.parent.gameObject.GetComponent<karte>().anzahl_id> dyn_anzahl.Length) { return false; }

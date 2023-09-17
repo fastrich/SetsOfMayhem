@@ -8,6 +8,8 @@ using static algos;
 using System;
 using static config_parameters;
 using static bruecke;
+using static setsUndFelder;
+using static karteZuBild;
 
 public class karte_HG : MonoBehaviour
 {

@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 using static config_parameters;
 using static algos;
 using static medium;
+using static setsUndFelder;
+using static karteZuBild;
 public class intro_main : MonoBehaviour
 {
 
@@ -25,7 +27,7 @@ public class intro_main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inSettings = true;
+        inSettings = false;
         backup_numberField = Game_numberOfCardsOnDeck;
         Game_numberOfCardsOnDeck = Game_numberOfCardsOnDeck_Intro;
         backup_genSet = numberOfSelected_soll_gen;

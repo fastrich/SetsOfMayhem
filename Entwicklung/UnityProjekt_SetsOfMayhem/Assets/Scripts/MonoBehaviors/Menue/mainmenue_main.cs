@@ -8,6 +8,8 @@ using static medium;
 using static algos;
 using static methods;
 using TMPro;
+using static setsUndFelder;
+using static karteZuBild;
 public class mainmenue_main : MonoBehaviour
 {
    public GameObject KartenReboot;
@@ -18,38 +20,18 @@ public class mainmenue_main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(Waiting(3));
-        
-        inSettings = true;
-        kategorien_n2[0] = farbe_gen;
-        kategorien_n2[1] = ausrichtung_gen;
-        kategorien_n2[2] = anzahl_gen;
-        for (int i =0; i < ueberschuessig.Length; i++) {
-            ueberschuessig[i] =0;
-                }
-
-        KartenReboot.SetActive(false);
-
-     
-        StartCoroutine(Waiting2());
-
-
-
-
+        //newField()
+        resettonew();
     }
 
     private void OnEnable()
     {
-        inSettings = true;
-        update_arrays();
-        resettonew();
-        StartCoroutine(Waiting2());
-
+    //new arrays
     }
     // Update is called once per frame
     void Update()
     {
-        inSettings = true;
+        //inSettings = true;
         //lade123(classicSET);
    
         kartenKostuem_ID = arr_Kostuem_ID[kartenKostuem_Pointer];
@@ -60,6 +42,8 @@ public class mainmenue_main : MonoBehaviour
         string s = "";
         if (i != 0) { s = "Schnellste Zeit: " + i.ToString(); }
         KlasUTZ.GetComponent<TMP_Text>().text =  s;
+        //getToSetKatNum();
+        resettonew();
     }
     IEnumerator Waiting2()
     {
@@ -83,6 +67,7 @@ public class mainmenue_main : MonoBehaviour
     }
     private void resettonew()
     {
+        /*
         kategorien_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
         werte_n = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 1, numberofUnitsPerKat_max_SLIDER_MAX + 1];
         werte_n_length = new int[Max_Anzahl_katProKarte_SLIDER_MAX + 1];
@@ -91,7 +76,7 @@ public class mainmenue_main : MonoBehaviour
         //kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
         //werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
         StartCoroutine(Waiting2());
-
+        */
 
     }
 
@@ -131,6 +116,7 @@ public class mainmenue_main : MonoBehaviour
         lade123(classicSET);
         update_arrays();
         resettonew();
+        lade123(classicSET);
         //Debug.Log("Kartenwerte123 " + ArrayToString(kategorien_n_sorted));
         inSettings = false;
         if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
@@ -157,111 +143,7 @@ public class mainmenue_main : MonoBehaviour
     }
 
 
-    public void lade123(string[] presetSET) {
-        kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
-        Max_Anzahl_katProKarte = 0;
-        int k = 0;
-        int z = 0;
-        AnazhlEintraege_nurManuell = presetSET.Length;
-
-        for (int i = 0; i < classicSET.Length; i++)
-        {
-            Max_Anzahl_katProKarte = Max_Anzahl_katProKarte + 1;
-            kategorien_n_sorted[k] = presetSET[i]; k++;
-        }
-        
-        for (int i = 0; i < kategorien_n.Length; i++)
-        {
-            z =0;
-            for (int ii = 0; ii < kategorien_n_sorted.Length; ii++)
-            {
-                if (kategorien_n[i] == kategorien_n_sorted[ii]) { z++; }
-            }
-            if (!string.IsNullOrEmpty(kategorien_n[i]) && z==0 ) { kategorien_n_sorted[k] = kategorien_n[i]; k++; }
-            
-            
-        }
-        
-        for (int i = 0; i < kategorien_n2.Length; i++)
-        {
-            z = 0;
-            for (int ii = 0; ii < kategorien_n_sorted.Length; ii++)
-            {
-                if (kategorien_n2[i] == kategorien_n_sorted[ii]) { z++; }
-            }
-            if (!string.IsNullOrEmpty(kategorien_n2[i]) && z == 0) { kategorien_n_sorted[k] = kategorien_n2[i]; k++; }
-         
-        }
-
-        AnazhlEintraege = k;
-        AnazhlEintraege_nurManuell = AnazhlEintraege;
-
-        for (int i = 0; i < kategorien_n_sorted.Length; i++)
-        {
-            for (int j = 0; j < kategorien_n2.Length; j++)
-            {
-
-                if ( !string.IsNullOrEmpty(kategorien_n2[j])   && kategorien_n_sorted[i] == kategorien_n2[j])
-                {
-                    AnazhlEintraege_nurManuell--;
-                }
-
-            }
-
-        }
-        numberOfKatsOnCardsNeeded = AnazhlEintraege_nurManuell;
-
-
-        //=)====================================
-        werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX];
-        for (int katj = 0; katj < kategorien_n_sorted.Length; katj++)
-        {
-            for (int katjv = 0; katjv < kategorien_n.Length; katjv++)
-            {
-                if (kategorien_n_sorted[katj] == kategorien_n[katjv])
-                {
-                    for (int j = 0; j < numberofUnitsPerKat_max; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n[katjv, j];
-                    }  
-
-                }
-            }
-            for (int katjv = 0; katjv < kategorien_n2.Length; katjv++)
-            {
-                if (kategorien_n_sorted[katj] == kategorien_n2[katjv])
-                {
-                    for (int j = 0; j < numberofUnitsPerKat_max; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n2[katjv, j].ToString();
-                    }
-                }
-            }
-
-            if (kategorien_n_sorted[katj]==classicSET[0])
-            {
-                for (int j = 0; j < classicSET_1.Length; j++)
-                {
-                    werte_n_sorted[katj, j] = classicSET_1[j];
-                        }
-            }
-            if (kategorien_n_sorted[katj] == classicSET[1])
-            {
-                for (int j = 0; j < classicSET_2.Length; j++)
-                {
-                    werte_n_sorted[katj, j] = classicSET_2[j];
-                }
-            }
-
-
-
-        }
-
-
-
-
-
-    }
+   
 
 
 }

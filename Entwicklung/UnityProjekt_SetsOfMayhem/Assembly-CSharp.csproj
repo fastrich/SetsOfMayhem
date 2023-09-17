@@ -142,6 +142,8 @@
     <Compile Include="Assets\Scripts\MonoBehaviors\Menue\gamemode_main.cs" />
     <Compile Include="Assets\Scripts\Algorithms\Special\algos.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\Special\karteZuBild.cs" />
+    <Compile Include="Assets\Scripts\Algorithms\Special\setsUndFelder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

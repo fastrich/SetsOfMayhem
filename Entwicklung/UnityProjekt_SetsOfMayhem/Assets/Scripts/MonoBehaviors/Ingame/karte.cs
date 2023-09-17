@@ -8,6 +8,8 @@ using static algos;
 using System;
 using static config_parameters;
 using static bruecke;
+using static setsUndFelder;
+using static karteZuBild;
 
 public class karte : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class karte : MonoBehaviour
     public int hoch = 0;
 
     public string[] KartenWerteAlsString = new string[AnazhlEintraege];
+    public string[] KartenKatAlsString = new string[AnazhlEintraege];
     public int whichFieldIam = 0;
 
     private int HideYourself = 1;
@@ -35,6 +38,7 @@ public class karte : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("start von karte");
         if (checkForPlaceID)
         {
             whichFieldIam= Karte_get_FieldID_From_ObjektName( gobj_mit_placeID);
@@ -45,7 +49,8 @@ public class karte : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() { 
+    void Update() {
+        mapit();
         //Debug.Log("h"+ hoch);
         if (inSettings && hoch == 0) { activChilds(false); activChilds(true); }
             if (inSettings) { hoch++; }
@@ -227,21 +232,30 @@ public class karte : MonoBehaviour
     void mapit()
     {
         KartenWerteAlsString = new string[AnazhlEintraege];
+        KartenKatAlsString = new string[AnazhlEintraege];
+
+        //Debug.Log("mapit-s" + Max_Anzahl_katProKarte);
         for (int i = 0; i < Max_Anzahl_katProKarte; i++)
         {
             try
             {
+                KartenKatAlsString[i] = kategorien_n_sorted[i];
                 //Todo
-                //Debug.Log("hierBugArray");
+                Debug.Log("mapit");
                 if (string.IsNullOrEmpty(werte_n_sorted[i, fieldOfCards_GetIt(whichFieldIam, place_id, i)])) 
                 {
                     KartenWerteAlsString[i] = i.ToString();
                 }
                 else
-                { KartenWerteAlsString[i] = werte_n_sorted[i, fieldOfCards_GetIt(whichFieldIam, place_id, i)]; }
-                if (kategorien_n_sorted[i] == farbe_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); farbe_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
-                if (kategorien_n_sorted[i] == ausrichtung_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); rotation_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
-                if (kategorien_n_sorted[i] == anzahl_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); anzahl_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
+                { KartenWerteAlsString[i] = werte_n_sorted[i, fieldOfCards_GetIt(whichFieldIam, place_id, i)];
+                    if (kategorien_n_sorted[i] == farbe_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); farbe_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
+                    if (kategorien_n_sorted[i] == ausrichtung_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); rotation_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
+                    if (kategorien_n_sorted[i] == anzahl_gen) { KartenWerteAlsString[i] = fieldOfCards_GetIt(whichFieldIam, place_id, i).ToString(); anzahl_id = fieldOfCards_GetIt(whichFieldIam, place_id, i); }
+
+
+
+                }
+      
             }
             catch
             {  Debug.Log("hierBugArray");}
@@ -251,15 +265,25 @@ public class karte : MonoBehaviour
                 //Debug.Log("hey" + werte_n_sorted[0, 0] + werte_n_sorted[0, 1] + werte_n_sorted[0, 2] + werte_n_sorted[0, 3]);
         }
         
-        //Debug.Log("+Anz "+AnazhlEintraege);
+       // Debug.Log("maxkat "+ Max_Anzahl_katProKarte+ "+Anz " +AnazhlEintraege);
         for (int i = Max_Anzahl_katProKarte; i < (AnazhlEintraege); i++)
         {
-
+            KartenKatAlsString[i] = kategorien_n_sorted[i];
             KartenWerteAlsString[i] = werte_n_sorted[i, ueberschuessig[i]];
-        }
+            if (kategorien_n_sorted[i] == farbe_gen) { farbe_id = Int32.Parse(KartenWerteAlsString[i]); }
+            if (kategorien_n_sorted[i] == ausrichtung_gen) { rotation_id = Int32.Parse(KartenWerteAlsString[i]); }
+            if (kategorien_n_sorted[i] == anzahl_gen) { anzahl_id = Int32.Parse(KartenWerteAlsString[i]); }
+   
 
-       // Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
-       // Debug.Log("KartenKatAlsString " + ArrayToString(kategorien_n_sorted));
+        }
+        //Debug.Log("und kats" + fieldOfCards_SETs[whichFieldIam - 1, place_id, i]);
+        //  Debug.Log(AnazhlEintraege + " "+ whichFieldIam+ " place" + place_id);
+        // Debug.Log("und kats" + fieldOfCards_SETs[0,0,0] + fieldOfCards_LengthIt(0,0,1));
+        //Debug.Log("und kats" + fieldOfCards_SETs[whichFieldIam - 1, place_id, i]);
+
+
+        // Debug.Log("KartenwerteAlsString " + ArrayToString(KartenWerteAlsString));
+        // Debug.Log("KartenKatAlsString " + ArrayToString(kategorien_n_sorted))
 
     }
 }
