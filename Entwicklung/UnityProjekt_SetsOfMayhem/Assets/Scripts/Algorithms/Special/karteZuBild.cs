@@ -97,7 +97,7 @@ public static class karteZuBild
         Debug.Log("sollte nicht passieren");
         return i;
     }
-    public static void lade123(string[] presetSET)
+    public static void lade123(string[] presetSET, bool neuZufall)
     {
         //getToSetKatNum();
         resettonew();
@@ -156,10 +156,10 @@ public static class karteZuBild
         }
         numberOfKatsOnCardsNeeded = AnazhlEintraege_nurManuell;
         Debug.Log("no " + numberOfKatsOnCardsNeeded + " "+ AnazhlEintraege);
-        werteEinpflegen_1(true);
+        werteEinpflegen_1(true, neuZufall);
     }
 
-    public static void getToSetKatNum()
+    public static void getToSetKatNum(bool neuZufall)
     {
         kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
         Max_Anzahl_katProKarte = 0;
@@ -190,14 +190,14 @@ public static class karteZuBild
         AnazhlEintraege = k;
         update_arrays();
 
-        werteEinpflegen_1(false);
+        werteEinpflegen_1(false, neuZufall);
     }
 
 
 
-    public static void werteEinpflegen_1(bool classic_b1)
+    public static void werteEinpflegen_1(bool classic_b1, bool neuZufall)
     {
-        werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX];
+        if (neuZufall) { werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX]; }
         for (int katj = 0; katj < kategorien_n_sorted.Length; katj++)
         {
             if (kategorien_n_sorted[katj] == classicSET[0] && classic_b1)
@@ -215,6 +215,24 @@ public static class karteZuBild
                 }
             }
             werteEinpflegen(katj);
+            
+            if (false)
+            {
+                for (int katjv = 0; katjv < kategorien_n.Length; katjv++)
+                {
+                    if (kategorien_n_sorted[katj] == kategorien_n[katjv])
+                    {
+                        for (int j = 0; j < numberofUnitsPerKat_max_SLIDER_MAX; j++)
+                        {
+                            try{
+                                werte_n_sorted[katj, j] = werte_n[katjv, j].ToString();
+                            }
+                            catch { }
+                        }
+                    }
+                }
+            }
+            
         }
 
 
@@ -229,11 +247,23 @@ public static class karteZuBild
             {
                 for (int j = 0; j < numberofUnitsPerKat_max_SLIDER_MAX; j++)
                 {
-                    if (!string.IsNullOrEmpty(werte_n_sorted[katj, j])) { continue; }
+                    //Debug.Log("sdf1 " + katj);
+                    string s = "";
+                  
+                    bool ueberspr = true;
+                    if (string.IsNullOrEmpty(werte_n_sorted[katj, j])) { ueberspr = false; }
+                    if (!string.IsNullOrEmpty(werte_n_sorted[katj, j]))
+                    {
+                        s = werte_n_sorted[katj, j];
+                        Debug.Log("l "+s.Length);
+                        if (s.Length < 2) { ueberspr = false; }
+                    }
 
+                    if (ueberspr) { continue; }
+                    //Debug.Log("sdf2 " + katj );
                     //Debug.Log("wnl" + werte_n_length.Length + " "+kategorien_n.Length + " " +j + " " + katj )
                     if (werte_n_length[katjv] <= j) { break; }
-                
+                    //Debug.Log("sdf " +katj);
                     int vers = 10;//versuche
                     int xtr=0;
                     bool z = false;
@@ -246,7 +276,7 @@ public static class karteZuBild
                         {
                             if (werte_n_sorted[katj, i] == werte_n[katjv, xtr]) { z=true; break; }
                         }
-                        if (z==false) { werte_n_sorted[katj, j] = werte_n[katjv, xtr]; break; }
+                        if (z == false) { werte_n_sorted[katj, j] = werte_n[katjv, xtr].ToString(); break; }
                     }
                     if (z) {
                         for (int jj = 0; jj < numberofUnitsPerKat_max_SLIDER_MAX; jj++)
@@ -256,7 +286,11 @@ public static class karteZuBild
                             {
                                 if (werte_n_sorted[katj, i] == werte_n[katjv, jj]) { z = true; break; }
                             }
-                            if (z == false) { werte_n_sorted[katj, j] = werte_n[katjv, jj]; break; }
+                            try
+                            {
+                                if (z == false) { werte_n_sorted[katj, j] = werte_n[katjv, jj].ToString(); break; }
+                            }
+                            catch { Debug.Log("Err: No ObjectRefSetToInst"); }
                         }
                     }
  
@@ -321,7 +355,7 @@ public static class karteZuBild
         kategorien_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10];
         werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX + 1];
         ChoosenKats = new int[100];
-        getToSetKatNum();
+        getToSetKatNum(true);
     }
 
 }

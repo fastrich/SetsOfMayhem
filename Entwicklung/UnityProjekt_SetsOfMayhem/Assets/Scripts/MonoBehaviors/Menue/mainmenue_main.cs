@@ -22,7 +22,7 @@ public class mainmenue_main : MonoBehaviour
     {
         //newField()
         resettonew();
-        getToSetKatNum();
+        getToSetKatNum(false);
     
     }
 
@@ -46,7 +46,7 @@ public class mainmenue_main : MonoBehaviour
         string s = "";
         if (i != 0) { s = "Schnellste Zeit: " + i.ToString(); }
         KlasUTZ.GetComponent<TMP_Text>().text =  s;
-        //getToSetKatNum();
+        getToSetKatNum(false);
         //resettonew();
     }
 
@@ -54,7 +54,7 @@ public class mainmenue_main : MonoBehaviour
     {
         while (true)
         {
-            getToSetKatNum();
+           // getToSetKatNum();
             yield return new WaitForSeconds(0.5f);
             //resettonew();
            
@@ -71,8 +71,8 @@ public class mainmenue_main : MonoBehaviour
         numberOfSelected_soll = numberOfSelected_soll_Classic;
         numberofUnitsPerKat_max = numberofUnitsPerKat_max_classic;
         Max_Anzahl_katProKarte = Max_Anzahl_katProKarte_classic;
-        getToSetKatNum();
-        lade123(classicSET);
+        getToSetKatNum(true);
+        lade123(classicSET, true);
         update_arrays();
         inSettings = false;
         Debug.Log("Kartenwerte123 " + ArrayToString(kategorien_n_sorted));
@@ -100,7 +100,7 @@ public class mainmenue_main : MonoBehaviour
         }
         update_arrays();
         resettonew();
-        lade123(classicSET);
+        lade123(classicSET, true);
         //Debug.Log("Kartenwerte123 " + ArrayToString(kategorien_n_sorted));
         inSettings = false;
         if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
@@ -116,7 +116,7 @@ public class mainmenue_main : MonoBehaviour
 
         //if (numberOfSelected_soll_gen >= (Game_numberOfCardsOnDeck-numberOfSelected_soll)) { return; }
         inSettings = false;
-        getToSetKatNum();
+        getToSetKatNum(true);
         if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
         IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene("Stage");
     }
@@ -125,7 +125,7 @@ public class mainmenue_main : MonoBehaviour
     {
         IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene(true);
         update_arrays();
-        getToSetKatNum();
+        getToSetKatNum(true);
         inSettings = false;
         if (IntSceneMng == null) { SceneManager.LoadScene(sceneName: "Stage"); }
         IntSceneMng.GetComponent<internalScenesManager>().ChangeInternalScene("Stage");

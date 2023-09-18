@@ -86,13 +86,13 @@ public class gameoptions_main : MonoBehaviour
         tempColB[1] = Toogle_gen_colour.GetComponent<Button>().colors;
         tempColB[1].normalColor = colOptionEnabled;
         tempColB[1].selectedColor = colOptionEnabled;
-        getToSetKatNum();
+        getToSetKatNum(false);
 
     }
     void OnEnable()
     {
         //Debug.Log("onen_GO");
-        getToSetKatNum();
+        getToSetKatNum(false);
         //inSettings = true;
 
     }
@@ -203,20 +203,21 @@ public class gameoptions_main : MonoBehaviour
 
 
 
-    public void OnKlickBttn01(){ int i = 0; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn02() { int i = 1; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn03() { int i = 2; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn04() { int i = 3; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn05() { int i = 4; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn06() { int i = 5; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn07() { int i = 6; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn08() { int i = 7; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn09() { int i = 8; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(); }
-    public void OnKlickBttn_GenColor() { int i = 0; ChoosenKats2[i] = 1 - ChoosenKats2[i]; getToSetKatNum(); }
-    public void OnKlickBttn_GenRot() { int i = 1; ChoosenKats2[i] = 1-ChoosenKats2[i]; getToSetKatNum(); }
-    public void OnKlickBttn_GenChilds() { int i = 2; ChoosenKats2[i] = 1-ChoosenKats2[i]; getToSetKatNum(); }
-    
+    public void OnKlickBttn01(){ int i = 0; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn02() { int i = 1; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn03() { int i = 2; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn04() { int i = 3; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn05() { int i = 4; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn06() { int i = 5; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn07() { int i = 6; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn08() { int i = 7; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn09() { int i = 8; if (string.IsNullOrEmpty(kategorien_n[i])) { return; } ChoosenKats[i] = 1-ChoosenKats[i]; getToSetKatNum(false); }
+    public void OnKlickBttn_GenColor() { int i = 0; ChoosenKats2[i] = 1 - ChoosenKats2[i]; getToSetKatNum(false); }
+    public void OnKlickBttn_GenRot() { int i = 1; ChoosenKats2[i] = 1-ChoosenKats2[i]; getToSetKatNum(false); }
+    public void OnKlickBttn_GenChilds() { int i = 2; ChoosenKats2[i] = 1-ChoosenKats2[i]; getToSetKatNum(false); }
+    public void OnKlickBttn_weiteresKartenBsp() { resettonew(); }
 
-    
+
+
 
 }

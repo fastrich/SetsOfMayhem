@@ -29,10 +29,7 @@ public class go_costumes_main : MonoBehaviour
     public GameObject UIKHGskin_thema;
     public GameObject UIKHGskin_name_z;
     public GameObject UIKHGskin_thema_z;
-
-
-
-
+    
 
 
 
@@ -91,5 +88,6 @@ public class go_costumes_main : MonoBehaviour
     public void OnKlickBttn_UIKHG_rechts() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]++;  }
     public void OnKlickBttn_UIKHG_random() { UIKHG_Kaz_update(true);  }
 
+    public void OnKlickBttn_weiteresKartenBsp() { resettonew(); }
 
 }

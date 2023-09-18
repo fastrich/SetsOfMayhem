@@ -129,6 +129,17 @@ MonoBehaviour:
   - 
   - 
   - 
+  KartenKatAlsString:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   whichFieldIam: 0
 --- !u!1 &1966520222400915981
 GameObject:
@@ -395,7 +406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E2_w
-      value: 5
+      value: x5
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E3_n
@@ -589,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E2_w
-      value: 2
+      value: x2
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E3_n
@@ -925,7 +936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E2_w
-      value: 3
+      value: x3
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E3_n
@@ -1313,7 +1324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E2_w
-      value: 4
+      value: x4
       objectReference: {fileID: 0}
     - target: {fileID: 3061312214546401856, guid: 5b55abe5174a29146ab0e78d3419c65e, type: 3}
       propertyPath: E3_n

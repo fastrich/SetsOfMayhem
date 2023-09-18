@@ -52,19 +52,20 @@ public class karte : MonoBehaviour
     void Update() {
         mapit();
         //Debug.Log("h"+ hoch);
-        if (inSettings && hoch == 0) { activChilds(false); activChilds(true); }
-            if (inSettings) { hoch++; }
-        if (inSettings && hoch>1) { hoch = 0;  }
+       // if (inSettings && hoch == 0) { activChilds(false); activChilds(true); }
+        //    if (inSettings) { hoch++; }
+       // if (inSettings && hoch>1) { hoch = 0;  }
 
         //Debug.Log(whichFieldIam + " " + place_id + " "+ array_cards_status_GetIt(whichFieldIam, place_id));
 
         if (array_cards_status_GetIt(whichFieldIam, place_id) == 0)
         {
-            if (!inSettings) { activChilds(false); }
+            //if (!inSettings) { activChilds(false); }
             hasACard = false;
         }
-            
-          if(array_cards_status_GetIt(whichFieldIam, place_id) == 1)
+        if (whichFieldIam == 2) { activChilds(true); }
+
+        if (array_cards_status_GetIt(whichFieldIam, place_id) == 1)
         {
             changeToNotMarked();
         }
@@ -111,6 +112,7 @@ public class karte : MonoBehaviour
             }
             
         }
+     
 
 
         if (inSettings) { mapit(); }

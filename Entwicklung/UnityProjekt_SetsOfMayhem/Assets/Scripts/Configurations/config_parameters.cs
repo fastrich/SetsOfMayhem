@@ -137,7 +137,7 @@ public static class config_parameters {
     //Vorbelegungen
     public static string[] classicSET = new string[] { "Füllung", "Form", "Farbe_", "Anzahl_" };
     public static string[] classicSET_1 = new string[] { "Leer", "Ganz", "Streifen" };
-    public static string[] classicSET_2 = new string[] { "Oval", "Raute", "S" };
+    public static string[] classicSET_2 = new string[] { "Oval", "Raute", "S." };
 
     //Farben
     public static string farbe_gen = "Farbe_";
