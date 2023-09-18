@@ -53,6 +53,7 @@ public class go_costumes_main : MonoBehaviour
         resettonew();
     }
 
+
     private void Update()
     {
         string nun = "";
@@ -80,15 +81,15 @@ public class go_costumes_main : MonoBehaviour
     public void OnKlickBttn_UI_rechts() { kartenKostuem_Pointer++; if (kartenKostuem_Pointer > (arr_Kostuem_ID.Length - 1)) { kartenKostuem_Pointer = 0; } resettonew(); }
     public void OnKlickBttn_UI_random() { kartenKostuem_Pointer = (int)Random.Range(0, arr_Kostuem_ID.Length - 1); resettonew(); }
     public void OnKlickBttn_UI_0() { kartenKostuem_Pointer = kartenKostuem_Pointer_ClassicDefault; resettonew(); }
-    public void OnKlickBttn_UIKHG_Kat_links() { kartenKostuem_HG_Kat_Pointer--; if (kartenKostuem_HG_Kat_Pointer < 0) { kartenKostuem_HG_Kat_Pointer = (arr_Kostuem_HG_Kat_ID.Length - 1); } resettonew(); }
-    public void OnKlickBttn_UIKHG_Kat_rechts() { kartenKostuem_HG_Kat_Pointer++; if (kartenKostuem_HG_Kat_Pointer > (arr_Kostuem_HG_Kat_ID.Length - 1)) { kartenKostuem_HG_Kat_Pointer = 0; } resettonew(); }
-    public void OnKlickBttn_UIKHG_Kat_random() { kartenKostuem_HG_Kat_Pointer = (int)Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1); resettonew(); }
-    public void OnKlickBttn_UIKHG_Kat_0() { kartenKostuem_HG_Kat_Pointer = kartenKostuem_HG_Kat_Pointer_Default; resettonew(); }
+    public void OnKlickBttn_UIKHG_Kat_links() { kartenKostuem_HG_Kat_Pointer--; if (kartenKostuem_HG_Kat_Pointer < 0) { kartenKostuem_HG_Kat_Pointer = (arr_Kostuem_HG_Kat_ID.Length - 1); } }
+    public void OnKlickBttn_UIKHG_Kat_rechts() { kartenKostuem_HG_Kat_Pointer++; if (kartenKostuem_HG_Kat_Pointer > (arr_Kostuem_HG_Kat_ID.Length - 1)) { kartenKostuem_HG_Kat_Pointer = 0; }  }
+    public void OnKlickBttn_UIKHG_Kat_random() { kartenKostuem_HG_Kat_Pointer = (int)Random.Range(0, arr_Kostuem_HG_Kat_ID.Length - 1); }
+    public void OnKlickBttn_UIKHG_Kat_0() { kartenKostuem_HG_Kat_Pointer = kartenKostuem_HG_Kat_Pointer_Default;  }
 
-    public void OnKlickBttn_UIKHG_0() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] = arr_kartenKostuem_HG_Pointer_Default[kartenKostuem_HG_Kat_ID]; resettonew(); }
-    public void OnKlickBttn_UIKHG_links() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]--; resettonew(); }
-    public void OnKlickBttn_UIKHG_rechts() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]++; resettonew(); }
-    public void OnKlickBttn_UIKHG_random() { UIKHG_Kaz_update(true); resettonew(); }
+    public void OnKlickBttn_UIKHG_0() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID] = arr_kartenKostuem_HG_Pointer_Default[kartenKostuem_HG_Kat_ID];  }
+    public void OnKlickBttn_UIKHG_links() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]--;  }
+    public void OnKlickBttn_UIKHG_rechts() { arr_kartenKostuem_HG_Pointer[kartenKostuem_HG_Kat_ID]++;  }
+    public void OnKlickBttn_UIKHG_random() { UIKHG_Kaz_update(true);  }
 
 
 }

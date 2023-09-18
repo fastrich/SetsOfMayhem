@@ -104,7 +104,7 @@ public class gameoptions_main : MonoBehaviour
 
     private void Update()
     {
-        getToSetKatNum();
+        //getToSetKatNum();
         inSettings = true;
         //resettonew();
 

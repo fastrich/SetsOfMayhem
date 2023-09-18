@@ -51,7 +51,6 @@ public class kartenID_installer : MonoBehaviour
     {
 
         // io = new int[Max_Anzahl_katProKarte];
-        Debug.Log("onen");
         //
         if(transform.parent.parent.parent.parent.gameObject.GetComponent<GObj_OnOff>().id== kartenKostuem_ID && inSettings)//inSettings || true)
         //if(true)
@@ -171,7 +170,7 @@ public class kartenID_installer : MonoBehaviour
             if (kategorien_n_sorted[i] == E9_n && transform.parent.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString[i] == E9_w) { zahler++; }
         }
         //Debug.Log("katn"+kategorien_n_sorted+ " "+ transform.parent.parent.gameObject.GetComponent<karte>().KartenWerteAlsString);
-      Debug.Log("zähler" + zahler + "AnzhlMAnuell " + AnazhlEintraege_nurManuell);
+    //  Debug.Log("zähler" + zahler + "AnzhlMAnuell " + AnazhlEintraege_nurManuell);
         if(zahler< AnazhlEintraege_nurManuell) { return false; }
 
 

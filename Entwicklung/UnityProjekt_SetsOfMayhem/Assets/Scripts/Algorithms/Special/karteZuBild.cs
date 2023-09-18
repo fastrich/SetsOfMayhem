@@ -156,56 +156,7 @@ public static class karteZuBild
         }
         numberOfKatsOnCardsNeeded = AnazhlEintraege_nurManuell;
         Debug.Log("no " + numberOfKatsOnCardsNeeded + " "+ AnazhlEintraege);
-
-        //=)====================================
-        werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX];
-        for (int katj = 0; katj < kategorien_n_sorted.Length; katj++)
-        {
-            for (int katjv = 0; katjv < kategorien_n.Length; katjv++)
-            {
-                if (kategorien_n_sorted[katj] == kategorien_n[katjv])
-                {
-                    for (int j = 0; j < numberofUnitsPerKat_max; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n[katjv, j];
-                    }
-
-                }
-            }
-            for (int katjv = 0; katjv < kategorien_n2.Length; katjv++)
-            {
-                if (kategorien_n_sorted[katj] == kategorien_n2[katjv])
-                {
-                    for (int j = 0; j < numberofUnitsPerKat_max; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n2[katjv, j].ToString();
-                    }
-                }
-            }
-
-            if (kategorien_n_sorted[katj] == classicSET[0])
-            {
-                for (int j = 0; j < classicSET_1.Length; j++)
-                {
-                    werte_n_sorted[katj, j] = classicSET_1[j];
-                }
-            }
-            if (kategorien_n_sorted[katj] == classicSET[1])
-            {
-                for (int j = 0; j < classicSET_2.Length; j++)
-                {
-                    werte_n_sorted[katj, j] = classicSET_2[j];
-                }
-            }
-
-
-
-        }
-
-
-
-
-
+        werteEinpflegen_1(true);
     }
 
     public static void getToSetKatNum()
@@ -239,50 +190,90 @@ public static class karteZuBild
         AnazhlEintraege = k;
         update_arrays();
 
-        //=)=====================================
+        werteEinpflegen_1(false);
+    }
+
+
+
+    public static void werteEinpflegen_1(bool classic_b1)
+    {
         werte_n_sorted = new string[Max_Anzahl_katProKarte_SLIDER_MAX + 10, numberofUnitsPerKat_max_SLIDER_MAX];
         for (int katj = 0; katj < kategorien_n_sorted.Length; katj++)
         {
-            for (int katjv = 0; katjv < kategorien_n.Length; katjv++)
+            if (kategorien_n_sorted[katj] == classicSET[0] && classic_b1)
             {
-                if (kategorien_n_sorted[katj] == kategorien_n[katjv])
+                for (int j = 0; j < classicSET_1.Length; j++)
                 {
-                    for (int j = 0; j < numberofUnitsPerKat_max_SLIDER_MAX; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n[katjv, j];
-                    }
+                    werte_n_sorted[katj, j] = classicSET_1[j];
                 }
             }
-            for (int katjv = 0; katjv < kategorien_n2.Length; katjv++)
+            if (kategorien_n_sorted[katj] == classicSET[1] && classic_b1)
             {
-                if (kategorien_n_sorted[katj] == kategorien_n2[katjv])
+                for (int j = 0; j < classicSET_2.Length; j++)
                 {
-                    for (int j = 0; j < numberofUnitsPerKat_max_SLIDER_MAX; j++)
-                    {
-                        werte_n_sorted[katj, j] = werte_n2[katjv, j].ToString();
-                    }
+                    werte_n_sorted[katj, j] = classicSET_2[j];
                 }
             }
-
-
-
+            werteEinpflegen(katj);
         }
 
-        if (false)
+
+    }
+
+
+    public static void werteEinpflegen(int katj)
+    {
+        for (int katjv = 0; katjv < kategorien_n.Length; katjv++)
         {
-            for (int i = 0; i < 5; i++)
+            if (kategorien_n_sorted[katj] == kategorien_n[katjv])
             {
-
-                for (int ii = 0; ii < 2; ii++)
+                for (int j = 0; j < numberofUnitsPerKat_max_SLIDER_MAX; j++)
                 {
-                    Debug.Log("hier " + ii + " " + i + " " + werte_n_sorted[ii, i]);
+                    if (!string.IsNullOrEmpty(werte_n_sorted[katj, j])) { continue; }
+
+                    //Debug.Log("wnl" + werte_n_length.Length + " "+kategorien_n.Length + " " +j + " " + katj )
+                    if (werte_n_length[katjv] <= j) { break; }
+                
+                    int vers = 10;//versuche
+                    int xtr=0;
+                    bool z = false;
+                    for(int v=0; v<vers; v++)
+                    {
+                        z = false;
+                        xtr = UnityEngine.Random.Range(0, werte_n_length[katjv]);
+                        if(string.IsNullOrEmpty(werte_n[katjv, xtr])) { continue; }
+                        for (int i=0; i<j;i++)
+                        {
+                            if (werte_n_sorted[katj, i] == werte_n[katjv, xtr]) { z=true; break; }
+                        }
+                        if (z==false) { werte_n_sorted[katj, j] = werte_n[katjv, xtr]; break; }
+                    }
+                    if (z) {
+                        for (int jj = 0; jj < numberofUnitsPerKat_max_SLIDER_MAX; jj++)
+                        {
+                            z = false;
+                            for (int i = 0; i < j; i++)
+                            {
+                                if (werte_n_sorted[katj, i] == werte_n[katjv, jj]) { z = true; break; }
+                            }
+                            if (z == false) { werte_n_sorted[katj, j] = werte_n[katjv, jj]; break; }
+                        }
+                    }
+ 
+                }
+
+            }
+        }
+        for (int katjv = 0; katjv < kategorien_n2.Length; katjv++)
+        {
+            if (kategorien_n_sorted[katj] == kategorien_n2[katjv])
+            {
+                for (int j = 0; j < numberofUnitsPerKat_max_SLIDER_MAX; j++)
+                {
+                    werte_n_sorted[katj, j] = werte_n2[katjv, j].ToString();
                 }
             }
         }
-
-
-
-        //Debug.Log("kat "+kategorien_n[0]+ kategorien_n[1]);
     }
 
 
